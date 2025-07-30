@@ -1,19 +1,39 @@
 "use client";
 
-import { Calendar, Home, Inbox, Plus, Search, Settings } from "lucide-react";
+import {
+  Book,
+  Calendar,
+  Home,
+  Inbox,
+  Plus,
+  Search,
+  Settings,
+} from "lucide-react";
 
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupAction,
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
+  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarRail,
+  useSidebar,
 } from "@/components/ui/sidebar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 // Menu items.
 const items = [
@@ -45,23 +65,41 @@ const items = [
 ];
 
 export function AppSidebar() {
+  const { state } = useSidebar();
+
   return (
-    <Sidebar variant="sidebar">
+    <Sidebar variant="sidebar" collapsible="icon">
       <SidebarHeader>Here is my logo</SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
-          <SidebarGroupAction
-            onClick={() => console.log("Clicked from sidebar grup action!")}
-          >
-            <Plus />
-          </SidebarGroupAction>
+          <SidebarGroupLabel>Group label</SidebarGroupLabel>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <SidebarGroupAction
+                onClick={() => console.log("Clicked from sidebar grup action")}
+              >
+                <Plus />
+              </SidebarGroupAction>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent side="bottom" align="end">
+              <DropdownMenuItem>New window1</DropdownMenuItem>
+              <DropdownMenuItem>New window2</DropdownMenuItem>
+              <DropdownMenuItem>New window3</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>Here is my</SidebarMenuItem>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton
+                    asChild
+                    onClick={() =>
+                      console.log(`Clicked from sidebar menu ${item.title}`)
+                    }
+                  >
                     <a href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
@@ -69,10 +107,35 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  className={state === "collapsed" ? "hidden" : ""}
+                >
+                  <span>New item</span>
+                </SidebarMenuButton>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <SidebarMenuAction
+                      onClick={() =>
+                        console.log(`Clicked from sidebar menu action last`)
+                      }
+                    >
+                      <Plus />
+                    </SidebarMenuAction>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent side="bottom" align="end">
+                    <DropdownMenuItem>New item</DropdownMenuItem>
+                    <DropdownMenuItem>New item</DropdownMenuItem>
+                    <DropdownMenuItem>New item</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter>Here is my footer</SidebarFooter>
+      <SidebarRail />
     </Sidebar>
   );
 }
