@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Book,
-  Calendar,
-  Home,
-  Inbox,
-  Plus,
-  Search,
-  Settings,
-} from "lucide-react";
+import { Calendar, Home, Inbox, Plus, Search, Settings } from "lucide-react";
 
 import {
   Sidebar,
@@ -30,11 +22,13 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { FaGithub, FaInstagram } from "react-icons/fa6";
+import Link from "next/link";
+import { MdVerified } from "react-icons/md";
 // Menu items.
 const items = [
   {
@@ -69,11 +63,42 @@ export function AppSidebar() {
 
   return (
     <Sidebar variant="sidebar" collapsible="icon">
-      <SidebarHeader>Here is my logo</SidebarHeader>
-      <SidebarContent>
+      <SidebarHeader className="p-8">
+        <Avatar className="w-16 h-16 border border-muted-foreground">
+          <AvatarImage src="/img/profile.png" />
+          <AvatarFallback>WB</AvatarFallback>
+        </Avatar>
+        <div>
+          <div className="flex gap-x-1 items-center">
+            <h1>Wilbert Bernardi</h1>
+            <MdVerified style={{ color: "#0000FF" }} size={16} />
+          </div>
+          <span className="text-sm text-muted-foreground">@wilbertfe</span>
+        </div>
+        <div className="flex justify-between items-center">
+          <Button
+            className="text-sm text-muted-foreground rounded-full bg-transparent"
+            variant="outline"
+          >
+            <span className="relative flex size-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex size-2.5 rounded-full bg-green-400"></span>
+            </span>
+            Hire me
+          </Button>
+          <div className="flex gap-x-4">
+            <Link href="#">
+              <FaGithub size={24} />
+            </Link>
+            <Link href="#">
+              <FaInstagram size={24} />
+            </Link>
+          </div>
+        </div>
+      </SidebarHeader>
+      <SidebarContent className="px-8">
         <SidebarGroup>
           <SidebarGroupLabel>Group label</SidebarGroupLabel>
-
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <SidebarGroupAction
@@ -134,7 +159,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter>Here is my footer</SidebarFooter>
+      <SidebarFooter className="px-8">Here is my footer</SidebarFooter>
       <SidebarRail />
     </Sidebar>
   );
