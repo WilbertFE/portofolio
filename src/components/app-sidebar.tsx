@@ -1,6 +1,15 @@
 "use client";
 
-import { Calendar, Home, Inbox, Plus, Search, Settings } from "lucide-react";
+import {
+  Home,
+  User,
+  Award,
+  FolderGit2,
+  LayoutDashboard,
+  MessageCircleMore,
+  BookUser,
+  Settings,
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -29,31 +38,43 @@ import { Button } from "@/components/ui/button";
 import { FaGithub, FaInstagram } from "react-icons/fa6";
 import Link from "next/link";
 import { MdVerified } from "react-icons/md";
+import { Separator } from "@/components/ui/separator";
 // Menu items.
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/",
     icon: Home,
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "About",
+    url: "/about",
+    icon: User,
+  },
+
+  {
+    title: "Projects",
+    url: "/projects",
+    icon: FolderGit2,
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "Dashboard",
+    url: "/dashboard",
+    icon: LayoutDashboard,
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
+    title: "Chat Room",
+    url: "/chat",
+    icon: MessageCircleMore,
+  },
+  {
+    title: "Contact",
+    url: "/contact",
+    icon: BookUser,
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/settings",
     icon: Settings,
   },
 ];
@@ -61,9 +82,13 @@ const items = [
 export function AppSidebar() {
   const { state } = useSidebar();
 
+  console.log("try");
+
   return (
     <Sidebar variant="sidebar" collapsible="icon">
-      <SidebarHeader className="p-8">
+      <SidebarHeader
+        className={`px-8 py-4 ${state === "collapsed" ? "hidden" : ""}`}
+      >
         <Avatar className="w-16 h-16 border border-muted-foreground">
           <AvatarImage src="/img/profile.png" />
           <AvatarFallback>WB</AvatarFallback>
@@ -96,27 +121,10 @@ export function AppSidebar() {
           </div>
         </div>
       </SidebarHeader>
-      <SidebarContent className="px-8">
+      <SidebarContent className={state === "expanded" ? "px-4 py-0 my-0" : ""}>
         <SidebarGroup>
-          <SidebarGroupLabel>Group label</SidebarGroupLabel>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <SidebarGroupAction
-                onClick={() => console.log("Clicked from sidebar grup action")}
-              >
-                <Plus />
-              </SidebarGroupAction>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent side="bottom" align="end">
-              <DropdownMenuItem>New window1</DropdownMenuItem>
-              <DropdownMenuItem>New window2</DropdownMenuItem>
-              <DropdownMenuItem>New window3</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
           <SidebarGroupContent>
             <SidebarMenu>
-              <SidebarMenuItem>Here is my</SidebarMenuItem>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
@@ -126,40 +134,31 @@ export function AppSidebar() {
                     }
                   >
                     <a href={item.url}>
-                      <item.icon />
+                      <item.icon
+                        className={
+                          state === "expanded" ? "min-w-5 min-h-5" : ""
+                        }
+                      />
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  className={state === "collapsed" ? "hidden" : ""}
-                >
-                  <span>New item</span>
-                </SidebarMenuButton>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <SidebarMenuAction
-                      onClick={() =>
-                        console.log(`Clicked from sidebar menu action last`)
-                      }
-                    >
-                      <Plus />
-                    </SidebarMenuAction>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent side="bottom" align="end">
-                    <DropdownMenuItem>New item</DropdownMenuItem>
-                    <DropdownMenuItem>New item</DropdownMenuItem>
-                    <DropdownMenuItem>New item</DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter className="px-8">Here is my footer</SidebarFooter>
+
+      <Separator />
+
+      {state === "expanded" && (
+        <SidebarFooter
+          className={`px-8 flex flex-col gap-y-0 text-center text-[12px] text-muted-foreground`}
+        >
+          <span>COPYRIGHT &copy; 2025</span>
+          <span>Wilbert Bernardi. All rights reserved</span>
+        </SidebarFooter>
+      )}
       <SidebarRail />
     </Sidebar>
   );
