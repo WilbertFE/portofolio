@@ -100,23 +100,28 @@ export function AppSidebar() {
           </div>
           <span className="text-sm text-muted-foreground">@wilbertfe</span>
         </div>
-        <div className="flex justify-between items-center">
-          <Button
-            className="text-sm text-muted-foreground rounded-full bg-transparent"
-            variant="outline"
-          >
-            <span className="relative flex size-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex size-2.5 rounded-full bg-green-400"></span>
-            </span>
-            Hire me
-          </Button>
-          <div className="flex gap-x-4">
-            <Link href="#">
-              <FaGithub size={24} />
+        <div className="flex gap-x-2 justify-between items-center">
+          <Link href="/">
+            <Button
+              className="text-sm text-muted-foreground rounded-full bg-transparent"
+              variant="outline"
+            >
+              <span className="relative flex size-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex size-2.5 rounded-full bg-green-400"></span>
+              </span>
+              Hire me.
+            </Button>
+          </Link>
+          <div className="flex gap-x-2">
+            <Link href="https://github.com/WilbertFE">
+              <FaGithub size={30} />
             </Link>
-            <Link href="#">
-              <FaInstagram size={24} />
+            <Link href="https://fastwork.id/user/wilbertbernardi">
+              <Avatar>
+                <AvatarImage src="" />
+                <AvatarFallback>FW</AvatarFallback>
+              </Avatar>
             </Link>
           </div>
         </div>
