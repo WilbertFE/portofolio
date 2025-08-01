@@ -178,26 +178,30 @@ export default function Home() {
           </p>
         </div>
         <div className="space-y-4">
-          <div className="flex gap-x-4">
+          <ul className="flex gap-x-4">
             {skills1.map((skill, i) => (
-              <Badge key={i} variant="secondary" className="p-2 rounded-full">
-                <div className="flex gap-x-1 items-center">
-                  {<skill.icon size={20} style={{ color: skill.color }} />}
-                  <span className="tracking-wider">{skill.text}</span>
-                </div>
-              </Badge>
+              <li key={i}>
+                <Badge variant="secondary" className="p-2 rounded-full">
+                  <div className="flex gap-x-1 items-center">
+                    {<skill.icon size={20} style={{ color: skill.color }} />}
+                    <span className="tracking-wider">{skill.text}</span>
+                  </div>
+                </Badge>
+              </li>
             ))}
-          </div>
-          <div className="flex gap-x-4">
+          </ul>
+          <ul className="flex gap-x-4">
             {skills2.map((skill, i) => (
-              <Badge key={i} variant="secondary" className="p-2 rounded-full">
-                <div className="flex gap-x-1 items-center">
-                  {<skill.icon size={20} style={{ color: skill.color }} />}
-                  <span className="tracking-wider">{skill.text}</span>
-                </div>
-              </Badge>
+              <li key={i}>
+                <Badge variant="secondary" className="p-2 rounded-full">
+                  <div className="flex gap-x-1 items-center">
+                    {<skill.icon size={20} style={{ color: skill.color }} />}
+                    <span className="tracking-wider">{skill.text}</span>
+                  </div>
+                </Badge>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
       <div className="space-y-2 h-max">
@@ -207,16 +211,18 @@ export default function Home() {
           </p>
         </div>
         <div className="space-y-4">
-          <div className="flex gap-x-4">
+          <ul className="flex gap-x-4">
             {learningSkill.map((skill, i) => (
-              <Badge key={i} variant="secondary" className="p-2 rounded-full">
-                <div className="flex gap-x-1 items-center">
-                  {<skill.icon size={20} style={{ color: skill.color }} />}
-                  <span className="tracking-wider">{skill.text}</span>
-                </div>
-              </Badge>
+              <li key={i}>
+                <Badge variant="secondary" className="p-2 rounded-full">
+                  <div className="flex gap-x-1 items-center">
+                    {<skill.icon size={20} style={{ color: skill.color }} />}
+                    <span className="tracking-wider">{skill.text}</span>
+                  </div>
+                </Badge>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </div>
