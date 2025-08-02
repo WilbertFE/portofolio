@@ -84,24 +84,22 @@ export function AppSidebar() {
 
   return (
     <Sidebar variant="sidebar" collapsible="icon">
-      <SidebarHeader
-        className={`px-8 py-4 ${state === "collapsed" ? "hidden" : ""}`}
-      >
-        <Avatar className="w-16 h-16 border border-muted-foreground">
+      <SidebarHeader className={`p-4 ${state === "collapsed" ? "hidden" : ""}`}>
+        <Avatar className="w-24 h-24 border border-muted-foreground">
           <AvatarImage src="/img/profile.png" />
           <AvatarFallback>WB</AvatarFallback>
         </Avatar>
         <div>
           <div className="flex gap-x-1 items-center">
-            <h1>Wilbert Bernardi</h1>
-            <MdVerified style={{ color: "#0000FF" }} size={16} />
+            <h1 className="text-xl">Wilbert Bernardi</h1>
+            <MdVerified style={{ color: "#0000FF" }} size={24} />
           </div>
-          <span className="text-sm text-muted-foreground">@wilbertfe</span>
+          <span className="text-muted-foreground">@wilbertfe</span>
         </div>
         <div className="flex gap-x-2 justify-between items-center">
           <Link href="/">
             <Button
-              className="text-sm text-muted-foreground rounded-full bg-transparent"
+              className="text-lg text-muted-foreground rounded-full bg-transparent"
               variant="outline"
             >
               <span className="relative flex size-2.5">
@@ -113,10 +111,10 @@ export function AppSidebar() {
           </Link>
           <div className="flex gap-x-2">
             <Link href="https://github.com/WilbertFE">
-              <FaGithub size={30} />
+              <FaGithub size={32} />
             </Link>
             <Link href="https://fastwork.id/user/wilbertbernardi">
-              <Avatar>
+              <Avatar className="w-8 h-8">
                 <AvatarImage src="" />
                 <AvatarFallback>FW</AvatarFallback>
               </Avatar>
@@ -124,10 +122,10 @@ export function AppSidebar() {
           </div>
         </div>
       </SidebarHeader>
-      <SidebarContent className={state === "expanded" ? "px-4 py-0 my-0" : ""}>
+      <SidebarContent className={state === "expanded" ? "py-0 my-0" : ""}>
         <SidebarGroup>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="space-y-2">
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
@@ -139,10 +137,10 @@ export function AppSidebar() {
                     <a href={item.url}>
                       <item.icon
                         className={
-                          state === "expanded" ? "min-w-5 min-h-5" : ""
+                          state === "expanded" ? "min-w-6 min-h-6" : ""
                         }
                       />
-                      <span>{item.title}</span>
+                      <span className="text-lg">{item.title}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -156,7 +154,7 @@ export function AppSidebar() {
 
       {state === "expanded" && (
         <SidebarFooter
-          className={`px-8 flex flex-col gap-y-0 text-center text-[12px] text-muted-foreground`}
+          className={`flex flex-col gap-y-0 text-center text-muted-foreground`}
         >
           <span>COPYRIGHT &copy; 2025</span>
           <span>Wilbert Bernardi. All rights reserved</span>
