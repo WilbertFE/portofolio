@@ -31,7 +31,7 @@ export default function RootLayout({
         >
           <SidebarProvider>
             <AppSidebar />
-            <main className="min-h-screen w-full overflow-hidden container">
+            <main className="min-h-screen w-full overflow-x-hidden">
               <SidebarTrigger />
               {children}
             </main>
