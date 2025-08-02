@@ -82,8 +82,6 @@ const items = [
 export function AppSidebar() {
   const { state } = useSidebar();
 
-  console.log("try");
-
   return (
     <Sidebar variant="sidebar" collapsible="icon">
       <SidebarHeader

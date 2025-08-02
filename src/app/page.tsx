@@ -29,6 +29,87 @@ type Skill = {
   color: string;
 };
 
+export default function Home() {
+  return (
+    <div className="flex flex-col gap-y-4 h-full p-6">
+      <div className="space-y-2 h-max">
+        <h1 className="text-xl font-bold tracking-wider">
+          Hi, I&apos;m Wilbert Bernardi
+        </h1>
+        <div className="flex gap-x-4">
+          <span className="text-sm text-muted-foreground">
+            &bull; Tinggal di Medan, Indonesia (ID)
+          </span>
+          <span className="text-sm text-muted-foreground">&bull; Remote</span>
+        </div>
+        <p className="text-xs font-extralight leading-loose">
+          Seorang Web Developer yang menghadirkan pembuatan website modern
+          dengan teknologi terbaru.
+        </p>
+      </div>
+      <Separator />
+      <div className="space-y-2 h-max max-w-full">
+        <div className="space-y-2">
+          <div className="flex gap-x-2">
+            <Code2 />
+            <span>Skills</span>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            Skill professional saya.
+          </p>
+        </div>
+        <div className="space-y-4 py-4 w-[800px] overflow-x-hidden">
+          <ul className="flex gap-x-4 animate-infinite-scroll">
+            {skills1.map((skill, i) => (
+              <li key={i}>
+                <Badge variant="secondary" className="p-2 rounded-full">
+                  <div className="flex gap-x-1 items-center">
+                    {<skill.icon size={20} style={{ color: skill.color }} />}
+                    <span className="tracking-wider">{skill.text}</span>
+                  </div>
+                </Badge>
+              </li>
+            ))}
+          </ul>
+          <ul className="flex gap-x-4 animate-infinite-scroll-2">
+            {skills2.map((skill, i) => (
+              <li key={i}>
+                <Badge variant="secondary" className="p-2 rounded-full">
+                  <div className="flex gap-x-1 items-center">
+                    {<skill.icon size={20} style={{ color: skill.color }} />}
+                    <span className="tracking-wider">{skill.text}</span>
+                  </div>
+                </Badge>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="space-y-2 h-max">
+        <div className="space-y-2">
+          <p className="text-xs text-muted-foreground">
+            Skill yang sedang saya pelajari.
+          </p>
+        </div>
+        <div className="space-y-4">
+          <ul className="flex gap-x-4">
+            {learningSkill.map((skill, i) => (
+              <li key={i}>
+                <Badge variant="secondary" className="p-2 rounded-full">
+                  <div className="flex gap-x-1 items-center">
+                    {<skill.icon size={20} style={{ color: skill.color }} />}
+                    <span className="tracking-wider">{skill.text}</span>
+                  </div>
+                </Badge>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const skills1: Skill[] = [
   {
     text: "TailwindCSS",
@@ -147,84 +228,3 @@ const learningSkill: Skill[] = [
     color: "#34B27B",
   },
 ];
-
-export default function Home() {
-  return (
-    <div className="flex flex-col gap-y-4 h-full p-6">
-      <div className="space-y-2 h-max">
-        <h1 className="text-xl font-bold tracking-wider">
-          Hi, I&apos;m Wilbert Bernardi
-        </h1>
-        <div className="flex gap-x-4">
-          <span className="text-sm text-muted-foreground">
-            &bull; Tinggal di Medan, Indonesia (ID)
-          </span>
-          <span className="text-sm text-muted-foreground">&bull; Remote</span>
-        </div>
-        <p className="text-xs font-extralight leading-loose">
-          Seorang Web Developer yang menghadirkan pembuatan website dengan
-          teknologi terbaru.
-        </p>
-      </div>
-      <Separator />
-      <div className="space-y-2 h-max">
-        <div className="space-y-2">
-          <div className="flex gap-x-2">
-            <Code2 />
-            <span>Skills</span>
-          </div>
-          <p className="text-xs text-muted-foreground">
-            Skill professional saya.
-          </p>
-        </div>
-        <div className="space-y-4">
-          <ul className="flex gap-x-4">
-            {skills1.map((skill, i) => (
-              <li key={i}>
-                <Badge variant="secondary" className="p-2 rounded-full">
-                  <div className="flex gap-x-1 items-center">
-                    {<skill.icon size={20} style={{ color: skill.color }} />}
-                    <span className="tracking-wider">{skill.text}</span>
-                  </div>
-                </Badge>
-              </li>
-            ))}
-          </ul>
-          <ul className="flex gap-x-4">
-            {skills2.map((skill, i) => (
-              <li key={i}>
-                <Badge variant="secondary" className="p-2 rounded-full">
-                  <div className="flex gap-x-1 items-center">
-                    {<skill.icon size={20} style={{ color: skill.color }} />}
-                    <span className="tracking-wider">{skill.text}</span>
-                  </div>
-                </Badge>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className="space-y-2 h-max">
-        <div className="space-y-2">
-          <p className="text-xs text-muted-foreground">
-            Skill yang sedang saya pelajari.
-          </p>
-        </div>
-        <div className="space-y-4">
-          <ul className="flex gap-x-4">
-            {learningSkill.map((skill, i) => (
-              <li key={i}>
-                <Badge variant="secondary" className="p-2 rounded-full">
-                  <div className="flex gap-x-1 items-center">
-                    {<skill.icon size={20} style={{ color: skill.color }} />}
-                    <span className="tracking-wider">{skill.text}</span>
-                  </div>
-                </Badge>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-}

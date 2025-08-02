@@ -141,3 +141,32 @@
     --sidebar-ring: oklch(0.439 0 0);
   }
 }
+
+@theme {
+  --animate-infinite-scroll: infinite-scroll 10s ease-in-out infinite;
+  --animate-infinite-scroll-2: infinite-scroll-2 10s ease-in-out infinite;
+
+  @keyframes infinite-scroll {
+    0%,
+    100% {
+      transform: translateX(-25%);
+    }
+    50% {
+      transform: translateX(-45%);
+    }
+  }
+
+  @keyframes infinite-scroll-2 {
+    0%,
+    100% {
+      transform: translateX(-20%);
+    }
+    50% {
+      transform: translateX(0);
+    }
+  }
+}
+
+.infinite-scroll {
+  animation: infinite-sroll 40s linear infinite;
+}
