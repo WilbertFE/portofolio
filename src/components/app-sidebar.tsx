@@ -110,9 +110,6 @@ export function AppSidebar() {
             </Button>
           </Link>
           <div className="flex gap-x-2">
-            <Link href="https://github.com/WilbertFE">
-              <FaGithub size={32} />
-            </Link>
             <Link href="https://fastwork.id/user/wilbertbernardi">
               <Avatar className="w-8 h-8">
                 <AvatarImage src="" />
