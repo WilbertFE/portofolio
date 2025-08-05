@@ -1,18 +1,11 @@
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IconType } from "react-icons";
-import {
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaTiktok,
-  FaYoutube,
-} from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
 
 export default function About() {
