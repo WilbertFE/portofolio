@@ -13,24 +13,25 @@ import {
   FaTiktok,
   FaYoutube,
 } from "react-icons/fa6";
+import { AiFillInstagram } from "react-icons/ai";
 
 export default function About() {
   return (
-    <div className="gap-y-4 flex flex-wrap p-6 container">
+    <div className="gap-y-4 flex flex-wrap p-6 container mx-auto">
       <div className="space-y-2 w-full items-center flex gap-x-16">
-        <div className="w-1/3">
+        <div className="w-1/4">
           <h1 className="text-4xl font-bold tracking-wider">
             Hello, I&apos;m
-            <span className="text-cyan-400"> Wilbert Bernardi</span>
+            <span className="text-my-primary"> Wilbert Bernardi</span>
           </h1>
-          <Separator className="min-h-[2px] my-4 bg-yellow-300" />
+          <Separator className="min-h-[3px] my-4 bg-my-dark" />
           <p className="max-w-full">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
             dolor officiis cupiditate. Modi neque mollitia assumenda aliquid ut
             omnis vero!
           </p>
         </div>
-        <div className="w-1/3 min-h-96">
+        <div className="grow min-h-96">
           <AspectRatio className="w-full h-full" ratio={3 / 4}>
             <Image
               src="/img/profile.png"
@@ -40,13 +41,13 @@ export default function About() {
             />
           </AspectRatio>
         </div>
-        <div className="space-y-4 w-1/3">
-          <p className="font-bold text-lg text-cyan-400">Web Developer</p>
+        <div className="space-y-4 w-1/4">
+          <p className="font-bold text-lg text-my-primary">Web Developer</p>
           <p className="text-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
             omnis.
           </p>
-          <div className="flex gap-x-2 text-yellow-300">
+          <div className="flex gap-x-2 text-lg text-my-light">
             <span>show more</span>
             <ArrowRight />
           </div>
@@ -55,9 +56,9 @@ export default function About() {
               <Link
                 key={i}
                 href={item.href}
-                className="bg-foreground p-2 rounded-full"
+                className="bg-white p-2 rounded-full"
               >
-                <item.icon className="text-yellow-600" size={32} />
+                <item.icon className="text-black" size={32} />
               </Link>
             ))}
           </div>
@@ -71,7 +72,7 @@ const sosmed: { text: string; href: string; icon: IconType }[] = [
   {
     text: "Instagram",
     href: "https://www.instagram.com/bernardiwilberts/",
-    icon: FaInstagram,
+    icon: AiFillInstagram,
   },
   {
     text: "Youtube",
