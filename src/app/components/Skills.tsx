@@ -220,6 +220,11 @@ const skills2: Skill[] = [
     icon: SiShadcnui,
     color: "black",
   },
+  {
+    text: "Supabase",
+    icon: SiSupabase,
+    color: "#34B27B",
+  },
 ];
 
 const learningSkill: Skill[] = [
@@ -227,10 +232,5 @@ const learningSkill: Skill[] = [
     text: "Python",
     icon: FaPython,
     color: "#4584b6",
-  },
-  {
-    text: "Supabase",
-    icon: SiSupabase,
-    color: "#34B27B",
   },
 ];

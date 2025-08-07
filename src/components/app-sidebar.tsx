@@ -3,7 +3,6 @@
 import {
   Home,
   User,
-  Award,
   FolderGit2,
   LayoutDashboard,
   MessageCircleMore,
@@ -16,26 +15,16 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
-  SidebarGroupAction,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
   useSidebar,
 } from "@/components/ui/sidebar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { FaGithub, FaInstagram } from "react-icons/fa6";
 import Link from "next/link";
 import { MdVerified } from "react-icons/md";
 import { Separator } from "@/components/ui/separator";

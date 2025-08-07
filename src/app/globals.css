@@ -159,7 +159,7 @@
   @keyframes infinite-scroll-2 {
     0%,
     100% {
-      transform: translateX(-45%);
+      transform: translateX(-65%);
     }
     50% {
       transform: translateX(0);
