@@ -28,83 +28,95 @@ type Skill = {
 
 export function Hero() {
   return (
-    <div className="space-y-2 relative w-full items-center flex gap-x-4">
-      <div className="w-1/4 space-y-4">
-        <h2 className="text-4xl font-bold tracking-wider">I&apos;m</h2>
-        <h1 className="text-my-primary text-8xl text-shadow-lg leading-tight font-bold tracking-wider">
-          {" "}
-          Wilbert Bernardi
-        </h1>
-        <Separator className="min-h-[3px] my-4 bg-my-dark" />
-        <p className="max-w-full">
-          Seorang freelancer yang menyediakan jasa pembuatan website modern
-          untuk personal, bisnis, institusi, atau brand dengan menggunakan stack
-          teknologi terbaru.
-        </p>
-      </div>
-      <div className="grow">
-        <AspectRatio className="w-full h-full" ratio={1 / 1}>
-          <Image
-            src="/img/about.png"
-            alt="Wilbert Bernardi"
-            className="rounded-md object-cover h-full w-full"
-            fill
-          />
-        </AspectRatio>
-      </div>
-      <div className="flex flex-col w-1/4 self-start mt-12 space-y-8">
-        <div className="space-y-4">
-          <p className="font-bold text-lg text-my-primary">Web Developer</p>
-          <p className="text-xl">
-            Ayo bangun website modern yang tidak ketinggalan zaman.
+    <div className="w-full flex relative flex-col">
+      <div className="space-y-2 relative w-full items-center flex gap-x-4">
+        <div className="w-1/4 space-y-4">
+          <h2 className="text-4xl font-bold tracking-wider">I&apos;m</h2>
+          <h1 className="text-my-primary text-8xl text-shadow-lg leading-tight font-bold tracking-wider">
+            {" "}
+            Wilbert Bernardi
+          </h1>
+          <Separator className="min-h-[3px] my-4 bg-my-dark" />
+          <p className="max-w-full">
+            Seorang freelancer yang menyediakan jasa pembuatan website modern
+            untuk personal, bisnis, institusi, atau brand dengan menggunakan
+            stack teknologi terbaru.
           </p>
-          <Button variant="link" asChild>
-            <Link href="/" className="flex gap-x-2 text-lg">
-              <span>show more</span>
-              <ArrowRight />
-            </Link>
-          </Button>
-          <div className="flex gap-x-8 mb-8">
-            {sosmed.map((item, i) => (
-              <Link
-                key={i}
-                href={item.href}
-                className="bg-white p-2 rounded-full"
-              >
-                <item.icon className="text-black" size={32} />
+        </div>
+        <div className="grow">
+          <AspectRatio className="w-full h-full" ratio={1 / 1}>
+            <Image
+              src="/img/about.png"
+              alt="Wilbert Bernardi"
+              className="rounded-md object-cover h-full w-full"
+              fill
+            />
+          </AspectRatio>
+        </div>
+        <div className="flex flex-col w-1/4 self-start mt-12 space-y-8">
+          <div className="space-y-4">
+            <p className="font-bold text-lg text-my-primary">Web Developer</p>
+            <p className="text-xl">
+              Ayo bangun website modern yang tidak ketinggalan zaman.
+            </p>
+            <Button variant="link" asChild>
+              <Link href="/" className="flex gap-x-2 text-lg">
+                <span>show more</span>
+                <ArrowRight />
               </Link>
-            ))}
+            </Button>
+            <div className="flex gap-x-8 mb-8">
+              {sosmed.map((item, i) => (
+                <Link
+                  key={i}
+                  href={item.href}
+                  className="bg-white p-2 rounded-full"
+                >
+                  <item.icon className="text-black" size={32} />
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="space-y-4 text-right">
+            <p className="font-bold text-lg text-my-primary">Tech Stack</p>
+            <p className="text-xl">Teknologi utama yang sering digunakan.</p>
+            <Button variant="link" asChild>
+              <Link href="/" className="flex justify-self-end gap-x-2 text-lg">
+                <ArrowLeft />
+                <span>show more</span>
+              </Link>
+            </Button>
+            <div className="flex gap-x-8 mb-8 flex-wrap gap-y-4">
+              {skills.map((skill, i) => (
+                <div className="border rounded-full p-4" key={i}>
+                  <skill.icon size={32} style={{ color: skill.color }} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="space-y-4 text-right">
-          <p className="font-bold text-lg text-my-primary">Tech Stack</p>
-          <p className="text-xl">Teknologi utama yang sering digunakan.</p>
-          <Button variant="link" asChild>
-            <Link href="/" className="flex justify-self-end gap-x-2 text-lg">
-              <ArrowLeft />
-              <span>show more</span>
-            </Link>
-          </Button>
-          <div className="flex gap-x-8 mb-8 flex-wrap gap-y-4">
-            {skills.map((skill, i) => (
-              <div className="border rounded-full p-4" key={i}>
-                <skill.icon size={32} style={{ color: skill.color }} />
-              </div>
-            ))}
-          </div>
+        <svg
+          className="absolute -z-10 w-[60%] left-1/5"
+          viewBox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#5e936c"
+            d="M44,-76.2C58,-68,71.2,-58.4,79.5,-45.4C87.8,-32.5,91.3,-16.2,91.4,0C91.4,16.3,87.9,32.5,79.6,45.6C71.4,58.6,58.3,68.5,44.2,75.1C30.1,81.8,15.1,85.3,0,85.3C-15,85.2,-30.1,81.6,-43.1,74.4C-56.2,67.1,-67.2,56.2,-76.3,43.2C-85.4,30.1,-92.4,15.1,-92.6,-0.1C-92.9,-15.3,-86.2,-30.7,-77.7,-44.6C-69.2,-58.6,-58.9,-71.3,-45.6,-79.9C-32.3,-88.6,-16.2,-93.1,-0.6,-92.1C15,-91.1,29.9,-84.4,44,-76.2Z"
+            transform="translate(100 93)"
+          />
+        </svg>
+      </div>
+      <div className="w-1/2 p-4 flex gap-x-4 absolute bg-neutral-700 rounded-md bottom-0 left-1/2 -translate-x-1/2">
+        <div className="w-1/4 flex flex-col p-2 bg-neutral-900 rounded-md gap-x-2">
+          <h3 className="text-3xl font-bold text-center">32+</h3>
+          <h4 className="text-xl text-center">Projects</h4>
+        </div>
+        <div className="w-1/4 flex flex-col p-2 bg-neutral-900 rounded-md gap-x-2">
+          <h3 className="text-3xl font-bold text-center">2 Years+</h3>
+          <h4 className="text-xl text-center">Experience</h4>
         </div>
       </div>
-      <svg
-        className="absolute -z-10 w-[60%] left-1/5"
-        viewBox="0 0 200 200"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill="#5e936c"
-          d="M44,-76.2C58,-68,71.2,-58.4,79.5,-45.4C87.8,-32.5,91.3,-16.2,91.4,0C91.4,16.3,87.9,32.5,79.6,45.6C71.4,58.6,58.3,68.5,44.2,75.1C30.1,81.8,15.1,85.3,0,85.3C-15,85.2,-30.1,81.6,-43.1,74.4C-56.2,67.1,-67.2,56.2,-76.3,43.2C-85.4,30.1,-92.4,15.1,-92.6,-0.1C-92.9,-15.3,-86.2,-30.7,-77.7,-44.6C-69.2,-58.6,-58.9,-71.3,-45.6,-79.9C-32.3,-88.6,-16.2,-93.1,-0.6,-92.1C15,-91.1,29.9,-84.4,44,-76.2Z"
-          transform="translate(100 93)"
-        />
-      </svg>
     </div>
   );
 }
