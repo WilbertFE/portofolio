@@ -107,14 +107,18 @@ export function Hero() {
           />
         </svg>
       </div>
-      <div className="w-1/2 p-4 flex gap-x-4 absolute bg-neutral-700 rounded-md bottom-0 left-1/2 -translate-x-1/2">
-        <div className="w-1/4 flex flex-col p-2 bg-neutral-900 rounded-md gap-x-2">
-          <h3 className="text-3xl font-bold text-center">32+</h3>
-          <h4 className="text-xl text-center">Projects</h4>
-        </div>
-        <div className="w-1/4 flex flex-col p-2 bg-neutral-900 rounded-md gap-x-2">
+      <div className="w-1/2 p-4 flex gap-x-4 justify-around absolute border shadow-lg  bottom-0 bg-muted left-1/2 -translate-x-1/2">
+        <div className="w-1/4 flex flex-col p-2 bg-my-dark rounded-md gap-x-2 border shadow-md">
           <h3 className="text-3xl font-bold text-center">2 Years+</h3>
           <h4 className="text-xl text-center">Experience</h4>
+        </div>
+        <div className="w-1/4 flex flex-col p-2 bg-my-dark rounded-md gap-x-2 border shadow-md">
+          <h3 className="text-3xl font-bold text-center">740+</h3>
+          <h4 className="text-xl text-center">Contributions</h4>
+        </div>
+        <div className="w-1/4 flex flex-col p-2 bg-my-dark rounded-md gap-x-2 border shadow-md">
+          <h3 className="text-3xl font-bold text-center">126+</h3>
+          <h4 className="text-xl text-center">Streaks</h4>
         </div>
       </div>
     </div>
