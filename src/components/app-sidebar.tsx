@@ -99,14 +99,6 @@ export function AppSidebar() {
               Hire me.
             </Button>
           </Link>
-          <div className="flex gap-x-2">
-            <Link href="https://fastwork.id/user/wilbertbernardi">
-              <Avatar className="w-8 h-8">
-                <AvatarImage src="" />
-                <AvatarFallback>FW</AvatarFallback>
-              </Avatar>
-            </Link>
-          </div>
         </div>
       </SidebarHeader>
       <SidebarContent className={state === "expanded" ? "py-0 my-0" : ""}>

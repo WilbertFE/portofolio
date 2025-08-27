@@ -5,10 +5,10 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="gap-y-4 flex flex-wrap px-6 py-24 container mx-auto">
+    <div className="gap-y-4 flex flex-wrap px-8 py-0 pb-32 container mx-auto">
       <Hero />
       <Service />
-      <div className="w-full pb-32 pt-36 flex space-x-8">
+      {/* <div className="w-full pb-32 pt-36 flex space-x-8">
         <Image src="/img/profile.png" alt="profile" width={500} height={500} />
         <div className="">
           <p className="text-muted-foreground">About Me</p>
@@ -22,7 +22,7 @@ export default function About() {
             voluptate iure a quam? Iure, unde dolores.
           </p>
         </div>
-      </div>
+      </div> */}
       <CTA />
     </div>
   );

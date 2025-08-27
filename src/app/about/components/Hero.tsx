@@ -5,20 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IconType } from "react-icons";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaReact,
-  FaTiktok,
-  FaYoutube,
-} from "react-icons/fa6";
-import { AiFillInstagram } from "react-icons/ai";
+import { FaGithub, FaLinkedin, FaReact } from "react-icons/fa6";
 import { SiShadcnui, SiSupabase } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { Button } from "@/components/ui/button";
 import { IoLogoFirebase } from "react-icons/io5";
 import { DiMongodb } from "react-icons/di";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { MdOutlineWorkOutline, MdWork } from "react-icons/md";
+import { Badge } from "@/components/ui/badge";
 
 type Skill = {
   text: string;
@@ -38,9 +34,8 @@ export function Hero() {
           </h1>
           <Separator className="min-h-[3px] my-4 bg-my-dark" />
           <p className="max-w-full">
-            Seorang freelancer yang menyediakan jasa pembuatan website modern
-            untuk personal, bisnis, institusi, atau brand dengan menggunakan
-            stack teknologi terbaru.
+            Seorang Web Developer yang fokus membangun website modern, cepat,
+            dan responsif. Cocok untuk personal, bisnis, maupun brand.
           </p>
         </div>
         <div className="grow">
@@ -55,17 +50,17 @@ export function Hero() {
         </div>
         <div className="flex flex-col w-1/4 self-start mt-12 space-y-8">
           <div className="space-y-4">
-            <p className="font-bold text-lg text-my-primary">Web Developer</p>
-            <p className="text-xl">
-              Ayo bangun website modern yang tidak ketinggalan zaman.
+            <p className="font-bold text-lg text-my-primary">
+              Full-Stack Web Developer
             </p>
+            <p className="text-xl">Modern Web Solutions, Built for You.</p>
             <Button variant="link" asChild>
               <Link href="/" className="flex gap-x-2 text-lg">
                 <span>show more</span>
                 <ArrowRight />
               </Link>
             </Button>
-            <div className="flex gap-x-8 mb-8">
+            <div className="flex flex-wrap gap-x-8 mb-8">
               {sosmed.map((item, i) => (
                 <Link
                   key={i}
@@ -107,40 +102,34 @@ export function Hero() {
           />
         </svg>
       </div>
-      <div className="w-1/2 p-4 flex gap-x-4 justify-around absolute border shadow-lg bottom-0 bg-muted rounded-lg left-1/2 -translate-x-1/2">
-        <div className="w-1/3 rounded-lg flex flex-col p-2 bg-my-dark gap-x-2 border shadow-md">
-          <h3 className="text-3xl font-bold text-center">2 Years+</h3>
-          <h4 className="text-xl text-center">Experience</h4>
+      <div className="px-4 py-6 flex gap-x-4 justify-around absolute border shadow-lg bottom-16 bg-muted rounded-lg left-1/2 -translate-x-1/2">
+        {/* <div className="w-1/3 rounded-lg flex flex-col p-2 bg-my-dark gap-x-2 border shadow-md">
+          <h3 className="text-3xl font-bold text-center">2+</h3>
+          <h4 className="text-lg text-center">Years Experience</h4>
         </div>
         <div className="w-1/3 flex flex-col p-2 bg-my-dark rounded-md gap-x-2 border shadow-md">
-          <h3 className="text-3xl font-bold text-center">740+</h3>
-          <h4 className="text-xl text-center">Contributions</h4>
+          <h3 className="text-3xl font-bold text-center">22+</h3>
+          <h4 className="text-lg text-center">Tech Skills</h4>
         </div>
         <div className="w-1/3 flex flex-col p-2 bg-my-dark rounded-md gap-x-2 border shadow-md">
           <h3 className="text-3xl font-bold text-center">126+</h3>
-          <h4 className="text-xl text-center">Streaks</h4>
-        </div>
+          <h4 className="text-lg text-center">Streaks</h4>
+        </div> */}
+        <Badge variant="outline" className="text-base">
+          Continuous Learner
+        </Badge>
+        <Badge variant="outline" className="text-base">
+          Full-Stack Web Developer
+        </Badge>
+        <Badge variant="outline" className="text-base">
+          Tech Enthusiast
+        </Badge>
       </div>
     </div>
   );
 }
 
 const sosmed: { text: string; href: string; icon: IconType }[] = [
-  {
-    text: "Instagram",
-    href: "https://www.instagram.com/bernardiwilberts/",
-    icon: AiFillInstagram,
-  },
-  {
-    text: "Youtube",
-    href: "https://www.youtube.com/@WilbertBernardis",
-    icon: FaYoutube,
-  },
-  {
-    text: "Tiktok",
-    href: "https://www.tiktok.com/@bernardiwilbert",
-    icon: FaTiktok,
-  },
   {
     text: "Github",
     href: "https://github.com/WilbertFE",
@@ -150,6 +139,11 @@ const sosmed: { text: string; href: string; icon: IconType }[] = [
     text: "Linkedin",
     href: "https://www.linkedin.com/in/wilbert-bernardi-13683a2a7/",
     icon: FaLinkedin,
+  },
+  {
+    text: "Fastwork",
+    href: "https://fastwork.id/user/wilbertbernardi",
+    icon: MdWork,
   },
 ];
 
