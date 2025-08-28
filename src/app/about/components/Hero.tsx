@@ -103,18 +103,6 @@ export function Hero() {
         </svg>
       </div>
       <div className="px-4 py-6 flex gap-x-4 justify-around absolute border shadow-lg bottom-16 bg-muted rounded-lg left-1/2 -translate-x-1/2">
-        {/* <div className="w-1/3 rounded-lg flex flex-col p-2 bg-my-dark gap-x-2 border shadow-md">
-          <h3 className="text-3xl font-bold text-center">2+</h3>
-          <h4 className="text-lg text-center">Years Experience</h4>
-        </div>
-        <div className="w-1/3 flex flex-col p-2 bg-my-dark rounded-md gap-x-2 border shadow-md">
-          <h3 className="text-3xl font-bold text-center">22+</h3>
-          <h4 className="text-lg text-center">Tech Skills</h4>
-        </div>
-        <div className="w-1/3 flex flex-col p-2 bg-my-dark rounded-md gap-x-2 border shadow-md">
-          <h3 className="text-3xl font-bold text-center">126+</h3>
-          <h4 className="text-lg text-center">Streaks</h4>
-        </div> */}
         <Badge variant="outline" className="text-base">
           Continuous Learner
         </Badge>
