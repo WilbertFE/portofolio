@@ -85,7 +85,9 @@ export default function Service() {
                 </h1>
                 <p className="text-muted-foreground">{service.content}</p>
               </div>
-              <ArrowRight size={32} className="text-my-primary min-w-8" />
+              <Link href="/service">
+                <ArrowRight size={32} className="text-my-primary min-w-8" />
+              </Link>
             </div>
             <Separator className="my-8" />
           </div>
