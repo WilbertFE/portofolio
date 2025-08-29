@@ -135,13 +135,6 @@ export function AppSidebar() {
         <SidebarFooter
           className={`flex flex-col gap-y-0 text-center text-muted-foreground`}
         >
-          <Image
-            src="/img/logo.png"
-            className="mx-auto"
-            width={128}
-            height={128}
-            alt="logo"
-          />
           <span>COPYRIGHT &copy; 2025</span>
           <span>Wilbert Bernardi. All rights reserved</span>
         </SidebarFooter>

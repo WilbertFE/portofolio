@@ -12,8 +12,7 @@ import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { Button } from "@/components/ui/button";
 import { IoLogoFirebase } from "react-icons/io5";
 import { DiMongodb } from "react-icons/di";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { MdOutlineWorkOutline, MdWork } from "react-icons/md";
+import { MdWork } from "react-icons/md";
 import { Badge } from "@/components/ui/badge";
 
 type Skill = {
@@ -22,7 +21,7 @@ type Skill = {
   color: string;
 };
 
-export function Hero() {
+export default function Hero() {
   return (
     <div className="w-full flex relative flex-col">
       <div className="space-y-2 relative w-full items-center flex gap-x-4">
@@ -34,8 +33,8 @@ export function Hero() {
           </h1>
           <Separator className="min-h-[3px] my-4 bg-my-dark" />
           <p className="max-w-full">
-            Seorang Web Developer yang fokus membangun website modern, cepat,
-            dan responsif. Cocok untuk personal, bisnis, maupun brand.
+            Siap untuk membangun website modern, cepat, dan responsif. Cocok
+            untuk personal, bisnis, maupun brand.
           </p>
         </div>
         <div className="grow">
@@ -102,7 +101,7 @@ export function Hero() {
           />
         </svg>
       </div>
-      <div className="px-4 py-6 flex gap-x-4 justify-around absolute border shadow-lg bottom-16 bg-muted rounded-lg left-1/2 -translate-x-1/2">
+      <div className="px-2 py-6 flex gap-x-4 justify-around absolute border shadow-lg bottom-16 bg-muted rounded-lg left-1/2 -translate-x-1/2">
         <Badge variant="outline" className="text-base">
           Continuous Learner
         </Badge>
