@@ -15,7 +15,6 @@ import { DiCss3, DiHtml5 } from "react-icons/di";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { RiJavascriptFill, RiTailwindCssFill } from "react-icons/ri";
-import { FaLocationArrow } from "react-icons/fa6";
 import { TiLocationArrow } from "react-icons/ti";
 
 type Icon = {
