@@ -1,20 +1,52 @@
 "use client";
 
+import { Separator } from "@/components/ui/separator";
 import { Header, MainProjects } from "./components";
+import { IconType } from "react-icons";
+import {
+  Card,
+  CardAction,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { TiLocationArrow } from "react-icons/ti";
+import { DiCss3, DiHtml5 } from "react-icons/di";
+import { RiJavascriptFill, RiTailwindCssFill } from "react-icons/ri";
+import { Badge } from "@/components/ui/badge";
+
+type Icon = {
+  icon: IconType;
+  color: string;
+};
+
+type Projects = {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+  year: number;
+  icons: Icon[];
+};
 
 export default function page() {
   return (
     <div className="flex flex-wrap gap-y-16 px-8 pb-32 container mx-auto">
       <Header />
+      <Separator />
       <MainProjects />
-      {/* <div className="w-full space-y-8">
-        <div className="space-y-4">
-          <h1 className="text-6xl font-bold tracking-wider">
+      <div className="w-full space-y-8">
+        <div className="flex justify-end">
+          <Badge
+            variant="secondary"
+            className="bg-my-secondary text-white text-base my-4 justify-self-end"
+          >
             Learning Projects
-          </h1>
-          <p className="text-lg tracking-wide">
-            Proyek yang saya buat untuk belajar.
-          </p>
+          </Badge>
         </div>
         <div className="grid grid-cols-2 gap-8">
           {[...learningProjects]
@@ -22,7 +54,6 @@ export default function page() {
             .map((project, i) => (
               <div key={i} className="border bg-transparent p-1 rounded-xl">
                 <Card className="px-4 py-6 h-full">
-                 
                   <Skeleton className="max-w-full h-64" />
 
                   <CardHeader className="space-x-4">
@@ -57,104 +88,104 @@ export default function page() {
               </div>
             ))}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
 
-// const learningProjects: Projects[] = [
-//   {
-//     title: "Calculator",
-//     description:
-//       "Dapat menyelesaikan operasi aritmatik sederhana seperti tambah, kurang, bagi, kali.",
-//     image: "/img/projects/learning/calculator.png",
-//     href: "https://wilbertfe.github.io/Calculator/",
-//     year: 2023,
-//     icons: [
-//       {
-//         icon: DiHtml5,
-//         color: "red",
-//       },
-//       {
-//         icon: DiCss3,
-//         color: "lightblue",
-//       },
-//       { icon: RiJavascriptFill, color: "yellow" },
-//     ],
-//   },
+const learningProjects: Projects[] = [
+  {
+    title: "Calculator",
+    description:
+      "Dapat menyelesaikan operasi aritmatik sederhana seperti tambah, kurang, bagi, kali.",
+    image: "/img/projects/learning/calculator.png",
+    href: "https://wilbertfe.github.io/Calculator/",
+    year: 2023,
+    icons: [
+      {
+        icon: DiHtml5,
+        color: "red",
+      },
+      {
+        icon: DiCss3,
+        color: "lightblue",
+      },
+      { icon: RiJavascriptFill, color: "yellow" },
+    ],
+  },
 
-//   {
-//     title: "Portofolio V1",
-//     description: "Website portofolio pertama saya.",
-//     image: "/img/projects/learning/portofolio1.png",
-//     href: "https://wilbertfe.github.io/PortofolioV1/",
-//     year: 2023,
-//     icons: [
-//       {
-//         icon: DiHtml5,
-//         color: "red",
-//       },
-//       {
-//         icon: DiCss3,
-//         color: "lightblue",
-//       },
-//       { icon: RiJavascriptFill, color: "yellow" },
-//     ],
-//   },
-//   {
-//     title: "wBurger",
-//     description: "Website yang saya buat untuk belajar layouting.",
-//     image: "/img/projects/learning/burger-web.png",
-//     href: "https://wilbertfe.github.io/burgerWeb/",
-//     year: 2023,
-//     icons: [
-//       {
-//         icon: DiHtml5,
-//         color: "red",
-//       },
-//       {
-//         icon: DiCss3,
-//         color: "lightblue",
-//       },
-//       { icon: RiJavascriptFill, color: "yellow" },
-//     ],
-//   },
-//   {
-//     title: "Jaaz",
-//     description:
-//       "Website yang saya buat untuk belajar layouting dan responsive design.",
-//     image: "/img/projects/learning/Jaaz.png",
-//     href: "https://wilbertfe.github.io/Jaaz/",
-//     year: 2023,
-//     icons: [
-//       {
-//         icon: DiHtml5,
-//         color: "red",
-//       },
-//       {
-//         icon: RiTailwindCssFill,
-//         color: "cyan",
-//       },
-//       { icon: RiJavascriptFill, color: "yellow" },
-//     ],
-//   },
-//   {
-//     title: "To-do-list",
-//     description:
-//       "Project to-do-list sederhana. Bisa menambahkan tugas, menghapus, mengedit, dan mengingat tugas yang telah ditambahkan.",
-//     image: "/img/projects/learning/to-do-list.png",
-//     href: "https://wilbertfe.github.io/To-Do-List/",
-//     year: 2023,
-//     icons: [
-//       {
-//         icon: DiHtml5,
-//         color: "red",
-//       },
-//       {
-//         icon: DiCss3,
-//         color: "lightblue",
-//       },
-//       { icon: RiJavascriptFill, color: "yellow" },
-//     ],
-//   },
-// ];
+  {
+    title: "Portofolio V1",
+    description: "Website portofolio pertama saya.",
+    image: "/img/projects/learning/portofolio1.png",
+    href: "https://wilbertfe.github.io/PortofolioV1/",
+    year: 2023,
+    icons: [
+      {
+        icon: DiHtml5,
+        color: "red",
+      },
+      {
+        icon: DiCss3,
+        color: "lightblue",
+      },
+      { icon: RiJavascriptFill, color: "yellow" },
+    ],
+  },
+  {
+    title: "wBurger",
+    description: "Website yang saya buat untuk belajar layouting.",
+    image: "/img/projects/learning/burger-web.png",
+    href: "https://wilbertfe.github.io/burgerWeb/",
+    year: 2023,
+    icons: [
+      {
+        icon: DiHtml5,
+        color: "red",
+      },
+      {
+        icon: DiCss3,
+        color: "lightblue",
+      },
+      { icon: RiJavascriptFill, color: "yellow" },
+    ],
+  },
+  {
+    title: "Jaaz",
+    description:
+      "Website yang saya buat untuk belajar layouting dan responsive design.",
+    image: "/img/projects/learning/Jaaz.png",
+    href: "https://wilbertfe.github.io/Jaaz/",
+    year: 2023,
+    icons: [
+      {
+        icon: DiHtml5,
+        color: "red",
+      },
+      {
+        icon: RiTailwindCssFill,
+        color: "cyan",
+      },
+      { icon: RiJavascriptFill, color: "yellow" },
+    ],
+  },
+  {
+    title: "To-do-list",
+    description:
+      "Project to-do-list sederhana. Bisa menambahkan tugas, menghapus, mengedit, dan mengingat tugas yang telah ditambahkan.",
+    image: "/img/projects/learning/to-do-list.png",
+    href: "https://wilbertfe.github.io/To-Do-List/",
+    year: 2023,
+    icons: [
+      {
+        icon: DiHtml5,
+        color: "red",
+      },
+      {
+        icon: DiCss3,
+        color: "lightblue",
+      },
+      { icon: RiJavascriptFill, color: "yellow" },
+    ],
+  },
+];

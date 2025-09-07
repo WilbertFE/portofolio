@@ -18,10 +18,7 @@ export default function Header() {
             >
               Main Projects
             </Badge>
-            <p className="px-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus, error.
-            </p>
+            <p className="px-4">Proyek utama saya.</p>
           </div>
           <div className="space-y-4">
             <Badge
@@ -31,24 +28,22 @@ export default function Header() {
               Learning Projects
             </Badge>
             <p className="px-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus, error.
+              Proyek yang saya buat seiring dengan mempelajari hal baru.
             </p>
           </div>
         </div>
         <div className="w-1/2 space-y-24">
           <p className="text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            labore, cum veritatis eaque esse optio reprehenderit fugiat sapiente
-            nesciunt dicta.
+            Membuat website dengan teknologi terbaru. Menggunakan tampilan yang
+            modern dan responsive [UI]. Mengutamakan pengalaman pengguna [UX].
           </p>
           <div className="flex gap-x-4">
             <Skeleton className="w-32 h-32" />
             <div className="flex flex-col justify-between">
               <h1 className="text-lg font-bold">Wilbert Storytelling</h1>
               <p className="text-muted-foreground">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque,
-                vitae!
+                Halo, berikut adalah beberapa proyek saya. Silahkan
+                melihat-lihat!
               </p>
             </div>
           </div>
