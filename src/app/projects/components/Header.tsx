@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 
 export default function Header() {
   return (
@@ -38,9 +39,16 @@ export default function Header() {
             modern dan responsive [UI]. Mengutamakan pengalaman pengguna [UX].
           </p>
           <div className="flex gap-x-4">
-            <Skeleton className="w-32 h-32" />
+            <div className="w-32 h-32 relative rounded-md overflow-hidden">
+              <Image
+                src="/img/menjadi.png"
+                alt="wilbert bernardi"
+                fill
+                className="object-cover object-center"
+              />
+            </div>
             <div className="flex flex-col justify-between">
-              <h1 className="text-lg font-bold">Wilbert Storytelling</h1>
+              <h1 className="text-lg font-bold">Wilbert Bernardi</h1>
               <p className="text-muted-foreground">
                 Halo, berikut adalah beberapa proyek saya. Silahkan
                 melihat-lihat!

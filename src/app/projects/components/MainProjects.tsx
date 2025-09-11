@@ -232,6 +232,7 @@ const mainProjects: Projects[] = [
     href: "https://web-osis-five.vercel.app/",
     year: 2025,
     icons: [
+      { icon: FaReact, color: "cyan" },
       {
         icon: RiTailwindCssFill,
         color: "cyan",
@@ -256,6 +257,7 @@ const mainProjects: Projects[] = [
     href: "https://wilbertbernardi.vercel.app/",
     year: 2025,
     icons: [
+      { icon: FaReact, color: "cyan" },
       {
         icon: RiTailwindCssFill,
         color: "cyan",
