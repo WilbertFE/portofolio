@@ -28,7 +28,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { MdVerified } from "react-icons/md";
 import { Separator } from "@/components/ui/separator";
-import Image from "next/image";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 // Menu items.
 const items = [
   {
@@ -71,6 +72,13 @@ const items = [
 
 export function AppSidebar() {
   const { state } = useSidebar();
+  const [activeMenu, setActiveMenu] = useState("/");
+  const router = useRouter();
+
+  const handleClick = (url: string) => {
+    router.push(url);
+    setActiveMenu(url);
+  };
 
   return (
     <Sidebar variant="sidebar" collapsible="icon">
@@ -82,7 +90,7 @@ export function AppSidebar() {
         <div>
           <div className="flex gap-x-1 items-center">
             <h1 className="text-xl">Wilbert Bernardi</h1>
-            <MdVerified style={{ color: "#0000FF" }} size={24} />
+            <MdVerified style={{ color: "blue" }} size={20} />
           </div>
           <span className="text-muted-foreground">@wilbertfe</span>
         </div>
@@ -108,19 +116,20 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
+                    className={`hover:bg-muted rounded-sm cursor-pointer ${
+                      activeMenu === item.url ? "bg-muted" : ""
+                    }`}
+                    onClick={() => handleClick(item.url)}
                     asChild
-                    onClick={() =>
-                      console.log(`Clicked from sidebar menu ${item.title}`)
-                    }
                   >
-                    <a href={item.url}>
+                    <div>
                       <item.icon
                         className={
                           state === "expanded" ? "min-w-6 min-h-6" : ""
                         }
                       />
                       <span className="text-lg">{item.title}</span>
-                    </a>
+                    </div>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

@@ -11,7 +11,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { TiLocationArrow } from "react-icons/ti";
-import { DiCss3, DiFirebase, DiHtml5 } from "react-icons/di";
+import { DiCss3, DiHtml5 } from "react-icons/di";
 import {
   RiJavascriptFill,
   RiNextjsFill,
