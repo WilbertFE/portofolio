@@ -31,54 +31,16 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { MdVerified } from "react-icons/md";
 import { Separator } from "@/components/ui/separator";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-// Menu items.
-const items = [
-  {
-    title: "Home",
-    url: "/",
-    icon: Home,
-  },
-  {
-    title: "About",
-    url: "/about",
-    icon: User,
-  },
-
-  {
-    title: "Projects",
-    url: "/projects",
-    icon: FolderGit2,
-  },
-  {
-    title: "Dashboard",
-    url: "/dashboard",
-    icon: LayoutDashboard,
-  },
-  {
-    title: "Chat Room",
-    url: "/chat",
-    icon: MessageCircleMore,
-  },
-  {
-    title: "Contact",
-    url: "/contact",
-    icon: BookUser,
-  },
-  {
-    title: "Settings",
-    url: "/settings",
-    icon: Settings,
-  },
-];
 
 export function AppSidebar() {
   const { state } = useSidebar();
   const [activeMenu, setActiveMenu] = useState("/");
   const router = useRouter();
   const { setTheme, theme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
 
   const handleClick = (url: string) => {
     router.push(url);
@@ -92,6 +54,10 @@ export function AppSidebar() {
       setTheme("dark");
     }
   };
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <Sidebar variant="sidebar" collapsible="icon">
@@ -126,7 +92,7 @@ export function AppSidebar() {
             size="icon"
             className="size-8"
           >
-            {theme === "dark" ? <Moon /> : <Sun />}
+            {isMounted && theme === "light" ? <Sun /> : <Moon />}
           </Button>
         </div>
       </SidebarHeader>
@@ -176,3 +142,43 @@ export function AppSidebar() {
     </Sidebar>
   );
 }
+
+// Menu items.
+const items = [
+  {
+    title: "Home",
+    url: "/",
+    icon: Home,
+  },
+  {
+    title: "About",
+    url: "/about",
+    icon: User,
+  },
+
+  {
+    title: "Projects",
+    url: "/projects",
+    icon: FolderGit2,
+  },
+  {
+    title: "Dashboard",
+    url: "/dashboard",
+    icon: LayoutDashboard,
+  },
+  {
+    title: "Chat Room",
+    url: "/chat",
+    icon: MessageCircleMore,
+  },
+  {
+    title: "Contact",
+    url: "/contact",
+    icon: BookUser,
+  },
+  {
+    title: "Settings",
+    url: "/settings",
+    icon: Settings,
+  },
+];
