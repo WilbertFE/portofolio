@@ -12,7 +12,6 @@ import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { Button } from "@/components/ui/button";
 import { IoLogoFirebase } from "react-icons/io5";
 import { DiMongodb } from "react-icons/di";
-import { MdWork } from "react-icons/md";
 import { Badge } from "@/components/ui/badge";
 
 type Skill = {
@@ -126,11 +125,6 @@ const sosmed: { text: string; href: string; icon: IconType }[] = [
     text: "Linkedin",
     href: "https://www.linkedin.com/in/wilbert-bernardi-13683a2a7/",
     icon: FaLinkedin,
-  },
-  {
-    text: "Fastwork",
-    href: "https://fastwork.id/user/wilbertbernardi",
-    icon: MdWork,
   },
 ];
 

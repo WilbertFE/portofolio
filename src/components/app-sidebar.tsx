@@ -8,6 +8,7 @@ import {
   MessageCircleMore,
   BookUser,
   Settings,
+  ArrowRight,
 } from "lucide-react";
 
 import {
@@ -117,18 +118,21 @@ export function AppSidebar() {
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
                     className={`hover:bg-muted rounded-sm cursor-pointer ${
-                      activeMenu === item.url ? "bg-muted" : ""
+                      item.url === activeMenu ? "bg-muted" : ""
                     }`}
                     onClick={() => handleClick(item.url)}
                     asChild
                   >
-                    <div>
+                    <div className="flex">
                       <item.icon
                         className={
                           state === "expanded" ? "min-w-6 min-h-6" : ""
                         }
                       />
-                      <span className="text-lg">{item.title}</span>
+                      <span className="text-lg grow">{item.title}</span>
+                      {item.url === activeMenu && (
+                        <ArrowRight className="justify-self-end" />
+                      )}
                     </div>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
