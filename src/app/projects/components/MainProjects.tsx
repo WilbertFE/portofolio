@@ -126,26 +126,6 @@ const mainProjects: Projects[] = [
   },
 
   {
-    title: "Website Kampanye OSIS (SIKAT)",
-    description:
-      "Website yang saya buat ketika mencalonkan diri sebagai Ketua OSIS di sekolah saya.",
-    image: "/img/projects/main/portofolio2.png",
-    href: "https://tri-sakti.vercel.app/",
-    year: 2024,
-    icons: [
-      {
-        icon: RiTailwindCssFill,
-        color: "cyan",
-      },
-      { icon: FaReact, color: "cyan" },
-      {
-        icon: BiLogoTypescript,
-        color: "blue",
-      },
-    ],
-    badges: ["Frontend", "Responsive", "Local Data"],
-  },
-  {
     title: "Habit Tracker",
     description:
       "Aplikasi React pertama saya. Aplikasi yang membantu dalam membentuk kebiasaan baru. Mampu menambahkan tugas dengan tipe tertentu, meningat tugas yang sudah diselesaikan, menghapus tugas.",
@@ -237,7 +217,7 @@ const mainProjects: Projects[] = [
         icon: RiTailwindCssFill,
         color: "cyan",
       },
-      { icon: RiNextjsFill, color: "black" },
+      { icon: RiNextjsFill, color: "white" },
       {
         icon: BiLogoTypescript,
         color: "blue",
@@ -262,7 +242,7 @@ const mainProjects: Projects[] = [
         icon: RiTailwindCssFill,
         color: "cyan",
       },
-      { icon: RiNextjsFill, color: "black" },
+      { icon: RiNextjsFill, color: "white" },
       {
         icon: BiLogoTypescript,
         color: "blue",

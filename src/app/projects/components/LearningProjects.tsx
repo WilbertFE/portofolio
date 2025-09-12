@@ -261,7 +261,7 @@ const learningProjects: Projects[] = [
       { icon: RiJavascriptFill, color: "yellow" },
       { icon: IoLogoFirebase, color: "orange" },
       { icon: SiJest, color: "red" },
-      { icon: RiNextjsFill, color: "black" },
+      { icon: RiNextjsFill, color: "white" },
     ],
   },
   {
@@ -281,7 +281,7 @@ const learningProjects: Projects[] = [
       },
       { icon: BiLogoTypescript, color: "blue" },
       { icon: RiSupabaseFill, color: "lightgreen" },
-      { icon: RiNextjsFill, color: "black" },
+      { icon: RiNextjsFill, color: "white" },
     ],
   },
 ];

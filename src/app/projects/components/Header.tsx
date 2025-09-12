@@ -1,5 +1,4 @@
 import { Badge } from "@/components/ui/badge";
-import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
 
