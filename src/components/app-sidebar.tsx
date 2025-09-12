@@ -9,6 +9,8 @@ import {
   BookUser,
   Settings,
   ArrowRight,
+  Moon,
+  Sun,
 } from "lucide-react";
 
 import {
@@ -31,6 +33,7 @@ import { MdVerified } from "react-icons/md";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
 // Menu items.
 const items = [
   {
@@ -75,10 +78,19 @@ export function AppSidebar() {
   const { state } = useSidebar();
   const [activeMenu, setActiveMenu] = useState("/");
   const router = useRouter();
+  const { setTheme, theme } = useTheme();
 
   const handleClick = (url: string) => {
     router.push(url);
     setActiveMenu(url);
+  };
+
+  const handleMode = () => {
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
   };
 
   return (
@@ -108,6 +120,14 @@ export function AppSidebar() {
               Hire me.
             </Button>
           </Link>
+          <Button
+            onClick={handleMode}
+            variant="secondary"
+            size="icon"
+            className="size-8"
+          >
+            {theme === "dark" ? <Moon /> : <Sun />}
+          </Button>
         </div>
       </SidebarHeader>
       <SidebarContent className={state === "expanded" ? "py-0 my-0" : ""}>
