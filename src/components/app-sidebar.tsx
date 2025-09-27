@@ -32,20 +32,15 @@ import Link from "next/link";
 import { MdVerified } from "react-icons/md";
 import { Separator } from "@/components/ui/separator";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 
 export function AppSidebar() {
+  const pathname = usePathname();
   const { state } = useSidebar();
-  const [activeMenu, setActiveMenu] = useState("/");
   const router = useRouter();
   const { setTheme, theme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
-
-  const handleClick = (url: string) => {
-    router.push(url);
-    setActiveMenu(url);
-  };
 
   const handleMode = () => {
     if (theme === "dark") {
@@ -100,29 +95,32 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu className="space-y-2">
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton
-                    className={`hover:bg-muted rounded-sm cursor-pointer ${
-                      item.url === activeMenu ? "bg-muted" : ""
-                    }`}
-                    onClick={() => handleClick(item.url)}
-                    asChild
-                  >
-                    <div className="flex">
-                      <item.icon
-                        className={
-                          state === "expanded" ? "min-w-6 min-h-6" : ""
-                        }
-                      />
-                      <span className="text-lg grow">{item.title}</span>
-                      {item.url === activeMenu && (
-                        <ArrowRight className="justify-self-end" />
-                      )}
-                    </div>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {items.map((item) => {
+                const isActive = pathname === item.url;
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton
+                      className={`hover:bg-muted rounded-sm cursor-pointer ${
+                        isActive ? "bg-muted" : ""
+                      }`}
+                      onClick={() => router.push(item.url)}
+                      asChild
+                    >
+                      <div className="flex">
+                        <item.icon
+                          className={
+                            state === "expanded" ? "min-w-6 min-h-6" : ""
+                          }
+                        />
+                        <span className="text-lg grow">{item.title}</span>
+                        {isActive && (
+                          <ArrowRight className="justify-self-end" />
+                        )}
+                      </div>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
