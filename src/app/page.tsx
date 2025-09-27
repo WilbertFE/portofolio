@@ -5,7 +5,7 @@ import { Service } from "./components/Service";
 
 export default function Home() {
   return (
-    <div className="space-y-4 h-full p-6 container">
+    <div className="space-y-4 h-full p-6 container mx-auto">
       <Header />
       <Separator className="mb-4" />
       <Skills />

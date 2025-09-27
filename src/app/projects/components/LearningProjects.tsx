@@ -56,7 +56,6 @@ export default function LearningProjects() {
             <div key={i} className="border bg-transparent p-1 rounded-xl">
               <Card className="px-4 py-6 h-full">
                 <Skeleton className="max-w-full h-64" />
-
                 <CardHeader className="space-x-4">
                   <CardTitle className="text-lg tracking-wider">
                     {project.title}{" "}
