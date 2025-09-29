@@ -40,7 +40,7 @@ export function Service() {
               size="icon"
               variant="outline"
             >
-              <Link href="mailto:wilbertbernardife@gmail.com">
+              <Link href="/contact">
                 <Mail className="min-w-8 min-h-8" />
               </Link>
             </Button>

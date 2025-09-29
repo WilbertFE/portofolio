@@ -10,9 +10,7 @@ export default function CTA() {
         </h1>
 
         <Button asChild variant="secondary">
-          <Link href="mailto:wilbertbernardife@gmail.com">
-            wilbertbernardife@gmail.com
-          </Link>
+          <Link href="/contact">Hubungi Saya</Link>
         </Button>
       </div>
     </div>
