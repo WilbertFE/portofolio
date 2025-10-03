@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Separator } from "@/components/ui/separator";
 import { Header, Info } from "./components";
@@ -78,7 +77,6 @@ export default function ContacePage() {
                   <FormControl>
                     <Input placeholder="Input your email" {...field} />
                   </FormControl>
-
                   <FormMessage />
                 </FormItem>
               )}
