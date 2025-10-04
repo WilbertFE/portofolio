@@ -5,9 +5,7 @@ import {
   User,
   FolderGit2,
   LayoutDashboard,
-  MessageCircleMore,
   BookUser,
-  Settings,
   ArrowRight,
   Moon,
   Sun,
@@ -164,19 +162,19 @@ const items = [
     url: "/dashboard",
     icon: LayoutDashboard,
   },
-  {
-    title: "Chat Room",
-    url: "/chat",
-    icon: MessageCircleMore,
-  },
+  // {
+  //   title: "Chat Room",
+  //   url: "/chat",
+  //   icon: MessageCircleMore,
+  // },
   {
     title: "Contact",
     url: "/contact",
     icon: BookUser,
   },
-  {
-    title: "Settings",
-    url: "/settings",
-    icon: Settings,
-  },
+  // {
+  //   title: "Settings",
+  //   url: "/settings",
+  //   icon: Settings,
+  // },
 ];

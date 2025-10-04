@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+
 import { Separator } from "@/components/ui/separator";
 import { Header, Info } from "./components";
 import {
@@ -25,7 +25,7 @@ const formSchema = z.object({
 });
 
 export default function ContacePage() {
-  const [message, setMessage]: any = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -36,23 +36,25 @@ export default function ContacePage() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-  }
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
+    const { error } = await supabase.from("messages").insert({ ...values });
+    if (error) {
+      console.error(error);
+    } else {
+      form.reset({
+        name: "",
+        email: "",
+        message: "",
+      });
+    }
+    setIsSubmitting(false);
+  };
 
   const [isMounted, setIsMounted] = useState(false);
 
-  const fetchData = async () => {
-    const { data, error } = await supabase.from("messages").select("*");
-    if (error) console.log("error", error);
-    setMessage(data);
-  };
-
-  console.log("messasge", message);
-
   useEffect(() => {
     setIsMounted(true);
-    fetchData();
   }, []);
 
   if (!isMounted) return null;
@@ -112,8 +114,12 @@ export default function ContacePage() {
                 )}
               />
               <div className="col-span-2">
-                <Button className="w-full cursor-pointer" type="submit">
-                  Send Email
+                <Button
+                  disabled={isSubmitting}
+                  className="w-full cursor-pointer"
+                  type="submit"
+                >
+                  Send
                 </Button>
               </div>
             </div>
