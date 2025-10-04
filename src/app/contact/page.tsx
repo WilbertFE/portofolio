@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Separator } from "@/components/ui/separator";
 import { Header, Info } from "./components";
@@ -15,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import supabase from "@/lib/db";
 
 const formSchema = z.object({
   name: z.string().min(3).max(50),
@@ -23,6 +25,8 @@ const formSchema = z.object({
 });
 
 export default function ContacePage() {
+  const [message, setMessage]: any = useState(null);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -38,8 +42,17 @@ export default function ContacePage() {
 
   const [isMounted, setIsMounted] = useState(false);
 
+  const fetchData = async () => {
+    const { data, error } = await supabase.from("messages").select("*");
+    if (error) console.log("error", error);
+    setMessage(data);
+  };
+
+  console.log("messasge", message);
+
   useEffect(() => {
     setIsMounted(true);
+    fetchData();
   }, []);
 
   if (!isMounted) return null;
