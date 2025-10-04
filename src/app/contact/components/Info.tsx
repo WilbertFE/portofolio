@@ -24,7 +24,7 @@ export default function Info() {
             contact.action === "Gmail" ? "col-span-2" : ""
           }`}
         >
-          <div className="p-4 col-span-2 flex gap-x-12 bg-neutral-900">
+          <div className="p-4 col-span-2 flex gap-x-12 bg-neutral-900 h-full">
             <div className="space-y-4 grow">
               <h1 className="text-xl font-bold tracking-widest">
                 {contact.title}
@@ -52,7 +52,7 @@ export default function Info() {
 
 const contacts: Contact[] = [
   {
-    title: "Stay in Touch!",
+    title: "Stay in Touch",
     description: "Hubungi saya melalui E-mail.",
     action: "Gmail",
     href: "/",
