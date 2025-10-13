@@ -1,11 +1,12 @@
 import { Badge } from "@/components/ui/badge";
-import { Code2 } from "lucide-react";
+import { CandyCaneIcon, Code2 } from "lucide-react";
 import { BiLogoPostgresql, BiLogoTypescript } from "react-icons/bi";
 import { BsFiletypeScss } from "react-icons/bs";
 import { DiMongodb, DiRedis } from "react-icons/di";
 import {
   FaBootstrap,
   FaCss3,
+  FaFlutter,
   FaGitAlt,
   FaGithub,
   FaHtml5,
@@ -232,5 +233,10 @@ const learningSkill: Skill[] = [
     text: "Python",
     icon: FaPython,
     color: "#4584b6",
+  },
+  {
+    text: "Flutter",
+    icon: FaFlutter,
+    color: "cyan",
   },
 ];

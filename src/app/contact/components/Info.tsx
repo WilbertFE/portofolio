@@ -5,6 +5,15 @@ import { BiLogoGmail } from "react-icons/bi";
 import { FaGithub, FaInstagram, FaTiktok } from "react-icons/fa6";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { RiLinkedinLine } from "react-icons/ri";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 type Contact = {
   title: string;
@@ -18,18 +27,18 @@ export default function Info() {
   return (
     <div className="grid grid-cols-2 gap-x-6 gap-y-6">
       {contacts.map((contact, i) => (
-        <div
+        <Card
           key={i}
-          className={`shadow-sm shadow-neutral-600 ${
-            contact.action === "Gmail" ? "col-span-2" : ""
-          }`}
+          className={`${contact.action === "Gmail" ? "col-span-2" : ""}`}
         >
-          <div className="p-4 col-span-2 flex gap-x-12 bg-neutral-900 h-full">
-            <div className="space-y-4 grow">
-              <h1 className="text-xl font-bold tracking-widest">
-                {contact.title}
-              </h1>
-              <p className="text-muted-foreground">{contact.description}</p>
+          <CardHeader>
+            <CardTitle className="text-xl font-bold tracking-widest">
+              {contact.title}
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="flex justify-between">
+            <div className="space-y-8">
+              <CardDescription>{contact.description}</CardDescription>
               <Button
                 asChild
                 className="font-bold tracking-wide cursor-pointer"
@@ -43,8 +52,8 @@ export default function Info() {
             <div className="flex rounded-md shadow-md p-0.5 shadow-neutral-600 border self-end">
               {<contact.icon size={64} />}
             </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       ))}
     </div>
   );
