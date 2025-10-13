@@ -36,7 +36,7 @@ const services: Service[] = [
 
 export default function Service() {
   return (
-    <div className="w-full items-center gap-x-4 flex pt-36 pb-32">
+    <div id="service" className="w-full items-center gap-x-4 flex pt-36 pb-32">
       <div className="w-1/2 space-y-4">
         <h1 className="text-5xl font-bold tracking-wider leading-14">
           Yang Bisa Saya Berikan untuk Keperluan Anda

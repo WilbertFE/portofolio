@@ -53,7 +53,7 @@ export default function Hero() {
             </p>
             <p className="text-xl">Modern Web Solutions, Built for You.</p>
             <Button variant="link" asChild>
-              <Link href="/" className="flex gap-x-2 text-lg">
+              <Link href="#service" className="flex gap-x-2 text-lg">
                 <span>show more</span>
                 <ArrowRight />
               </Link>
