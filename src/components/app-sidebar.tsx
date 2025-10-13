@@ -7,8 +7,6 @@ import {
   LayoutDashboard,
   BookUser,
   ArrowRight,
-  Moon,
-  Sun,
 } from "lucide-react";
 
 import {
@@ -29,28 +27,12 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { MdVerified } from "react-icons/md";
 import { Separator } from "@/components/ui/separator";
-import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { useTheme } from "next-themes";
 
 export function AppSidebar() {
   const pathname = usePathname();
   const { state } = useSidebar();
   const router = useRouter();
-  const { setTheme, theme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
-
-  const handleMode = () => {
-    if (theme === "dark") {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
-  };
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   return (
     <Sidebar variant="sidebar" collapsible="icon">
@@ -79,14 +61,6 @@ export function AppSidebar() {
               Hire me.
             </Button>
           </Link>
-          <Button
-            onClick={handleMode}
-            variant="secondary"
-            size="icon"
-            className="size-8"
-          >
-            {isMounted && theme === "light" ? <Sun /> : <Moon />}
-          </Button>
         </div>
       </SidebarHeader>
       <SidebarContent className={state === "expanded" ? "py-0 my-0" : ""}>
