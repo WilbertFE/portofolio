@@ -6,11 +6,11 @@ export default function CTA() {
     <div className="w-full pt-36 pb-32">
       <div className="w-1/2 mx-auto flex flex-col items-center gap-y-8">
         <h1 className="text-5xl leading-normal font-bold tracking-wider text-center">
-          Itu Saja Tentang Saya. Jangan Ragu untuk Menyapa!
+          That&apos;s all about me. Feel free to say hello!
         </h1>
 
         <Button asChild variant="secondary">
-          <Link href="/contact">Hubungi Saya</Link>
+          <Link href="/contact">Contact me</Link>
         </Button>
       </div>
     </div>

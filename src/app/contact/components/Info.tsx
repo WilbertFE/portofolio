@@ -69,7 +69,7 @@ export default function Info() {
 const contacts: Contact[] = [
   {
     title: "Stay in Touch",
-    description: "Hubungi saya melalui E-mail.",
+    description: "Contact me via Email.",
     action: "Gmail",
     href: "mailto:bernardiwilbert@gmail.com",
     icon: BiLogoGmail,
@@ -77,7 +77,7 @@ const contacts: Contact[] = [
   },
   {
     title: "Follow My Journey",
-    description: "Dapatkan informasi secara berkala dari Instagram saya.",
+    description: "Get regular updates from my Instagram.",
     action: "Instagram",
     href: "https://www.instagram.com/bernardiwilberts",
     icon: GrInstagram,
@@ -85,7 +85,7 @@ const contacts: Contact[] = [
   },
   {
     title: "Let's Connect",
-    description: "Dapatkan informasi melalui akun Linkdln saya.",
+    description: "Get information through my Linkedin account.",
     action: "Linkdln",
     href: "https://www.linkedin.com/in/wilbert-bernardi-13683a2a7/",
     icon: ImLinkedin2,
@@ -93,7 +93,7 @@ const contacts: Contact[] = [
   },
   {
     title: "Join the Fun",
-    description: "Temui saya di Tiktok.",
+    description: "Meet me on Tiktok.",
     action: "Tiktok",
     href: "https://www.tiktok.com/@bernardiwilbert",
     icon: FaTiktok,
@@ -101,7 +101,7 @@ const contacts: Contact[] = [
   },
   {
     title: "Explore the Code",
-    description: "Lihat proyek-proyek saya.",
+    description: "Check out my projects.",
     action: "Github",
     href: "https://github.com/WilbertFE",
     icon: FaGithub,

@@ -13,10 +13,10 @@ export default function About() {
             About <i>Me</i>
           </h1>
           <p className="text-sm">
-            Halo, saya Wilbert Bernardi, seorang Full-Stack Web Developer. Saya
-            berfokus pada pengembangan aplikasi web modern dengan teknologi
-            seperti React dan Next.js. Fokus utama saya adalah menciptakan
-            aplikasi yang modern, cepat, responsif, dan mudah digunakan.
+            Hi, I&apos;m Wilbert Bernardi, a Full-Stack Web Developer. I focus
+            on developing modern web applications using technologies like React
+            and Next.js. My primary focus is creating modern, fast, responsive,
+            and easy-to-use applications.
           </p>
         </div>
         <div className="w-2/5 flex flex-col items-end">
@@ -28,9 +28,9 @@ export default function About() {
         <div className="flex items-center gap-x-4 self-end">
           <MoveDownRight size={64} />
           <p className="text-sm w-[300px]">
-            Selain itu, saya senang belajar hal baru dan terus beradaptasi
-            dengan teknologi terkini. Jika kamu mencari developer yang bisa
-            fokus pada kualitas, mari kita ngobrol!
+            Additionally, I enjoy learning new things and constantly adapting to
+            the latest technology. If you&apos;re looking for a developer who
+            can focus on quality, let&apos;s chat!
           </p>
         </div>
         <div className="w-full max-w-sm">
@@ -48,14 +48,14 @@ export default function About() {
       </div>
       <div className="flex gap-x-16">
         <div className="w-2/5 items-center flex gap-x-4">
-          <p className="w-full">Filosofi Kerja</p>
+          <p className="w-full">Work Philosophy</p>
           <ArrowRight size={64} />
         </div>
         <p className="grow text-5xl font-light text-muted-foreground text-justify tracking-wider leading-14">
-          Saya percaya bahwa website dengan desain yang{" "}
-          <span className="text-my-primary">modern</span> dan{" "}
-          <span className="text-my-primary">mudah digunakan</span> dapat
-          menciptakan pengalaman pengguna yang maksimal.
+          I believe that a website with a good design{" "}
+          <span className="text-my-primary">modern</span> and{" "}
+          <span className="text-my-primary">easy to use</span> can create a
+          maximum user experience.
         </p>
       </div>
       <div className="flex justify-between items-center">
@@ -73,10 +73,10 @@ export default function About() {
           <Redo className="absolute bottom-8 right-52 rotate-5" size={128} />
           <div className="space-y-4">
             <p className="text-sm w-[200px] text-justify">
-              Jangan ragu untuk mengontak saya!
+              Don&apos;t hesitate to contact me!
             </p>
             <Button asChild size="lg" variant="secondary">
-              <Link href="/contact">Di sini!</Link>
+              <Link href="/contact">Here!</Link>
             </Button>
           </div>
         </div>

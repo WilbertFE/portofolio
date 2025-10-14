@@ -32,8 +32,8 @@ export default function Hero() {
           </h1>
           <Separator className="min-h-[3px] my-4 bg-my-dark" />
           <p className="max-w-full">
-            Siap untuk membangun website modern, cepat, dan responsif. Cocok
-            untuk personal, bisnis, maupun brand.
+            Ready to build modern, fast, and responsive websites. Suitable for
+            personal, business, and brand use.
           </p>
         </div>
         <div className="grow">
@@ -72,7 +72,9 @@ export default function Hero() {
           </div>
           <div className="space-y-4 text-right">
             <p className="font-bold text-lg text-my-primary">Tech Stack</p>
-            <p className="text-xl">Teknologi utama yang sering digunakan.</p>
+            <p className="text-xl">
+              The main technologies that are frequently used.
+            </p>
             <Button variant="link" asChild>
               <Link href="/" className="flex justify-self-end gap-x-2 text-lg">
                 <ArrowLeft />

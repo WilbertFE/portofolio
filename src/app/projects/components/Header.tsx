@@ -18,7 +18,7 @@ export default function Header() {
             >
               Main Projects
             </Badge>
-            <p className="px-4">Proyek utama saya.</p>
+            <p className="px-4">My main project.</p>
           </div>
           <div className="space-y-4">
             <Badge
@@ -28,14 +28,14 @@ export default function Header() {
               Learning Projects
             </Badge>
             <p className="px-4">
-              Proyek yang saya buat seiring dengan mempelajari hal baru.
+              Projects that I create along with learning new things.
             </p>
           </div>
         </div>
         <div className="w-1/2 space-y-24">
           <p className="text-xl">
-            Membuat website dengan teknologi terbaru. Menggunakan tampilan yang
-            modern dan responsive [UI]. Mengutamakan pengalaman pengguna [UX].
+            Creating websites with the latest technology. Using a modern and
+            responsive (UI). Prioritizing user experience (UX).
           </p>
           <div className="flex gap-x-4">
             <div className="w-32 h-32 relative rounded-md overflow-hidden">
@@ -49,8 +49,7 @@ export default function Header() {
             <div className="flex flex-col justify-between">
               <h1 className="text-lg font-bold">Wilbert Bernardi</h1>
               <p className="text-muted-foreground">
-                Halo, berikut adalah beberapa proyek saya. Silahkan
-                melihat-lihat!
+                Hi, here are some of my projects. Please take a look!
               </p>
             </div>
           </div>

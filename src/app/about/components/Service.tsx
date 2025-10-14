@@ -13,23 +13,22 @@ type Service = {
 const services: Service[] = [
   {
     title: "Company Profile",
-    content: "website sederhana untuk profil perusahaan.",
+    content: "simple website for company profile.",
     image: "/img/company-profile-website.jpg",
   },
   {
     title: "Landing Page",
-    content: "website sederhana untuk mempromosikan produk atau jasa.",
+    content: "simple website to promote products or services.",
     image: "/img/landing-page-website.jpg",
   },
   {
     title: "E-Commerce",
-    content:
-      "toko online yang terintegrasi dengan database dan payment gateway.",
+    content: "online store integrated with database and payment gateway.",
     image: "/img/e-commerce-website.jpg",
   },
   {
     title: "Web Application",
-    content: "Aplikasi web kompleks dengan fitur tertentu.",
+    content: "Complex web applications with specific features.",
     image: "/img/complex-website.jpg",
   },
 ];
@@ -39,31 +38,28 @@ export default function Service() {
     <div id="service" className="w-full items-center gap-x-4 flex pt-36 pb-32">
       <div className="w-1/2 space-y-4">
         <h1 className="text-5xl font-bold tracking-wider leading-14">
-          Yang Bisa Saya Berikan untuk Keperluan Anda
+          What I Can Provide for Your Needs
         </h1>
         <p className="text-muted-foreground">
-          Pembuatan website yang berfokus dengan tampilan modern, simple, dan
-          fleksibel. Mulai dari website sederhana hingga kompleks.
+          Website creation focused on a modern, simple, and flexible appearance.
+          From simple to complex websites.
         </p>
         <div className="flex flex-wrap space-y-4">
           <div className="w-1/2">
             <h1 className="text-3xl font-bold text-my-primary">743+</h1>
-            <p>Kontribusi sejak 2023 di Github.</p>
+            <p>Contributions since 2023 on Github.</p>
           </div>
           <div className="w-1/2">
             <h1 className="text-3xl font-bold text-my-primary">126+</h1>
-            <p>Hari kontribusi beruntun di Github.</p>
+            <p>Contribution streak day on Github.</p>
           </div>
           <div className="w-1/2">
             <h1 className="text-3xl font-bold text-my-primary">40+</h1>
-            <p>Proyek selesai.</p>
+            <p>Project completed.</p>
           </div>
           <div className="w-1/2">
             <h1 className="text-3xl font-bold text-my-primary">2+</h1>
-            <p>
-              Lebih dari dua tahun pengalaman dalam dunia programming sejak
-              2023.
-            </p>
+            <p>Over two years of programming experience since 2023.</p>
           </div>
         </div>
         <Button
@@ -71,7 +67,7 @@ export default function Service() {
           variant="secondary"
           className="w-full py-8 text-xl tracking-wide"
         >
-          <Link href="/service">Lihat lebih banyak</Link>
+          <Link href="/service">See more</Link>
         </Button>
       </div>
       <div className="w-1/2">

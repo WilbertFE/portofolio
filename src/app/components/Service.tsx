@@ -19,9 +19,9 @@ export function Service() {
           <span className="text-2xl tracking-wider">Service</span>
         </div>
         <p>
-          Saya bekerja sebagai seorang freelancer yang membuat dan mengembangkan
-          website untuk brand, perusahaan, institusi, dan startup. Berfokus pada
-          tampilan yang modern dan penggunaan teknologi terbaru.
+          I work as a freelancer creating and developing websites for brands,
+          companies, institutions, and startups. I focus on a modern look and
+          the use of the latest technology.
         </p>
       </div>
       <Card>
@@ -30,8 +30,8 @@ export function Service() {
             LET&apos;S WORK TOGETHER!
           </CardTitle>
           <CardDescription className="text-base">
-            Saya bersedia untuk mengerjakan proyek freelance. Hubungi email saya
-            untuk komunikasi lebih lanjut.
+            I&apos;m available for freelance projects. Please contact me by
+            email for further information.
           </CardDescription>
           <CardAction>
             <Button

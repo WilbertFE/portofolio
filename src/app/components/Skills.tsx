@@ -45,7 +45,7 @@ export function Skills() {
       <div className="flex gap-x-2 gap-y-2 flex-wrap">
         <div className="space-y-2">
           <div className="space-y-2">
-            <p className="text-muted-foreground">Skill professional saya.</p>
+            <p className="text-muted-foreground">My professional skills.</p>
           </div>
           <div className="space-y-4 py-4 w-[1000px] rounded-lg border border-muted-foreground overflow-x-hidden">
             <ul className="flex gap-x-4 animate-infinite-scroll">
@@ -87,7 +87,7 @@ export function Skills() {
         <div className="space-y-2 h-max">
           <div className="space-y-2">
             <p className="text-muted-foreground">
-              Skill yang sedang saya pelajari.
+              The skill I am currently learning.
             </p>
           </div>
           <div className="space-y-4">
