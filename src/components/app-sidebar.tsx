@@ -38,7 +38,11 @@ export function AppSidebar() {
     <Sidebar variant="sidebar" collapsible="icon">
       <SidebarHeader className={`p-4 ${state === "collapsed" ? "hidden" : ""}`}>
         <Avatar className="w-24 h-24 border border-muted-foreground">
-          <AvatarImage src="/img/profile.png" />
+          <AvatarImage
+            alt="wilbert bernardi"
+            src="/img/profile-pixel.png"
+            className="object-cover scale-125"
+          />
           <AvatarFallback>WB</AvatarFallback>
         </Avatar>
         <div>

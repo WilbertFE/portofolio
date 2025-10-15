@@ -21,7 +21,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { FaReact } from "react-icons/fa6";
 import { IoLogoFirebase } from "react-icons/io5";
-import { SiJest, SiTypescript } from "react-icons/si";
+import { SiJest } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 
 type Icon = {
@@ -96,188 +96,136 @@ const learningProjects: Projects[] = [
   {
     title: "Calculator",
     description:
-      "Dapat menyelesaikan operasi aritmatik sederhana seperti tambah, kurang, bagi, kali.",
+      "Can perform basic arithmetic operations such as addition, subtraction, division, and multiplication.",
     image: "/img/projects/learning/calculator.png",
     href: "https://wilbertfe.github.io/Calculator/",
     year: 2023,
     icons: [
-      {
-        icon: DiHtml5,
-        color: "red",
-      },
-      {
-        icon: DiCss3,
-        color: "lightblue",
-      },
+      { icon: DiHtml5, color: "red" },
+      { icon: DiCss3, color: "lightblue" },
       { icon: RiJavascriptFill, color: "yellow" },
     ],
   },
 
   {
-    title: "Portofolio V1",
-    description: "Website portofolio pertama saya.",
+    title: "Portfolio V1",
+    description: "My first personal portfolio website.",
     image: "/img/projects/learning/portofolio1.png",
     href: "https://wilbertfe.github.io/PortofolioV1/",
     year: 2023,
     icons: [
-      {
-        icon: DiHtml5,
-        color: "red",
-      },
-      {
-        icon: DiCss3,
-        color: "lightblue",
-      },
+      { icon: DiHtml5, color: "red" },
+      { icon: DiCss3, color: "lightblue" },
       { icon: RiJavascriptFill, color: "yellow" },
     ],
   },
+
   {
     title: "wBurger",
-    description: "Website yang saya buat untuk belajar layouting.",
+    description: "A website I built to practice layout design.",
     image: "/img/projects/learning/burger-web.png",
     href: "https://wilbertfe.github.io/burgerWeb/",
     year: 2023,
     icons: [
-      {
-        icon: DiHtml5,
-        color: "red",
-      },
-      {
-        icon: DiCss3,
-        color: "lightblue",
-      },
+      { icon: DiHtml5, color: "red" },
+      { icon: DiCss3, color: "lightblue" },
       { icon: RiJavascriptFill, color: "yellow" },
     ],
   },
+
   {
     title: "Jaaz",
     description:
-      "Website yang saya buat untuk belajar layouting dan responsive design.",
+      "A website I built to learn layouting and responsive design techniques.",
     image: "/img/projects/learning/Jaaz.png",
     href: "https://wilbertfe.github.io/Jaaz/",
     year: 2023,
     icons: [
-      {
-        icon: DiHtml5,
-        color: "red",
-      },
-      {
-        icon: RiTailwindCssFill,
-        color: "cyan",
-      },
+      { icon: DiHtml5, color: "red" },
+      { icon: RiTailwindCssFill, color: "cyan" },
       { icon: RiJavascriptFill, color: "yellow" },
     ],
   },
+
   {
     title: "To-do-list",
     description:
-      "Project to-do-list sederhana. Bisa menambahkan tugas, menghapus, mengedit, dan mengingat tugas yang telah ditambahkan.",
+      "A simple to-do list project. Allows users to add, edit, delete, and track completed tasks.",
     image: "/img/projects/learning/to-do-list.png",
     href: "https://wilbertfe.github.io/To-Do-List/",
     year: 2023,
     icons: [
-      {
-        icon: DiHtml5,
-        color: "red",
-      },
-      {
-        icon: DiCss3,
-        color: "lightblue",
-      },
+      { icon: DiHtml5, color: "red" },
+      { icon: DiCss3, color: "lightblue" },
       { icon: RiJavascriptFill, color: "yellow" },
     ],
   },
+
   {
     title: "Tic-tac-toe Game",
-    description: "Permainan tic-tac-toe",
+    description: "A simple tic-tac-toe game built with React.",
     image: "/img/projects/learning/to-do-list.png",
     href: "https://tic-tac-toe-three-mu-27.vercel.app/",
     year: 2024,
     icons: [
-      {
-        icon: FaReact,
-        color: "cyan",
-      },
-      {
-        icon: DiCss3,
-        color: "lightblue",
-      },
+      { icon: FaReact, color: "cyan" },
+      { icon: DiCss3, color: "lightblue" },
       { icon: RiJavascriptFill, color: "yellow" },
     ],
   },
+
   {
-    title: "Catatan Belanja",
-    description: "Aplikasi belanja sederhana dengan ReactJS.",
+    title: "Shopping Notes",
+    description: "A simple shopping list app built with ReactJS.",
     image: "/img/projects/learning/to-do-list.png",
     href: "https://4-catatan-belanja.vercel.app/",
     year: 2024,
     icons: [
-      {
-        icon: FaReact,
-        color: "cyan",
-      },
-      {
-        icon: DiCss3,
-        color: "lightblue",
-      },
+      { icon: FaReact, color: "cyan" },
+      { icon: DiCss3, color: "lightblue" },
       { icon: RiJavascriptFill, color: "yellow" },
     ],
   },
+
   {
-    title: "Batu-Gunting-Kertas React",
-    description: "Permainan batu gunting kertas.",
+    title: "Rock-Paper-Scissors React",
+    description: "A classic rock-paper-scissors game built with React.",
     image: "/img/projects/learning/to-do-list.png",
     href: "https://tebak-react.vercel.app/",
     year: 2024,
     icons: [
-      {
-        icon: FaReact,
-        color: "cyan",
-      },
-      {
-        icon: DiCss3,
-        color: "lightblue",
-      },
+      { icon: FaReact, color: "cyan" },
+      { icon: DiCss3, color: "lightblue" },
       { icon: RiJavascriptFill, color: "yellow" },
     ],
   },
+
   {
     title: "NextJS Login System",
     description:
-      "Aplikasi NextJS dengan authentication and authorization dengan NextAuth. Terintegrasi dengan Google.",
+      "A Next.js app with authentication and authorization using NextAuth, integrated with Google.",
     image: "/img/projects/learning/to-do-list.png",
     href: "https://my-next-app-router-five.vercel.app/",
     year: 2024,
     icons: [
-      {
-        icon: FaReact,
-        color: "cyan",
-      },
-      {
-        icon: RiTailwindCssFill,
-        color: "cyan",
-      },
+      { icon: FaReact, color: "cyan" },
+      { icon: RiTailwindCssFill, color: "cyan" },
       { icon: RiJavascriptFill, color: "yellow" },
       { icon: IoLogoFirebase, color: "orange" },
       { icon: SiJest, color: "red" },
       { icon: RiNextjsFill, color: "white" },
     ],
   },
+
   {
     title: "Next-Supabase",
-    description: "Aplikasi restoran sederhana terintegrasi dengan Supabase.",
+    description: "A simple restaurant application integrated with Supabase.",
     image: "/img/projects/learning/to-do-list.png",
     href: "https://next-supabase-blush.vercel.app/",
     year: 2025,
     icons: [
-      {
-        icon: FaReact,
-        color: "cyan",
-      },
-      {
-        icon: RiTailwindCssFill,
-        color: "cyan",
-      },
+      { icon: FaReact, color: "cyan" },
+      { icon: RiTailwindCssFill, color: "cyan" },
       { icon: BiLogoTypescript, color: "blue" },
       { icon: RiSupabaseFill, color: "lightgreen" },
       { icon: RiNextjsFill, color: "white" },

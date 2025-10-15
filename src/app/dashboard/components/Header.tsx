@@ -6,7 +6,7 @@ export default function Header() {
         className="font-extralight leading-loose text-muted-foreground
         "
       >
-        Halaman yang menampilkan data Github saya.
+        Page showing my Github data.
       </p>
     </div>
   );

@@ -107,19 +107,13 @@ const mainProjects: Projects[] = [
   {
     title: "Weather Forecast",
     description:
-      "Aplikasi yang dapat memprediksi cuaca saat ini dan meramal cuaca di masa depan. Terkoneksi dengan API OpenWeatherMap.",
+      "An application that predicts current weather and forecasts future conditions. Connected to the OpenWeatherMap API.",
     image: "",
     href: "https://wilbertfe.github.io/weatherapp/",
     year: 2023,
     icons: [
-      {
-        icon: DiHtml5,
-        color: "red",
-      },
-      {
-        icon: DiCss3,
-        color: "lightblue",
-      },
+      { icon: DiHtml5, color: "red" },
+      { icon: DiCss3, color: "lightblue" },
       { icon: RiJavascriptFill, color: "yellow" },
     ],
     badges: ["API Integration", "Responsive"],
@@ -128,129 +122,92 @@ const mainProjects: Projects[] = [
   {
     title: "Habit Tracker",
     description:
-      "Aplikasi React pertama saya. Aplikasi yang membantu dalam membentuk kebiasaan baru. Mampu menambahkan tugas dengan tipe tertentu, meningat tugas yang sudah diselesaikan, menghapus tugas.",
+      "My first React application. It helps users build new habits by allowing them to add, complete, and delete tasks of various types.",
     image: "/img/projects/main/portofolio2.png",
     href: "https://wilbertfe.github.io/habittracker/",
     year: 2024,
     icons: [
-      {
-        icon: RiTailwindCssFill,
-        color: "cyan",
-      },
+      { icon: RiTailwindCssFill, color: "cyan" },
       { icon: FaReact, color: "cyan" },
-      {
-        icon: RiJavascriptFill,
-        color: "yellow",
-      },
+      { icon: RiJavascriptFill, color: "yellow" },
     ],
     badges: ["Frontend", "Responsive", "Local Data"],
   },
+
   {
     title: "NimeKu",
     description:
-      "Aplikasi FrontEnd website anime. Terintegrasi dengan API MyAnimeList (MAL)",
+      "A frontend anime website integrated with the MyAnimeList (MAL) API.",
     image: "/img/projects/main/portofolio2.png",
     href: "https://wilbertfe.github.io/nimeku/",
     year: 2024,
     icons: [
-      {
-        icon: RiTailwindCssFill,
-        color: "cyan",
-      },
+      { icon: RiTailwindCssFill, color: "cyan" },
       { icon: FaReact, color: "cyan" },
-      {
-        icon: RiJavascriptFill,
-        color: "yellow",
-      },
+      { icon: RiJavascriptFill, color: "yellow" },
     ],
     badges: ["Frontend", "Responsive", "API Integration"],
   },
+
   {
     title: "Github Search",
     description:
-      "Terhubung dengan API Github. Aplikasi untuk Menemukan profile user github dan repository.",
+      "Connected to the GitHub API. An application to search for GitHub user profiles and repositories.",
     image: "",
     href: "https://wilbertfe.github.io/githubsearch/",
     year: 2024,
     icons: [
-      {
-        icon: DiHtml5,
-        color: "red",
-      },
-      {
-        icon: RiTailwindCssFill,
-        color: "cyan",
-      },
+      { icon: DiHtml5, color: "red" },
+      { icon: RiTailwindCssFill, color: "cyan" },
       { icon: RiJavascriptFill, color: "yellow" },
     ],
     badges: ["API Integration", "Responsive"],
   },
+
   {
     title: "Portofolio V2",
     description:
-      "Website portofolio kedua saya. Terhubung dengan google spreadsheet.",
+      "My second portfolio website, connected to Google Spreadsheet for data integration.",
     image: "/img/projects/main/portofolio2.png",
     href: "https://wilbertfe.github.io/PortofolioV-2.0/",
     year: 2024,
     icons: [
-      {
-        icon: DiHtml5,
-        color: "red",
-      },
-      {
-        icon: RiTailwindCssFill,
-        color: "cyan",
-      },
+      { icon: DiHtml5, color: "red" },
+      { icon: RiTailwindCssFill, color: "cyan" },
       { icon: RiJavascriptFill, color: "yellow" },
     ],
     badges: ["Frontend", "Responsive", "Data Integration"],
   },
+
   {
-    title: "Website OSIS Methonam",
-    description: "Website OSIS yang saya buat untuk sekolah dan para siswa.",
+    title: "Methonam OSIS Website",
+    description:
+      "A website I built for the school's student council (OSIS) and students.",
     image: "/img/projects/main/portofolio2.png",
     href: "https://web-osis-five.vercel.app/",
     year: 2025,
     icons: [
       { icon: FaReact, color: "cyan" },
-      {
-        icon: RiTailwindCssFill,
-        color: "cyan",
-      },
+      { icon: RiTailwindCssFill, color: "cyan" },
       { icon: RiNextjsFill, color: "white" },
-      {
-        icon: BiLogoTypescript,
-        color: "blue",
-      },
-
-      {
-        icon: IoLogoFirebase,
-        color: "orange",
-      },
+      { icon: BiLogoTypescript, color: "blue" },
+      { icon: IoLogoFirebase, color: "orange" },
     ],
     badges: ["Fullstack", "Responsive"],
   },
+
   {
     title: "Portofolio V3",
-    description: "Website portofolio terbaru.",
+    description: "The latest version of my personal portfolio website.",
     image: "/img/projects/main/portofolio2.png",
     href: "https://wilbertbernardi.vercel.app/",
     year: 2025,
     icons: [
       { icon: FaReact, color: "cyan" },
-      {
-        icon: RiTailwindCssFill,
-        color: "cyan",
-      },
+      { icon: RiTailwindCssFill, color: "cyan" },
       { icon: RiNextjsFill, color: "white" },
-      {
-        icon: BiLogoTypescript,
-        color: "blue",
-      },
-      {
-        icon: RiSupabaseFill,
-        color: "lightgreen",
-      },
+      { icon: BiLogoTypescript, color: "blue" },
+      { icon: RiSupabaseFill, color: "lightgreen" },
     ],
     badges: ["Fullstack", "Responsive"],
   },

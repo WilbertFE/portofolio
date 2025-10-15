@@ -40,7 +40,7 @@ export default function Header() {
           <div className="flex gap-x-4">
             <div className="w-32 h-32 relative rounded-md overflow-hidden">
               <Image
-                src="/img/menjadi.png"
+                src="/img/profile.png"
                 alt="wilbert bernardi"
                 fill
                 className="object-cover object-center"

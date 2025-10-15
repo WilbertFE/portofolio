@@ -62,7 +62,7 @@ export default function About() {
         <div className="w-full max-w-60">
           <AspectRatio ratio={3 / 4}>
             <Image
-              src="/img/about2.png"
+              src="/img/profile-pixel.png"
               alt="profile"
               fill
               className="object-cover rounded-lg bg-center"
