@@ -34,13 +34,13 @@ export default function About() {
           </p>
         </div>
         <div className="w-full max-w-sm">
-          <AspectRatio ratio={16 / 9}>
+          <AspectRatio ratio={4 / 3}>
             <div className="max-w-xs">
               <Image
-                src="/img/menjadi.png"
+                src="/img/pixel-profile.png"
                 alt="profile"
                 fill
-                className="object-cover rounded-sm bg-center border"
+                className="object-cover rounded-sm object-center border"
               />
             </div>
           </AspectRatio>
