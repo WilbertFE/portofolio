@@ -12,19 +12,13 @@ export default function Header() {
       <div className="flex">
         <div className="w-1/2 space-y-6">
           <div className="space-y-4">
-            <Badge
-              variant="secondary"
-              className="bg-my-secondary text-white text-base"
-            >
+            <Badge variant="secondary" className="text-base">
               Main Projects
             </Badge>
             <p className="px-4">My main project.</p>
           </div>
           <div className="space-y-4">
-            <Badge
-              variant="secondary"
-              className="bg-my-secondary text-white text-base"
-            >
+            <Badge variant="secondary" className="text-base">
               Learning Projects
             </Badge>
             <p className="px-4">
