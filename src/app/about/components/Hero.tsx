@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="grow">
           <AspectRatio className="w-full h-full" ratio={1 / 1}>
             <Image
-              src="/img/about.png"
+              src="/img/about/about.png"
               alt="Wilbert Bernardi"
               className="rounded-md object-cover h-full w-full"
               fill

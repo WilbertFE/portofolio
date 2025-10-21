@@ -14,22 +14,22 @@ const services: Service[] = [
   {
     title: "Company Profile",
     content: "simple website for company profile.",
-    image: "/img/company-profile-website.jpg",
+    image: "/img/about/1.svg",
   },
   {
     title: "Landing Page",
     content: "simple website to promote products or services.",
-    image: "/img/landing-page-website.jpg",
+    image: "/img/about/2.svg",
   },
   {
     title: "E-Commerce",
     content: "online store integrated with database and payment gateway.",
-    image: "/img/e-commerce-website.jpg",
+    image: "/img/about/3.svg",
   },
   {
     title: "Web Application",
     content: "Complex web applications with specific features.",
-    image: "/img/complex-website.jpg",
+    image: "/img/about/4.svg",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function Service() {
         {services.map((service, i) => (
           <div key={i}>
             <div className="flex items-center space-x-4">
-              <Image src={service.image} width={128} height={128} alt="logo" />
+              <Image src={service.image} width={164} height={164} alt="logo" />
               <div className="grow">
                 <h1 className="text-3xl font-bold tracking-wider">
                   {service.title}

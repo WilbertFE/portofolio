@@ -49,19 +49,19 @@ export default function Dashboard() {
           <Avatar className="w-72 h-72 border-4 border-white">
             <AvatarImage
               className="object-cover object-center"
-              src="/img/pixel-profile.png"
+              src="/img/dashboard/1.png"
             />
             <AvatarFallback>WB</AvatarFallback>
           </Avatar>
           <Image
-            src="/img/sun.png"
+            src="/img/dashboard/sun.png"
             alt="sun"
             className="absolute -top-12 -right-12"
             width={164}
             height={164}
           />
           <Image
-            src="/img/blue.png"
+            src="/img/dashboard/blue.png"
             alt="blue"
             className="absolute -bottom-8 -left-8"
             width={164}
