@@ -10,7 +10,7 @@ export default function CTA() {
         </h1>
 
         <Button asChild variant="secondary">
-          <Link href="/contact">Contact me</Link>
+          <Link href="/contact">Contact Me</Link>
         </Button>
       </div>
     </div>

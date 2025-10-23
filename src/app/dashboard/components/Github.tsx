@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/select";
 import { Dispatch, SetStateAction, useState } from "react";
 import { Clock } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
 
 export default function GithubComponent() {
   const [year, setYear] = useState<Year | undefined>(2024);
@@ -73,7 +72,6 @@ export default function GithubComponent() {
           </div>
         )}
       </div>
-      <Separator className="my-4" />
       <div className="space-y-6">
         <div className="space-y-2">
           <div className="flex gap-x-2 items-center">
