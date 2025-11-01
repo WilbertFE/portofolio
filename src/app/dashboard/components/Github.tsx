@@ -10,7 +10,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Dispatch, SetStateAction, useState } from "react";
-import { Clock } from "lucide-react";
 
 export default function GithubComponent() {
   const [year, setYear] = useState<Year | undefined>(2024);
