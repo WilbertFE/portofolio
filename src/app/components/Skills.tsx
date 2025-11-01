@@ -230,11 +230,6 @@ const skills2: Skill[] = [
 
 const learningSkill: Skill[] = [
   {
-    text: "Python",
-    icon: FaPython,
-    color: "#4584b6",
-  },
-  {
     text: "Flutter",
     icon: FaFlutter,
     color: "cyan",
