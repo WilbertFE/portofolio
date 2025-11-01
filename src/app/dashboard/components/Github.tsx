@@ -26,7 +26,7 @@ export default function GithubComponent() {
             My contributions on Github.
           </p>
         </div>
-        <div className="flex justify-between gap-x-4">
+        {/* <div className="flex justify-between gap-x-4">
           <div className="border w-1/4 bg-transparent p-1 rounded-xl">
             <div className="bg-neutral-900 p-4 rounded-lg shadow-lg">
               <h3>Total</h3>
@@ -59,7 +59,7 @@ export default function GithubComponent() {
               </h1>
             </div>
           </div>
-        </div>
+        </div> */}
         {year && (
           <div className="flex gap-x-4">
             <GitHubCalendar
@@ -72,7 +72,7 @@ export default function GithubComponent() {
           </div>
         )}
       </div>
-      <div className="space-y-6">
+      {/* <div className="space-y-6">
         <div className="space-y-2">
           <div className="flex gap-x-2 items-center">
             <Clock size={32} />
@@ -124,7 +124,7 @@ export default function GithubComponent() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

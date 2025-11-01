@@ -6,7 +6,7 @@ export default function Header() {
         className="font-extralight leading-loose text-muted-foreground
         "
       >
-        Page showing further information.
+        Page showing further information about my profile.
       </p>
     </div>
   );
