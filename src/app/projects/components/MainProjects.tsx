@@ -41,10 +41,7 @@ type Projects = {
 export default function MainProjects() {
   return (
     <div className="w-full pb-12">
-      <Badge
-        variant="secondary"
-        className="bg-my-secondary text-white text-base my-4"
-      >
+      <Badge variant="outline" className="text-base my-4 justify-self-end">
         Main Projects
       </Badge>
       <div className="grid grid-cols-2 gap-8">

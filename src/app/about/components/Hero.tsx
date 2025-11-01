@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IconType } from "react-icons";
-import { FaGithub, FaLinkedin, FaReact } from "react-icons/fa6";
+import { FaGithub, FaReact, FaYoutube } from "react-icons/fa6";
 import { SiShadcnui, SiSupabase } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
@@ -124,9 +124,9 @@ const sosmed: { text: string; href: string; icon: IconType }[] = [
     icon: FaGithub,
   },
   {
-    text: "Linkedin",
-    href: "https://www.linkedin.com/in/wilbert-bernardi-13683a2a7/",
-    icon: FaLinkedin,
+    text: "Youtube",
+    href: "https://www.youtube.com/@WilbertBernardis",
+    icon: FaYoutube,
   },
 ];
 

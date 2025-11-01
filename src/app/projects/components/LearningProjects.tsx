@@ -42,10 +42,7 @@ export default function LearningProjects() {
   return (
     <div className="w-full space-y-8">
       <div className="flex justify-end">
-        <Badge
-          variant="secondary"
-          className="bg-my-secondary text-white text-base my-4 justify-self-end"
-        >
+        <Badge variant="outline" className="text-base my-4 justify-self-end">
           Learning Projects
         </Badge>
       </div>
