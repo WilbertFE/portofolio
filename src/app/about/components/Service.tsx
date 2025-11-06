@@ -1,7 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 type Service = {
@@ -62,13 +61,6 @@ export default function Service() {
             <p>Over two years of programming experience since 2023.</p>
           </div>
         </div>
-        <Button
-          asChild
-          variant="secondary"
-          className="w-full py-8 text-xl tracking-wide"
-        >
-          <Link href="/service">See more</Link>
-        </Button>
       </div>
       <div className="w-1/2">
         {services.map((service, i) => (

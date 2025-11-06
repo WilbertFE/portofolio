@@ -22,6 +22,7 @@ export default function About() {
         <div className="w-2/5 flex flex-col items-end">
           <p className="text-muted-foreground">Freelancer</p>
           <p className="text-muted-foreground">Full-Stack Web Developer</p>
+          <p className="text-muted-foreground">Content Creator</p>
         </div>
       </div>
       <div className="flex justify-between">
