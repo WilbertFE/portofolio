@@ -53,18 +53,21 @@ export function AppSidebar() {
           <span className="text-muted-foreground">@wilbertfe</span>
         </div>
         <div className="flex gap-x-2 justify-between items-center">
-          <Link href="/">
-            <Button
-              className="text-lg text-muted-foreground rounded-full bg-transparent"
-              variant="outline"
-            >
+          {/* <Link href="/contact"> */}
+          <Button
+            asChild
+            className="text-lg text-muted-foreground rounded-full bg-transparent cursor-pointer"
+            variant="outline"
+          >
+            <Link href="/contact">
               <span className="relative flex size-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex size-2.5 rounded-full bg-green-400"></span>
               </span>
               Hire me.
-            </Button>
-          </Link>
+            </Link>
+          </Button>
+          {/* </Link> */}
         </div>
       </SidebarHeader>
       <SidebarContent className={state === "expanded" ? "py-0 my-0" : ""}>
