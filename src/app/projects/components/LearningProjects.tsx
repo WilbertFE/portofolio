@@ -40,11 +40,11 @@ type Projects = {
 
 export default function LearningProjects() {
   return (
-    <div className="w-full space-y-8">
+    <div className="w-full space-y-12">
       <div className="flex justify-end">
-        <Badge variant="outline" className="text-base my-4 justify-self-end">
+        <h1 className="text-2xl text-my-primary font-bold tracking-wide">
           Learning Projects
-        </Badge>
+        </h1>
       </div>
       <div className="grid grid-cols-2 gap-8">
         {[...learningProjects]

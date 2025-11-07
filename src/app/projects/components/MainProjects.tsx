@@ -40,10 +40,10 @@ type Projects = {
 
 export default function MainProjects() {
   return (
-    <div className="w-full pb-12">
-      <Badge variant="outline" className="text-base my-4 justify-self-end">
+    <div className="w-full pb-12 space-y-12">
+      <h1 className="text-2xl text-my-primary font-bold tracking-wide">
         Main Projects
-      </Badge>
+      </h1>
       <div className="grid grid-cols-2 gap-8">
         {[...mainProjects]
           .sort((a: Projects, b: Projects) => b.year - a.year)
