@@ -103,13 +103,22 @@ export default function Hero() {
         </svg>
       </div>
       <div className="px-2 py-6 flex gap-x-4 justify-around absolute border shadow-lg bottom-16 bg-muted rounded-lg left-1/2 -translate-x-1/2">
-        <Badge variant="outline" className="text-base">
+        <Badge
+          variant="outline"
+          className="text-base tracking-wide border-4 border-my-primary rounded-full"
+        >
           Continuous Learner
         </Badge>
-        <Badge variant="outline" className="text-base">
+        <Badge
+          variant="outline"
+          className="text-base tracking-wide border-4 border-my-primary rounded-full"
+        >
           Full-Stack Web Developer
         </Badge>
-        <Badge variant="outline" className="text-base">
+        <Badge
+          variant="outline"
+          className="text-base tracking-wide border-4 border-my-primary rounded-full"
+        >
           Tech Enthusiast
         </Badge>
       </div>
