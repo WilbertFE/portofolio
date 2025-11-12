@@ -26,7 +26,7 @@ export function Service() {
       </div>
       <Card>
         <CardHeader>
-          <CardTitle className="text-xl font-bold tracking-wider">
+          <CardTitle className="lg:text-xl text-base font-bold tracking-wider">
             LET&apos;S WORK TOGETHER!
           </CardTitle>
           <CardDescription className="text-base">

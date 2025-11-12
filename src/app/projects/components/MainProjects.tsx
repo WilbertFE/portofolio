@@ -22,6 +22,7 @@ import { Badge } from "@/components/ui/badge";
 import { FaReact } from "react-icons/fa6";
 import { BiLogoTypescript } from "react-icons/bi";
 import { IoLogoFirebase } from "react-icons/io5";
+import Image from "next/image";
 
 type Icon = {
   icon: IconType;
@@ -49,8 +50,19 @@ export default function MainProjects() {
           .sort((a: Projects, b: Projects) => b.year - a.year)
           .map((project, i) => (
             <div key={i} className="border bg-transparent p-1 rounded-xl">
-              <Card className="px-4 py-6 h-full">
-                <Skeleton className="max-w-full h-64" />
+              <Card className="px-4 py-6 h-full relative">
+                <div className="max-w-full relative h-64 overflow-hidden">
+                  {project.image !== "" ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-center object-cover rounded-lg scale-110"
+                    />
+                  ) : (
+                    <Skeleton className="max-w-full h-64" />
+                  )}
+                </div>
                 <CardHeader className="space-x-4">
                   <CardTitle className="text-lg tracking-wider flex items-center gap-x-2">
                     <h1>{project.title}</h1>
@@ -196,7 +208,7 @@ const mainProjects: Projects[] = [
   {
     title: "Portofolio V3",
     description: "The latest version of my personal portfolio website.",
-    image: "/img/projects/main/portofolio2.png",
+    image: "/img/projects/mockups/portofolio.jpeg",
     href: "https://wilbertbernardi.vercel.app/",
     year: 2025,
     icons: [

@@ -18,7 +18,6 @@ import {
   RiSupabaseFill,
   RiTailwindCssFill,
 } from "react-icons/ri";
-import { Badge } from "@/components/ui/badge";
 import { FaReact } from "react-icons/fa6";
 import { IoLogoFirebase } from "react-icons/io5";
 import { SiJest } from "react-icons/si";
