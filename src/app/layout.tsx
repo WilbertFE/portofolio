@@ -40,6 +40,7 @@ export default function RootLayout({
             <Toaster />
           </SidebarProvider>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
