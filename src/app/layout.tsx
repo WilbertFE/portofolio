@@ -36,11 +36,11 @@ export default function RootLayout({
             <main className="min-h-screen w-full overflow-hidden">
               <SidebarTrigger />
               {children}
+              <SpeedInsights />
             </main>
             <Toaster />
           </SidebarProvider>
         </ThemeProvider>
-        <SpeedInsights />
       </body>
     </html>
   );
