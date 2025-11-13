@@ -36,7 +36,7 @@ type Skill = {
 
 export function Skills() {
   return (
-    <div className="space-y-2 h-max max-w-full overflow-x-scroll">
+    <div className="space-y-2 h-max max-w-full">
       <div className="flex items-center gap-x-2">
         <Code2 size={32} />
         <span className="text-2xl tracking-wider">Skills</span>
