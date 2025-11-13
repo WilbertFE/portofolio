@@ -38,7 +38,7 @@ export default function About() {
           <AspectRatio ratio={4 / 3}>
             <div className="max-w-xs">
               <Image
-                src="/img/pixel-profile.png"
+                src="/img/profile1.png"
                 alt="profile"
                 fill
                 className="object-cover rounded-sm object-center border"
@@ -63,7 +63,7 @@ export default function About() {
         <div className="w-full max-w-60">
           <AspectRatio ratio={3 / 4}>
             <Image
-              src="/img/profile-pixel.png"
+              src="/img/profile2.png"
               alt="profile"
               fill
               className="object-cover rounded-lg bg-center"

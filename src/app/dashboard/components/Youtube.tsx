@@ -155,7 +155,7 @@ export default function Youtube() {
           <Avatar className="w-72 h-72 border-4 border-white">
             <AvatarImage
               className="object-cover object-center"
-              src="/img/dashboard/1.png"
+              src="/img/profile1.png"
             />
             <AvatarFallback>WB</AvatarFallback>
           </Avatar>

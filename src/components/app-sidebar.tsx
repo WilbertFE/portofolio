@@ -8,7 +8,6 @@ import {
   BookUser,
   ArrowRight,
 } from "lucide-react";
-
 import {
   Sidebar,
   SidebarContent,
@@ -40,7 +39,7 @@ export function AppSidebar() {
         <Avatar className="w-24 h-24 border border-muted-foreground">
           <AvatarImage
             alt="wilbert bernardi"
-            src="/img/profile-pixel.png"
+            src="/img/profile2.png"
             className="object-cover scale-125"
           />
           <AvatarFallback>WB</AvatarFallback>
@@ -53,7 +52,6 @@ export function AppSidebar() {
           <span className="text-muted-foreground">@wilbertfe</span>
         </div>
         <div className="flex gap-x-2 justify-between items-center">
-          {/* <Link href="/contact"> */}
           <Button
             asChild
             className="text-lg text-muted-foreground rounded-full bg-transparent cursor-pointer"
@@ -67,7 +65,6 @@ export function AppSidebar() {
               Hire me.
             </Link>
           </Button>
-          {/* </Link> */}
         </div>
       </SidebarHeader>
       <SidebarContent className={state === "expanded" ? "py-0 my-0" : ""}>
@@ -143,19 +140,9 @@ const items = [
     url: "/dashboard",
     icon: LayoutDashboard,
   },
-  // {
-  //   title: "Chat Room",
-  //   url: "/chat",
-  //   icon: MessageCircleMore,
-  // },
   {
     title: "Contact",
     url: "/contact",
     icon: BookUser,
   },
-  // {
-  //   title: "Settings",
-  //   url: "/settings",
-  //   icon: Settings,
-  // },
 ];
