@@ -30,6 +30,7 @@ type Icon = {
 };
 
 type Projects = {
+  id?: number;
   title: string;
   description: string;
   image: string;
@@ -57,7 +58,7 @@ export default function MainProjects() {
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-center object-cover rounded-lg scale-110"
+                      className="object-center object-cover rounded-lg"
                     />
                   ) : (
                     <Skeleton className="max-w-full h-64" />
@@ -206,9 +207,10 @@ const mainProjects: Projects[] = [
   },
 
   {
+    id: 7,
     title: "Portofolio V3",
     description: "The latest version of my personal portfolio website.",
-    image: "/img/projects/mockups/portofolio.jpeg",
+    image: "/img/projects/mockups/7.png",
     href: "https://wilbertbernardi.vercel.app/",
     year: 2025,
     icons: [
