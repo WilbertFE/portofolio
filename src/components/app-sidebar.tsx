@@ -117,7 +117,6 @@ export function AppSidebar() {
   );
 }
 
-// Menu items.
 const items = [
   {
     title: "Home",
