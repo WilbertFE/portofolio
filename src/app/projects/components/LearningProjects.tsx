@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { TiLocationArrow } from "react-icons/ti";
@@ -51,7 +50,6 @@ export default function LearningProjects() {
           .map((project, i) => (
             <div key={i} className="border bg-transparent p-1 rounded-xl">
               <Card className="px-4 py-6 h-full">
-                <Skeleton className="max-w-full h-64" />
                 <CardHeader className="space-x-4">
                   <CardTitle className="text-lg tracking-wider">
                     {project.title}{" "}
