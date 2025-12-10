@@ -23,6 +23,7 @@ import { FaReact } from "react-icons/fa6";
 import { BiLogoTypescript } from "react-icons/bi";
 import { IoLogoFirebase } from "react-icons/io5";
 import Image from "next/image";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 type Icon = {
   icon: IconType;
@@ -30,10 +31,9 @@ type Icon = {
 };
 
 type Projects = {
-  id?: number;
+  id: number;
   title: string;
   description: string;
-  image: string;
   href: string;
   year: number;
   icons: Icon[];
@@ -52,10 +52,13 @@ export default function MainProjects() {
           .map((project, i) => (
             <div key={i} className="border bg-transparent p-1 rounded-xl">
               <Card className="px-4 py-6 h-full relative">
-                <div className="max-w-full relative h-64 overflow-hidden">
-                  {project.image !== "" ? (
+                <AspectRatio
+                  ratio={16 / 9}
+                  className="relative h-64 overflow-hidden"
+                >
+                  {project.id ? (
                     <Image
-                      src={project.image}
+                      src={`/img/projects/mockups/${project.id}.png`}
                       alt={project.title}
                       fill
                       className="object-center object-cover rounded-lg"
@@ -63,7 +66,7 @@ export default function MainProjects() {
                   ) : (
                     <Skeleton className="max-w-full h-64" />
                   )}
-                </div>
+                </AspectRatio>
                 <CardHeader className="space-x-4">
                   <CardTitle className="text-lg tracking-wider flex items-center gap-x-2">
                     <h1>{project.title}</h1>
@@ -115,10 +118,10 @@ export default function MainProjects() {
 
 const mainProjects: Projects[] = [
   {
+    id: 1,
     title: "Weather Forecast",
     description:
       "An application that predicts current weather and forecasts future conditions. Connected to the OpenWeatherMap API.",
-    image: "",
     href: "https://wilbertfe.github.io/weatherapp/",
     year: 2023,
     icons: [
@@ -130,10 +133,10 @@ const mainProjects: Projects[] = [
   },
 
   {
+    id: 2,
     title: "Habit Tracker",
     description:
       "My first React application. It helps users build new habits by allowing them to add, complete, and delete tasks of various types.",
-    image: "/img/projects/main/portofolio2.png",
     href: "https://wilbertfe.github.io/habittracker/",
     year: 2024,
     icons: [
@@ -145,10 +148,10 @@ const mainProjects: Projects[] = [
   },
 
   {
+    id: 3,
     title: "NimeKu",
     description:
       "A frontend anime website integrated with the MyAnimeList (MAL) API.",
-    image: "/img/projects/main/portofolio2.png",
     href: "https://wilbertfe.github.io/nimeku/",
     year: 2024,
     icons: [
@@ -160,10 +163,10 @@ const mainProjects: Projects[] = [
   },
 
   {
+    id: 4,
     title: "Github Search",
     description:
       "Connected to the GitHub API. An application to search for GitHub user profiles and repositories.",
-    image: "",
     href: "https://wilbertfe.github.io/githubsearch/",
     year: 2024,
     icons: [
@@ -175,10 +178,10 @@ const mainProjects: Projects[] = [
   },
 
   {
+    id: 5,
     title: "Portofolio V2",
     description:
       "My second portfolio website, connected to Google Spreadsheet for data integration.",
-    image: "/img/projects/main/portofolio2.png",
     href: "https://wilbertfe.github.io/PortofolioV-2.0/",
     year: 2024,
     icons: [
@@ -190,10 +193,10 @@ const mainProjects: Projects[] = [
   },
 
   {
+    id: 6,
     title: "Methonam OSIS Website",
     description:
       "A website I built for the school's student council (OSIS) and students.",
-    image: "/img/projects/main/portofolio2.png",
     href: "https://web-osis-five.vercel.app/",
     year: 2025,
     icons: [
@@ -210,7 +213,6 @@ const mainProjects: Projects[] = [
     id: 7,
     title: "Portofolio V3",
     description: "The latest version of my personal portfolio website.",
-    image: "/img/projects/mockups/7.png",
     href: "https://wilbertbernardi.vercel.app/",
     year: 2025,
     icons: [
