@@ -30,7 +30,9 @@ export default function Info() {
         <Card
           key={i}
           className={`${
-            contact.action === "Gmail" ? "col-span-2" : ""
+            contact.action === "Gmail"
+              ? "col-span-2"
+              : "lg:col-span-1 col-span-2"
           } bg-gradient-to-r ${
             contact.background
           } shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300

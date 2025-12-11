@@ -74,7 +74,7 @@ export default function Message() {
               control={form.control}
               name="name"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="col-span-2 lg:col-span-1">
                   <FormControl>
                     <Input placeholder="Name" {...field} />
                   </FormControl>
@@ -86,7 +86,7 @@ export default function Message() {
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="col-span-2 lg:col-span-1">
                   <FormControl>
                     <Input placeholder="Email" {...field} />
                   </FormControl>
