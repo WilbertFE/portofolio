@@ -25,42 +25,9 @@ export default function GithubComponent() {
             My contributions on Github.
           </p>
         </div>
-        {/* <div className="flex justify-between gap-x-4">
-          <div className="border w-1/4 bg-transparent p-1 rounded-xl">
-            <div className="bg-neutral-900 p-4 rounded-lg shadow-lg">
-              <h3>Total</h3>
-              <h1 className="text-3xl font-bold text-green-600 tracking-wide">
-                999
-              </h1>
-            </div>
-          </div>
-          <div className="border w-1/4 bg-transparent p-1 rounded-xl">
-            <div className="bg-neutral-900 p-4 rounded-lg shadow-lg">
-              <h3>This week</h3>
-              <h1 className="text-3xl font-bold text-green-600 tracking-wide">
-                999
-              </h1>
-            </div>
-          </div>
-          <div className="border w-1/4 bg-transparent p-1 rounded-xl">
-            <div className="bg-neutral-900 p-4 rounded-lg shadow-lg">
-              <h3>Best</h3>
-              <h1 className="text-3xl font-bold text-green-600 tracking-wide">
-                999
-              </h1>
-            </div>
-          </div>
-          <div className="border w-1/4 bg-transparent p-1 rounded-xl">
-            <div className="bg-neutral-900 p-4 rounded-lg shadow-lg">
-              <h3>Average</h3>
-              <h1 className="text-3xl font-bold text-green-600 tracking-wide">
-                999
-              </h1>
-            </div>
-          </div>
-        </div> */}
+
         {year && (
-          <div className="flex gap-x-4">
+          <div className="flex lg:gap-x-4 flex-col-reverse lg:flex-row gap-y-6">
             <GitHubCalendar
               colorScheme="dark"
               blockSize={16}
@@ -71,59 +38,6 @@ export default function GithubComponent() {
           </div>
         )}
       </div>
-      {/* <div className="space-y-6">
-        <div className="space-y-2">
-          <div className="flex gap-x-2 items-center">
-            <Clock size={32} />
-            <h1 className="text-xl tracking-wider">Weekly Statistics</h1>
-          </div>
-          <p className="font-extralight leading-loose text-muted-foreground">
-            My Github statistics for last 7 days.
-          </p>
-        </div>
-        <div className="grid grid-cols-2 gap-x-3 gap-y-3">
-          <div className="p-1 rounded-xl shadow shadow-neutral-800">
-            <div className="bg-neutral-900 p-4 rounded-md">
-              <p className="text-muted-foreground">Start Date</p>
-              <h1 className="text-xl font-bold tracking-wide">
-                March, 02 2008
-              </h1>
-            </div>
-          </div>
-          <div className="p-1 rounded-xl shadow shadow-neutral-800">
-            <div className="bg-neutral-900 p-4 rounded-md">
-              <p className="text-muted-foreground">Start Date</p>
-              <h1 className="text-xl font-bold tracking-wide">
-                March, 02 2008
-              </h1>
-            </div>
-          </div>
-          <div className="p-1 rounded-xl shadow shadow-neutral-800">
-            <div className="bg-neutral-900 p-4 rounded-md">
-              <p className="text-muted-foreground">Start Date</p>
-              <h1 className="text-xl font-bold tracking-wide">
-                March, 02 2008
-              </h1>
-            </div>
-          </div>
-          <div className="p-1 rounded-xl shadow shadow-neutral-800">
-            <div className="bg-neutral-900 p-4 rounded-md">
-              <p className="text-muted-foreground">Start Date</p>
-              <h1 className="text-xl font-bold tracking-wide">
-                March, 02 2008
-              </h1>
-            </div>
-          </div>
-          <div className="p-1 col-span-2 rounded-xl shadow shadow-neutral-800">
-            <div className="bg-neutral-900 p-4 rounded-md">
-              <p className="text-muted-foreground">Start Date</p>
-              <h1 className="text-xl font-bold tracking-wide">
-                March, 02 2008
-              </h1>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 }

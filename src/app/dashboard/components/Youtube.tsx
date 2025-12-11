@@ -102,20 +102,19 @@ export default function Youtube() {
 
   return (
     <div className="pt-36 pb-32 space-y-12">
-      <div className="px-10 flex gap-x-8 items-center justify-between">
+      <div className="px-10 gap-y-12 lg:gap-y-0 flex gap-x-8 items-center justify-between flex-col-reverse lg:flex-row">
         <div className="space-y-8">
-          <h3 className="text-xl font-bold text-shadow-lg leading-tight tracking-widest">
+          <h3 className="lg:text-xl font-bold text-shadow-lg leading-tight tracking-widest">
             Hi There 👋
           </h3>
-          <h1 className="text-6xl text-shadow-lg leading-tight font-bold tracking-wider">
+          <h1 className="lg:text-6xl text-xl text-shadow-lg leading-tight font-bold tracking-wider">
             I&apos;m <span className="text-my-primary ">{snippet?.title}</span>
           </h1>
-          <div className="text-muted-foreground justify-between flex items-center gap-x-2">
-            <Separator className="max-w-6/10" />
+          <div className="text-muted-foreground justify-between flex items-center gap-x-2 flex-col lg:flex-row">
+            <Separator className="lg:max-w-6/10" />
             <p>Content Creator | Developer</p>
           </div>
-
-          <div className="flex gap-x-4">
+          <div className="flex gap-x-4 flex-col lg:flex-row gap-y-4 lg:gap-y-0">
             <Button
               variant="destructive"
               size="lg"
@@ -175,32 +174,30 @@ export default function Youtube() {
           />
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-y-4">
+      <div className="grid lg:grid-cols-2 gap-y-4">
         {videos?.map((video: any, i: number) => (
           <Card className="bg-transparent border-0" key={i}>
             <CardContent>
               <iframe
                 key={i}
-                className="border-white border-1 rounded-lg"
-                width="560"
-                height="315"
+                className="border-white border-1 rounded-lg lg:w-[560px] lg:h-[315px]"
                 src={`https://www.youtube.com/embed/${video.contentDetails.videoId}?si=T1lxT3hOquHD2NYM`}
-                title="YouTube video player"
+                title={video.snippet.title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               ></iframe>
             </CardContent>
             <CardFooter className="flex flex-col items-start gap-y-4">
-              <div className="flex gap-x-12 w-full justify-between">
-                <div className="flex gap-x-1">
-                  <FaQuoteLeft color="yellow" />
+              <div className="flex lg:flex-row lg:gap-x-12 gap-y-4  w-full justify-between flex-col">
+                <div className="flex gap-x-1 max-w-4/5 lg:max-w-full">
+                  <FaQuoteLeft size={16} color="yellow" />
                   <h1 className="tracking-wider font-bold text-xl line-clamp-1">
                     {video.snippet.title}
                   </h1>
-                  <FaQuoteRight color="yellow" />
+                  <FaQuoteRight size={16} color="yellow" />
                 </div>
-                <CardAction className="justify-self-end">
+                <CardAction className="lg:justify-self-end">
                   <Button
                     asChild
                     size="sm"
