@@ -46,7 +46,7 @@ export default function MainProjects() {
       <h1 className="text-2xl text-my-primary font-bold tracking-wide">
         Main Projects
       </h1>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 gap-8">
         {[...mainProjects]
           .sort((a: Projects, b: Projects) => b.year - a.year)
           .map((project, i) => (
@@ -54,7 +54,7 @@ export default function MainProjects() {
               <Card className="px-4 py-6 h-full relative">
                 <AspectRatio
                   ratio={16 / 9}
-                  className="relative h-64 overflow-hidden"
+                  className="relative lg:h-64 overflow-hidden"
                 >
                   {project.id ? (
                     <Image
@@ -67,14 +67,28 @@ export default function MainProjects() {
                     <Skeleton className="max-w-full h-64" />
                   )}
                 </AspectRatio>
-                <CardHeader className="space-x-4">
-                  <CardTitle className="text-lg tracking-wider flex items-center gap-x-2">
-                    <h1>{project.title}</h1>
-                    <span className="text-muted-foreground text-base">
-                      {"["}
-                      {project.year}
-                      {"]"}
-                    </span>
+                <CardHeader className="lg:space-x-4 flex flex-col gap-y-4 px-1">
+                  <CardTitle className="text-lg tracking-wider w-full flex items-center gap-x-2">
+                    <div className="flex flex-1 items-center gap-x-4">
+                      <h1 className="line-clamp-1 ">{project.title}</h1>
+                      <span className="text-muted-foreground text-base">
+                        {"["}
+                        {project.year}
+                        {"]"}
+                      </span>
+                    </div>
+                    <CardAction className="self-center">
+                      <Button
+                        asChild
+                        variant="link"
+                        className="tracking-wider font-bold text-my-primary"
+                      >
+                        <Link className="relative" href={project.href}>
+                          Visit{" "}
+                          <TiLocationArrow className="absolute top-0 -right-1" />
+                        </Link>
+                      </Button>
+                    </CardAction>
                   </CardTitle>
                   <CardDescription className="space-y-4">
                     <div className="space-x-2">
@@ -90,18 +104,6 @@ export default function MainProjects() {
                     </div>
                     <p>{project.description}</p>
                   </CardDescription>
-                  <CardAction className="self-center">
-                    <Button
-                      asChild
-                      variant="link"
-                      className="tracking-wider font-bold text-my-primary"
-                    >
-                      <Link className="relative" href={project.href}>
-                        Visit{" "}
-                        <TiLocationArrow className="absolute top-0 -right-1" />
-                      </Link>
-                    </Button>
-                  </CardAction>
                 </CardHeader>
                 <CardFooter className="space-x-4">
                   {project.icons.map((icon, i) => (

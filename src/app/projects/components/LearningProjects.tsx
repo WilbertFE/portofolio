@@ -44,12 +44,12 @@ export default function LearningProjects() {
           Learning Projects
         </h1>
       </div>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 lg:gap-8 gap-y-8">
         {[...learningProjects]
           .sort((a: Projects, b: Projects) => b.year - a.year)
           .map((project, i) => (
             <div key={i} className="border bg-transparent p-1 rounded-xl">
-              <Card className="px-4 py-6 h-full">
+              <Card className="lg:px-4 py-6 h-full">
                 <CardHeader className="space-x-4">
                   <CardTitle className="text-lg tracking-wider">
                     {project.title}{" "}
