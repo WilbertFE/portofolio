@@ -13,6 +13,7 @@ export default function Home() {
   useEffect(() => {
     if (!isMessageSended) {
       toast.message("Temen-temen bisa memberi saran di halaman Contact");
+      toast.message("menu ada di pojok kiri atas");
       SetMessageSended(true);
     }
   }, []);
