@@ -18,7 +18,6 @@ import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().min(3).max(50),
-  email: z.email(),
   message: z.string().min(3).max(256),
 });
 
@@ -30,7 +29,6 @@ export default function Message() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      email: "",
       message: "",
     },
   });
@@ -44,7 +42,6 @@ export default function Message() {
     } else {
       form.reset({
         name: "",
-        email: "",
         message: "",
       });
       toast.success("Message has been sent");
@@ -77,18 +74,6 @@ export default function Message() {
                 <FormItem className="col-span-2 lg:col-span-1">
                   <FormControl>
                     <Input placeholder="Name" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem className="col-span-2 lg:col-span-1">
-                  <FormControl>
-                    <Input placeholder="Email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

@@ -3,7 +3,6 @@ import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { IconType } from "react-icons";
 import { FaGithub, FaInstagram, FaReact, FaYoutube } from "react-icons/fa6";
 import { SiShadcnui, SiSupabase } from "react-icons/si";
@@ -22,21 +21,23 @@ type Skill = {
 
 export default function Hero() {
   return (
-    <div className="w-full flex relative flex-col">
-      <div className="space-y-2 relative w-full items-center flex gap-x-4">
-        <div className="w-1/4 space-y-4">
-          <h2 className="text-4xl font-bold tracking-wider">I&apos;m</h2>
-          <h1 className="text-my-primary text-8xl text-shadow-lg leading-tight font-bold tracking-wider">
+    <div className="w-full flex relative flex-col pb-32">
+      <div className="space-y-2 relative w-full items-center flex gap-x-4 flex-col lg:flex-row">
+        <div className="w-full lg:w-1/4 space-y-4">
+          <h2 className="lg:text-4xl text-xl font-bold tracking-wider">
+            I&apos;m
+          </h2>
+          <h1 className="text-my-primary lg:text-8xl text-4xl text-shadow-lg leading-tight font-bold tracking-wider">
             {" "}
             Wilbert Bernardi
           </h1>
           <Separator className="min-h-[3px] my-4 bg-my-dark" />
-          <p className="max-w-full">
+          <p className="max-w-full lg:text-base text-sm">
             Ready to build modern, fast, and responsive websites. Suitable for
             personal, business, and brand use.
           </p>
         </div>
-        <div className="grow">
+        <div className="w-full lg:grow">
           <AspectRatio className="w-full h-full" ratio={1 / 1}>
             <Image
               src="/img/about/about.png"
@@ -46,7 +47,7 @@ export default function Hero() {
             />
           </AspectRatio>
         </div>
-        <div className="flex flex-col w-1/4 self-start mt-12 space-y-8">
+        <div className="flex flex-col lg:w-1/2 mt-46 lg:mt-0 self-start space-y-8">
           <div className="space-y-4">
             <p className="font-bold text-lg text-my-primary">
               Full-Stack Web Developer
@@ -91,7 +92,7 @@ export default function Hero() {
           </div>
         </div>
         <svg
-          className="absolute -z-10 w-[60%] left-1/5"
+          className="absolute -z-10 lg:w-[60%] lg:left-[20%] w-full lg:top-[10%] top-[15%]"
           viewBox="0 0 200 200"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -102,22 +103,22 @@ export default function Hero() {
           />
         </svg>
       </div>
-      <div className="px-2 py-6 flex gap-x-4 justify-around absolute border shadow-lg bottom-16 bg-muted rounded-lg left-1/2 -translate-x-1/2">
+      <div className="px-2 py-6 gap-y-4 gap-x-4 flex-wrap flex lg:block lg:flex-nowrap justify-around absolute lg:border shadow-lg top-[33%] lg:top-[75%] bg-transparent lg:bg-muted rounded-lg lg:left-1/2 lg:-translate-x-1/2">
         <Badge
           variant="outline"
-          className="text-base tracking-wide border-4 border-my-primary rounded-full"
+          className="lg:text-base text-xs tracking-wide border-4 border-my-primary rounded-full"
         >
           Continuous Learner
         </Badge>
         <Badge
           variant="outline"
-          className="text-base tracking-wide border-4 border-my-primary rounded-full"
+          className="lg:text-base text-xs tracking-wide border-4 border-my-primary rounded-full"
         >
           Full-Stack Web Developer
         </Badge>
         <Badge
           variant="outline"
-          className="text-base tracking-wide border-4 border-my-primary rounded-full"
+          className="lg:text-base text-xs tracking-wide border-4 border-my-primary rounded-full"
         >
           Tech Enthusiast
         </Badge>

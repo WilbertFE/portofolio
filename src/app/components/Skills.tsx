@@ -37,15 +37,17 @@ type Skill = {
 export function Skills() {
   return (
     <div className="space-y-2 h-max max-w-full">
-      <div className="flex items-center gap-x-2">
-        <Code2 size={32} />
-        <span className="text-2xl tracking-wider">Skills</span>
+      <div className="space-y-2">
+        <div className="flex items-center gap-x-2">
+          <Code2 size={32} />
+          <span className="text-2xl tracking-wider">Skills</span>
+        </div>
+        <div>
+          <p className="text-muted-foreground">My professional skills.</p>
+        </div>
       </div>
       <div className="flex gap-x-2 gap-y-2 flex-wrap">
-        <div className="space-y-2">
-          <div className="space-y-2">
-            <p className="text-muted-foreground">My professional skills.</p>
-          </div>
+        <div className="space-y-2 overflow-x-scroll lg:overflow-x-hidden">
           <div className="space-y-4 py-4 w-[1000px] overflow-x-hidden rounded-lg border border-muted-foreground">
             <ul className="flex gap-x-4 animate-infinite-scroll">
               {skills1.map((skill, i) => (
