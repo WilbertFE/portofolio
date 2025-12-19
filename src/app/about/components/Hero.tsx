@@ -54,7 +54,7 @@ export default function Hero() {
             </p>
             <p className="text-xl">Modern Web Solutions, Built for You.</p>
             <Button variant="link" asChild>
-              <Link href="#service" className="flex gap-x-2 text-lg">
+              <Link href="/dashboard" className="flex gap-x-2 text-lg">
                 <span>show more</span>
                 <ArrowRight />
               </Link>
@@ -77,7 +77,10 @@ export default function Hero() {
               The main technologies that are frequently used.
             </p>
             <Button variant="link" asChild>
-              <Link href="/" className="flex justify-self-end gap-x-2 text-lg">
+              <Link
+                href="/projects"
+                className="flex justify-self-end gap-x-2 text-lg"
+              >
                 <ArrowLeft />
                 <span>show more</span>
               </Link>
