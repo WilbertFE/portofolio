@@ -73,7 +73,7 @@ const contacts: Contact[] = [
     title: "Stay in Touch",
     description: "Contact me via Email.",
     action: "Gmail",
-    href: "mailto:bernardiwilbert@gmail.com",
+    href: "mailto:wilbertbernardife@gmail.com",
     icon: BiLogoGmail,
     background: "from-[#EB3349] to-[#F45C43]",
   },
