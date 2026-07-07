@@ -89,7 +89,7 @@ const contacts: Contact[] = [
     title: "Let's Connect",
     description: "Get information through my Linkedin account.",
     action: "Linkdln",
-    href: "https://www.linkedin.com/in/wilbert-bernardi-13683a2a7/",
+    href: "https://www.linkedin.com/in/wilbert-bernardi-021910417/",
     icon: ImLinkedin2,
     background: "from-[#1E3C72] to-[#2A5298]",
   },
