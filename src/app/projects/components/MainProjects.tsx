@@ -11,6 +11,7 @@ import { DiCss3, DiHtml5 } from "react-icons/di";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {
+  RiGeminiLine,
   RiJavascriptFill,
   RiNextjsFill,
   RiSupabaseFill,
@@ -31,11 +32,11 @@ type Icon = {
 };
 
 type Projects = {
-  id: number;
   title: string;
   description: string;
   href: string;
   year: number;
+  image: string;
   icons: Icon[];
   badges: string[];
 };
@@ -44,7 +45,7 @@ export default function MainProjects() {
   return (
     <div className="w-full pb-12 space-y-12">
       <h1 className="text-2xl text-my-primary font-bold tracking-wide">
-        Main Projects
+        Projects
       </h1>
       <div className="grid lg:grid-cols-2 gap-8">
         {[...mainProjects]
@@ -56,9 +57,9 @@ export default function MainProjects() {
                   ratio={16 / 9}
                   className="relative lg:h-64 overflow-hidden"
                 >
-                  {project.id ? (
+                  {project.image ? (
                     <Image
-                      src={`/img/projects/mockups/${project.id}.png`}
+                      src={`/img/projects/mockups/${project.image}.png`}
                       alt={project.title}
                       fill
                       className="object-center object-cover rounded-lg"
@@ -120,12 +121,12 @@ export default function MainProjects() {
 
 const mainProjects: Projects[] = [
   {
-    id: 1,
     title: "Weather Forecast",
     description:
       "An application that predicts current weather and forecasts future conditions. Connected to the OpenWeatherMap API.",
     href: "https://wilbertfe.github.io/weatherapp/",
     year: 2023,
+    image: "weather-forecast",
     icons: [
       { icon: DiHtml5, color: "red" },
       { icon: DiCss3, color: "lightblue" },
@@ -135,12 +136,12 @@ const mainProjects: Projects[] = [
   },
 
   {
-    id: 2,
     title: "Habit Tracker",
     description:
       "My first React application. It helps users build new habits by allowing them to add, complete, and delete tasks of various types.",
     href: "https://wilbertfe.github.io/habittracker/",
     year: 2024,
+    image: "habit-tracker",
     icons: [
       { icon: RiTailwindCssFill, color: "cyan" },
       { icon: FaReact, color: "cyan" },
@@ -150,12 +151,12 @@ const mainProjects: Projects[] = [
   },
 
   {
-    id: 3,
     title: "NimeKu",
     description:
       "A frontend anime website integrated with the MyAnimeList (MAL) API.",
     href: "https://wilbertfe.github.io/nimeku/",
     year: 2024,
+    image: "nimeku",
     icons: [
       { icon: RiTailwindCssFill, color: "cyan" },
       { icon: FaReact, color: "cyan" },
@@ -165,12 +166,12 @@ const mainProjects: Projects[] = [
   },
 
   {
-    id: 4,
     title: "Github Search",
     description:
       "Connected to the GitHub API. An application to search for GitHub user profiles and repositories.",
     href: "https://wilbertfe.github.io/githubsearch/",
     year: 2024,
+    image: "github-search",
     icons: [
       { icon: DiHtml5, color: "red" },
       { icon: RiTailwindCssFill, color: "cyan" },
@@ -178,29 +179,13 @@ const mainProjects: Projects[] = [
     ],
     badges: ["API Integration", "Responsive"],
   },
-
   {
-    id: 5,
-    title: "Portofolio V2",
-    description:
-      "My second portfolio website, connected to Google Spreadsheet for data integration.",
-    href: "https://wilbertfe.github.io/PortofolioV-2.0/",
-    year: 2024,
-    icons: [
-      { icon: DiHtml5, color: "red" },
-      { icon: RiTailwindCssFill, color: "cyan" },
-      { icon: RiJavascriptFill, color: "yellow" },
-    ],
-    badges: ["Frontend", "Responsive", "Data Integration"],
-  },
-
-  {
-    id: 6,
     title: "Methonam OSIS Website",
     description:
       "A website I built for the school's student council (OSIS) and students.",
     href: "https://web-osis-five.vercel.app/",
     year: 2025,
+    image: "methonam-osis",
     icons: [
       { icon: FaReact, color: "cyan" },
       { icon: RiTailwindCssFill, color: "cyan" },
@@ -212,17 +197,32 @@ const mainProjects: Projects[] = [
   },
 
   {
-    id: 7,
     title: "Portofolio V3",
     description: "The latest version of my personal portfolio website.",
     href: "https://wilbertbernardi.vercel.app/",
     year: 2025,
+    image: "portofolio-v3",
     icons: [
       { icon: FaReact, color: "cyan" },
       { icon: RiTailwindCssFill, color: "cyan" },
       { icon: RiNextjsFill, color: "white" },
       { icon: BiLogoTypescript, color: "blue" },
       { icon: RiSupabaseFill, color: "lightgreen" },
+    ],
+    badges: ["Fullstack", "Responsive"],
+  },
+  {
+    title: "Ringkas CV",
+    description: "A free CV builder with AI-assisted writing, 15 templates, and ATS-friendly PDF/DOCX export.",
+    href: "https://cv-kan.vercel.app/",
+    year: 2025,
+    image: "ringkas-cv",
+    icons: [
+      { icon: RiNextjsFill, color: "white" },
+      { icon: FaReact, color: "cyan" },
+      { icon: BiLogoTypescript, color: "blue" },
+      { icon: RiTailwindCssFill, color: "cyan" },
+      { icon: RiGeminiLine, color: "purple" },
     ],
     badges: ["Fullstack", "Responsive"],
   },
