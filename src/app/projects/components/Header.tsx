@@ -17,14 +17,7 @@ export default function Header() {
             </h1>
             <p className="px-4">My main project.</p>
           </div>
-          <div className="space-y-4">
-            <h1 className="lg:text-2xl text-xl text-my-primary font-bold tracking-wide">
-              Learning Projects
-            </h1>
-            <p className="px-4">
-              Projects that I create along with learning new things.
-            </p>
-          </div>
+          
           <div className="flex gap-x-4 flex-col lg:flex-row gap-y-4 lg:gap-y-0">
             <div className="w-32 h-32 relative rounded-md overflow-hidden">
               <Image

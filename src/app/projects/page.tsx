@@ -1,7 +1,7 @@
 "use client";
 
 import { Separator } from "@/components/ui/separator";
-import { Header, LearningProjects, MainProjects } from "./components";
+import { Header, MainProjects } from "./components";
 
 export default function page() {
   return (
@@ -9,7 +9,6 @@ export default function page() {
       <Header />
       <Separator className="my-12 lg:my-0" />
       <MainProjects />
-      <LearningProjects />
     </div>
   );
 }
