@@ -215,7 +215,7 @@ const mainProjects: Projects[] = [
     title: "Ringkas CV",
     description: "A free CV builder with AI-assisted writing, 15 templates, and ATS-friendly PDF/DOCX export.",
     href: "https://cv-kan.vercel.app/",
-    year: 2025,
+    year: 2026,
     image: "ringkas-cv",
     icons: [
       { icon: RiNextjsFill, color: "white" },
@@ -224,6 +224,6 @@ const mainProjects: Projects[] = [
       { icon: RiTailwindCssFill, color: "cyan" },
       { icon: RiGeminiLine, color: "purple" },
     ],
-    badges: ["Fullstack", "Responsive"],
+    badges: ["Fullstack", "AI-Powered", "SAAS", "Auth & Database"],
   },
 ];
