@@ -214,7 +214,7 @@ const mainProjects: Projects[] = [
   {
     title: "Ringkas CV",
     description: "A free CV builder with AI-assisted writing, 15 templates, and ATS-friendly PDF/DOCX export.",
-    href: "https://cv-kan.vercel.app/",
+    href: "https://ringkascv.com/",
     year: 2026,
     image: "ringkas-cv",
     icons: [

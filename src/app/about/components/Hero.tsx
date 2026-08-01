@@ -143,7 +143,7 @@ const sosmed: { text: string; href: string; icon: IconType }[] = [
   },
   {
     text: "Instagram",
-    href: "https://www.instagram.com/bernardiwilberts/",
+    href: "https://www.instagram.com/bernardiwilbertt/",
     icon: FaInstagram,
   },
 ];
