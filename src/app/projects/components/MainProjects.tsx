@@ -226,4 +226,19 @@ const mainProjects: Projects[] = [
     ],
     badges: ["Fullstack", "AI-Powered", "SAAS", "Auth & Database"],
   },
+  {
+    title: "Snapenda",
+    description: "A free financial planning tool for individuals expenses tracking.",
+    href: "https://snapenda.my.id/",
+    year: 2026,
+    image: "snapenda",
+    icons: [
+      { icon: RiNextjsFill, color: "white" },
+      { icon: FaReact, color: "cyan" },
+      { icon: BiLogoTypescript, color: "blue" },
+      { icon: RiTailwindCssFill, color: "cyan" },
+      { icon: RiGeminiLine, color: "purple" },
+    ],
+    badges: ["Fullstack", "AI-Powered", "SAAS", "Auth & Database"],
+  },
 ];
