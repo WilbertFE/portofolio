@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "certs:preview": "node scripts/generate-certificate-previews.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -45,6 +46,7 @@
     "@types/react-dom": "19.2.3",
     "eslint": "^9",
     "eslint-config-next": "16.0.8",
+    "pdf-to-img": "^6.2.0",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.5",
     "typescript": "^5"

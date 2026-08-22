@@ -4,6 +4,7 @@ import {
   Home,
   User,
   FolderGit2,
+  Award,
   LayoutDashboard,
   BookUser,
   ArrowRight,
@@ -133,6 +134,11 @@ const items = [
     title: "Projects",
     url: "/projects",
     icon: FolderGit2,
+  },
+  {
+    title: "Certificates",
+    url: "/certificates",
+    icon: Award,
   },
   {
     title: "Dashboard",
