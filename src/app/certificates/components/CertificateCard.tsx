@@ -184,6 +184,11 @@ export default function CertificateCard({
             width={CERTIFICATE_PAGE_WIDTH}
             height={CERTIFICATE_PAGE_HEIGHT}
             sizes="(max-width: 640px) 92vw, (max-width: 1024px) 640px, 896px"
+            // Must not be lazy. The dialog is portaled, so when paging swaps
+            // the src on this same <img> the browser can decide it is not
+            // intersecting the viewport and never fire the request at all,
+            // leaving a permanently blank page.
+            loading="eager"
             className="mx-auto h-auto w-full max-h-[calc(90dvh_-_14rem)] rounded-lg border bg-white object-contain"
           />
 

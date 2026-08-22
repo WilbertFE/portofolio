@@ -65,10 +65,22 @@ export const certificates: Certificate[] = [
     pageCount: 2,
   },
   {
+    slug: "dicoding-memulai-dasar-pemrograman",
+    title: "Memulai Dasar Pemrograman untuk Menjadi Pengembang Software",
+    issuer: "Dicoding",
+    issuedAt: "2026-08-21",
+    validUntil: "2029-08-21",
+    credentialId: "QLZ9N8N49Z5D",
+    credentialUrl: "https://www.dicoding.com/certificates/QLZ9N8N49Z5D",
+    pageCount: 3,
+  },
+  {
     slug: "kaggle-intro-to-programming",
     title: "Intro to Programming",
     issuer: "Kaggle",
     issuedAt: "2026-08-07",
+    credentialUrl:
+      "https://www.kaggle.com/learn/certification/bernardiwilbert/intro-to-programming",
     pageCount: 1,
   },
 ];
