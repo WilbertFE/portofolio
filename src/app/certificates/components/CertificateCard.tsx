@@ -26,6 +26,8 @@ import {
 } from "@/components/ui/dialog";
 import {
   CERTIFICATE_ASPECT_RATIO,
+  CERTIFICATE_PAGE_HEIGHT,
+  CERTIFICATE_PAGE_WIDTH,
   certificateFile,
   certificatePage,
   formatCertificateDate,
@@ -162,7 +164,7 @@ export default function CertificateCard({
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="lg:max-w-4xl max-h-[92dvh] overflow-y-auto">
+        <DialogContent className="sm:max-w-2xl lg:max-w-4xl max-h-[90dvh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="tracking-wider pr-6">{title}</DialogTitle>
             <DialogDescription>
@@ -172,18 +174,18 @@ export default function CertificateCard({
             </DialogDescription>
           </DialogHeader>
 
-          {/* Bounded by viewport height rather than aspect ratio, so the
-              header, pager and footer always stay on screen. object-contain
-              keeps the page whole inside it. */}
-          <div className="relative w-full h-[42dvh] sm:h-[50dvh] lg:h-[55dvh] overflow-hidden rounded-lg border bg-white">
-            <Image
-              src={certificatePage(slug, page)}
-              alt={`${title}, page ${page} of ${pageCount}`}
-              fill
-              sizes="(max-width: 1024px) 100vw, 896px"
-              className="object-contain"
-            />
-          </div>
+          {/* Sized by the image itself rather than a fixed-height box: it
+              shrinks to whichever of the two limits bites first - the dialog
+              width on narrow screens, or the height left over once the
+              header, pager and footer have taken their share on short ones. */}
+          <Image
+            src={certificatePage(slug, page)}
+            alt={`${title}, page ${page} of ${pageCount}`}
+            width={CERTIFICATE_PAGE_WIDTH}
+            height={CERTIFICATE_PAGE_HEIGHT}
+            sizes="(max-width: 640px) 92vw, (max-width: 1024px) 640px, 896px"
+            className="mx-auto h-auto w-full max-h-[calc(90dvh_-_14rem)] rounded-lg border bg-white object-contain"
+          />
 
           {hasMultiplePages && (
             <div className="flex items-center justify-center gap-x-4">
@@ -211,7 +213,9 @@ export default function CertificateCard({
             </div>
           )}
 
-          <DialogFooter className="sm:justify-start gap-2">
+          {/* max-sm:flex-col cancels the base flex-col-reverse, so Verify
+              stays the first action on phones instead of sliding under Open PDF. */}
+          <DialogFooter className="gap-2 max-sm:flex-col sm:justify-start">
             {credentialUrl && (
               <Button asChild className="font-bold tracking-wider">
                 <Link

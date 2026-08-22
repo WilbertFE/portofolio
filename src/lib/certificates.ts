@@ -2,6 +2,10 @@
 // ratio fits every preview and nothing has to be cropped.
 export const CERTIFICATE_ASPECT_RATIO = 841.89 / 595.28;
 
+// Intrinsic size of the files written by scripts/generate-certificate-previews.mjs.
+export const CERTIFICATE_PAGE_WIDTH = 1600;
+export const CERTIFICATE_PAGE_HEIGHT = 1131;
+
 export type Certificate = {
   slug: string;
   title: string;
