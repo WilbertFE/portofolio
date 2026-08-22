@@ -231,7 +231,7 @@ const mainProjects: Projects[] = [
     description: "A free financial planning tool for individuals expenses tracking.",
     href: "https://snapenda.my.id/",
     year: 2026,
-    image: "snapenda",
+    image: "",
     icons: [
       { icon: RiNextjsFill, color: "white" },
       { icon: FaReact, color: "cyan" },

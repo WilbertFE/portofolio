@@ -11,8 +11,20 @@ import {
 } from "@/components/ui/select";
 import { Dispatch, SetStateAction, useState } from "react";
 
+const FIRST_CONTRIBUTION_YEAR = 2023;
+
+function getSelectableYears() {
+  const currentYear = new Date().getFullYear();
+  const years: number[] = [];
+  for (let y = currentYear; y >= FIRST_CONTRIBUTION_YEAR; y--) {
+    years.push(y);
+  }
+  return years;
+}
+
 export default function GithubComponent() {
-  const [year, setYear] = useState<Year | undefined>(2024);
+  const years = getSelectableYears();
+  const [year, setYear] = useState<Year | undefined>(years[0]);
   return (
     <>
       <div className="space-y-6">
@@ -34,7 +46,7 @@ export default function GithubComponent() {
               year={year}
               username="wilbertfe"
             />
-            <SelectDemo year={year} setYear={setYear} />
+            <SelectDemo year={year} setYear={setYear} years={years} />
           </div>
         )}
       </div>
@@ -45,9 +57,11 @@ export default function GithubComponent() {
 function SelectDemo({
   year,
   setYear,
+  years,
 }: {
   year: Year | undefined;
   setYear: Dispatch<SetStateAction<Year | undefined>>;
+  years: number[];
 }) {
   return (
     <Select
@@ -60,9 +74,11 @@ function SelectDemo({
       <SelectContent>
         <SelectGroup>
           <SelectLabel>Year</SelectLabel>
-          <SelectItem value="2023">2023</SelectItem>
-          <SelectItem value="2024">2024</SelectItem>
-          <SelectItem value="2025">2025</SelectItem>
+          {years.map((y) => (
+            <SelectItem key={y} value={y.toString()}>
+              {y}
+            </SelectItem>
+          ))}
         </SelectGroup>
       </SelectContent>
     </Select>

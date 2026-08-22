@@ -127,7 +127,7 @@ const skills1: Skill[] = [
   {
     text: "NextJS",
     icon: RiNextjsFill,
-    color: "black",
+    color: "white",
   },
   {
     text: "TypeScript",
@@ -147,7 +147,7 @@ const skills1: Skill[] = [
   {
     text: "ExpressJS",
     icon: SiExpress,
-    color: "black",
+    color: "white",
   },
   {
     text: "MongoDB",
@@ -205,7 +205,7 @@ const skills2: Skill[] = [
   {
     text: "Vercel",
     icon: IoLogoVercel,
-    color: "black",
+    color: "white",
   },
   {
     text: "Vite",
@@ -220,7 +220,7 @@ const skills2: Skill[] = [
   {
     text: "ShadCN UI",
     icon: SiShadcnui,
-    color: "black",
+    color: "white",
   },
   {
     text: "Supabase",

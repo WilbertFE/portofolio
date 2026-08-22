@@ -108,7 +108,7 @@ export function AppSidebar() {
         <SidebarFooter
           className={`flex flex-col gap-y-0 text-center text-muted-foreground`}
         >
-          <span>COPYRIGHT &copy; 2025</span>
+          <span>COPYRIGHT &copy; {new Date().getFullYear()}</span>
           <span>Wilbert Bernardi. All rights reserved</span>
         </SidebarFooter>
       )}
