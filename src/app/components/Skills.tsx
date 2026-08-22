@@ -5,12 +5,14 @@ import { BsFiletypeScss } from "react-icons/bs";
 import { DiMongodb, DiRedis } from "react-icons/di";
 import {
   FaBootstrap,
+  FaC,
   FaCss3,
   FaFlutter,
   FaGitAlt,
   FaGithub,
   FaHtml5,
   FaNodeJs,
+  FaPython,
   FaReact,
 } from "react-icons/fa6";
 import { IoLogoFirebase, IoLogoVercel } from "react-icons/io5";
@@ -231,8 +233,13 @@ const skills2: Skill[] = [
 
 const learningSkill: Skill[] = [
   {
-    text: "Flutter",
-    icon: FaFlutter,
-    color: "cyan",
+    text: "++",
+    icon: FaC,
+    color: "blue",
+  },
+  {
+    text: "Python",
+    icon: FaPython,
+    color: "yellow",
   },
 ];
