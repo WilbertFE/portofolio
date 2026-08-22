@@ -1,104 +1,74 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { useEffect, useState } from "react";
-import { FaEye, FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
+import { FaEye } from "react-icons/fa6";
 import { BsFillPersonCheckFill } from "react-icons/bs";
 import { BiSolidVideos } from "react-icons/bi";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import VideoCard from "./VideoCard";
+import { YOUTUBE_SUBSCRIBE_URL, type YoutubeData } from "@/lib/youtube";
+
+// Thumbnails above the fold get eager-loaded; the rest lazy-load on scroll.
+const PRIORITY_THUMBNAILS = 2;
+
+type Status = "loading" | "ready" | "error";
 
 export default function Youtube() {
-  const [snippet, setSnippet] = useState<null | {
-    title: string;
-    description: string;
-    customUrl: string;
-    thumbnails: {
-      default: { url: string };
-      high: { url: string };
-      medium: { url: string };
-    };
-  }>(null);
-
-  const [videos, setVideos] = useState<any>(null);
-
-  const [statistics, setStatistics] = useState<null | {
-    viewCount: string;
-    subscriberCount: string;
-    videoCount: string;
-  }>(null);
-
-  const getData = async () => {
-    try {
-      const res = await fetch(
-        `https://www.googleapis.com/youtube/v3/channels?key=${
-          process.env.NEXT_PUBLIC_YOUTUBE_API_KEY || ""
-        }&id=UCwr_nwGeno64CHwji2ZAGvQ&part=snippet,statistics`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      ).then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to get data!");
-        }
-
-        return res.json();
-      });
-
-      const snippetData = res.items[0].snippet;
-      const statisticsData = res.items[0].statistics;
-      setStatistics(statisticsData);
-      setSnippet(snippetData);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const getVideos = async () => {
-    try {
-      const data = await fetch(
-        `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=UUwr_nwGeno64CHwji2ZAGvQ&maxResults=40&key=${
-          process.env.NEXT_PUBLIC_YOUTUBE_API_KEY || ""
-        }`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      ).then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to get videos data");
-        }
-        return res.json();
-      });
-
-      const responseData = data.items;
-
-      setVideos(responseData);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  console.log("videos : ", videos);
+  const [data, setData] = useState<YoutubeData | null>(null);
+  const [status, setStatus] = useState<Status>("loading");
 
   useEffect(() => {
-    getData();
-    getVideos();
+    let cancelled = false;
+
+    const loadChannel = async () => {
+      try {
+        const res = await fetch("/api/youtube");
+        if (!res.ok) {
+          throw new Error(`/api/youtube responded with ${res.status}`);
+        }
+        const channelData: YoutubeData = await res.json();
+        if (!cancelled) {
+          setData(channelData);
+          setStatus("ready");
+        }
+      } catch (error) {
+        console.error(error);
+        if (!cancelled) {
+          setStatus("error");
+        }
+      }
+    };
+
+    loadChannel();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  if (!snippet && !statistics && !videos) return null;
+  if (status === "loading") {
+    return (
+      <div className="pt-36 pb-32 space-y-12">
+        <div className="px-10 flex gap-x-8 items-center justify-between flex-col-reverse lg:flex-row gap-y-12 lg:gap-y-0">
+          <div className="space-y-8 w-full">
+            <Skeleton className="h-6 w-40" />
+            <Skeleton className="h-14 w-72" />
+            <Skeleton className="h-10 w-full max-w-md" />
+          </div>
+          <Skeleton className="size-72 rounded-full" />
+        </div>
+      </div>
+    );
+  }
+
+  // Keep the section out of the page entirely if the channel cannot be
+  // reached, rather than showing an empty shell.
+  if (status === "error" || !data) return null;
+
+  const { channel, statistics, videos } = data;
 
   return (
     <div className="pt-36 pb-32 space-y-12">
@@ -108,7 +78,7 @@ export default function Youtube() {
             Hi There 👋
           </h3>
           <h1 className="lg:text-6xl text-xl text-shadow-lg leading-tight font-bold tracking-wider">
-            I&apos;m <span className="text-my-primary ">{snippet?.title}</span>
+            I&apos;m <span className="text-my-primary ">{channel.title}</span>
           </h1>
           <div className="text-muted-foreground justify-between flex items-center gap-x-2 flex-col lg:flex-row">
             <Separator className="lg:max-w-6/10" />
@@ -121,9 +91,9 @@ export default function Youtube() {
               asChild
               className="shadow-xs shadow-white font-bold tracking-widest text-base"
             >
-              <Link href="https://www.youtube.com/channel/UCwr_nwGeno64CHwji2ZAGvQ?sub_confirmation=1">
+              <Link href={YOUTUBE_SUBSCRIBE_URL}>
                 <BsFillPersonCheckFill />
-                {statistics?.subscriberCount} Subscribers
+                {statistics.subscriberCount} Subscribers
               </Link>
             </Button>
             <Button
@@ -132,9 +102,9 @@ export default function Youtube() {
               asChild
               className="shadow-xs shadow-white font-bold tracking-widest text-base"
             >
-              <Link href="https://www.youtube.com/channel/UCwr_nwGeno64CHwji2ZAGvQ?sub_confirmation=1">
+              <Link href={YOUTUBE_SUBSCRIBE_URL}>
                 <FaEye />
-                {statistics?.viewCount} Views
+                {statistics.viewCount} Views
               </Link>
             </Button>
             <Button
@@ -143,9 +113,9 @@ export default function Youtube() {
               asChild
               className="shadow-xs shadow-white font-bold tracking-widest text-base"
             >
-              <Link href="https://www.youtube.com/channel/UCwr_nwGeno64CHwji2ZAGvQ?sub_confirmation=1">
+              <Link href={YOUTUBE_SUBSCRIBE_URL}>
                 <BiSolidVideos />
-                {statistics?.videoCount} Videos
+                {statistics.videoCount} Videos
               </Link>
             </Button>
           </div>
@@ -154,20 +124,21 @@ export default function Youtube() {
           <Avatar className="w-72 h-72 border-4 border-white">
             <AvatarImage
               className="object-cover object-center"
+              alt={channel.title}
               src="/img/profile1.png"
             />
             <AvatarFallback>WB</AvatarFallback>
           </Avatar>
           <Image
             src="/img/dashboard/sun.png"
-            alt="sun"
+            alt=""
             className="absolute -top-12 -right-12"
             width={164}
             height={164}
           />
           <Image
             src="/img/dashboard/blue.png"
-            alt="blue"
+            alt=""
             className="absolute -bottom-8 -left-8"
             width={164}
             height={164}
@@ -175,50 +146,12 @@ export default function Youtube() {
         </div>
       </div>
       <div className="grid lg:grid-cols-2 gap-y-4">
-        {videos?.map((video: any, i: number) => (
-          <Card className="bg-transparent border-0" key={i}>
-            <CardContent>
-              <iframe
-                key={i}
-                className="border-white border-1 rounded-lg lg:w-[560px] lg:h-[315px]"
-                src={`https://www.youtube.com/embed/${video.contentDetails.videoId}?si=T1lxT3hOquHD2NYM`}
-                title={video.snippet.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
-            </CardContent>
-            <CardFooter className="flex flex-col items-start gap-y-4">
-              <div className="flex lg:flex-row lg:gap-x-12 gap-y-4  w-full justify-between flex-col">
-                <div className="flex gap-x-1 max-w-4/5 lg:max-w-full">
-                  <FaQuoteLeft size={16} color="yellow" />
-                  <h1 className="tracking-wider font-bold text-xl line-clamp-1">
-                    {video.snippet.title}
-                  </h1>
-                  <FaQuoteRight size={16} color="yellow" />
-                </div>
-                <CardAction className="lg:justify-self-end">
-                  <Button
-                    asChild
-                    size="sm"
-                    variant="destructive"
-                    className="border-1 border-white"
-                  >
-                    <Link
-                      href={`https://www.youtube.com/watch?v=${video.contentDetails.videoId}`}
-                    >
-                      <FaEye />
-                      Watch
-                    </Link>
-                  </Button>
-                </CardAction>
-              </div>
-              <p className="line-clamp-2 text-muted-foreground">
-                {video.snippet.description ||
-                  "Video ini tidak memiliki deskripsi."}
-              </p>
-            </CardFooter>
-          </Card>
+        {videos.map((video, i) => (
+          <VideoCard
+            key={video.id}
+            video={video}
+            priority={i < PRIORITY_THUMBNAILS}
+          />
         ))}
       </div>
     </div>
