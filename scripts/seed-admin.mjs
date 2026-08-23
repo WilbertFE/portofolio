@@ -50,13 +50,41 @@ async function promptHidden(rl, question) {
   }
 }
 
-async function main() {
-  const rl = readline.createInterface({ input: stdin, output: stdout });
+/**
+ * Prompts, unless ADMIN_EMAIL and ADMIN_PASSWORD are already in the
+ * environment. The env path exists for terminals where the hidden-password
+ * prompt misbehaves, and for re-running this without interaction.
+ */
+async function collectCredentials() {
+  if (process.env.ADMIN_EMAIL && process.env.ADMIN_PASSWORD) {
+    console.log("Using ADMIN_EMAIL / ADMIN_PASSWORD from the environment.\n");
+    return {
+      email: process.env.ADMIN_EMAIL.trim().toLowerCase(),
+      name: process.env.ADMIN_NAME?.trim() || "Admin",
+      password: process.env.ADMIN_PASSWORD,
+    };
+  }
 
-  const email = (await rl.question("Admin email: ")).trim().toLowerCase();
-  const name = (await rl.question("Display name: ")).trim() || "Admin";
-  const password = await promptHidden(rl, "Password (min 8 chars): ");
-  rl.close();
+  if (!stdin.isTTY) {
+    throw new Error(
+      "No terminal to prompt on. Either run this in a normal terminal, or set\n" +
+        "ADMIN_EMAIL and ADMIN_PASSWORD in the environment first."
+    );
+  }
+
+  const rl = readline.createInterface({ input: stdin, output: stdout });
+  try {
+    const email = (await rl.question("Admin email: ")).trim().toLowerCase();
+    const name = (await rl.question("Display name: ")).trim() || "Admin";
+    const password = await promptHidden(rl, "Password (min 8 chars): ");
+    return { email, name, password };
+  } finally {
+    rl.close();
+  }
+}
+
+async function main() {
+  const { email, name, password } = await collectCredentials();
 
   if (!email.includes("@")) {
     throw new Error("That does not look like an email address.");
