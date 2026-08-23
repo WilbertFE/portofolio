@@ -100,7 +100,10 @@ export async function DELETE(_request: Request, { params }: Params) {
       .flatMap((url) => {
         const index = url.indexOf(publicPrefix);
         // Rows seeded from public/ hold plain paths and own no storage object.
-        return index === -1 ? [] : [url.slice(index + publicPrefix.length)];
+        if (index === -1) return [];
+        // Uploads carry a "?v=" cache-buster. Storage keys have no query, so
+        // leaving it on makes remove() match nothing and silently no-op.
+        return [url.slice(index + publicPrefix.length).split("?")[0]];
       });
 
     if (paths.length > 0) {
