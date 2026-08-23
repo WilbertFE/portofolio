@@ -71,6 +71,9 @@ Public sign-up is disabled, so this is the only way to create a user. Use the
 address listed in `SIGNUP_ALLOWLIST` in `src/lib/auth.ts` — Google sign-in
 matches on email, and any other address is rejected.
 
+Forgotten or mistyped it? `npm run auth:set-password` sets a new one without
+asking for the old one, and signs out any existing sessions.
+
 ## 6. Move the existing content in
 
 ```bash

@@ -12,7 +12,8 @@
     "seed:content": "node scripts/seed-content.mjs",
     "auth:generate": "npx auth@latest generate --config src/lib/auth.ts --output supabase/migrations/0001_better_auth.sql --yes",
     "auth:migrate": "npx auth@latest migrate --config src/lib/auth.ts --yes",
-    "db:migrate": "node scripts/run-migrations.mjs"
+    "db:migrate": "node scripts/run-migrations.mjs",
+    "auth:set-password": "node scripts/set-password.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

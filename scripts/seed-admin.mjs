@@ -11,11 +11,10 @@
  *
  * Re-running with an existing email just promotes that user.
  */
-import readline from "node:readline/promises";
-import { stdin, stdout } from "node:process";
 import { betterAuth } from "better-auth";
 import { admin } from "better-auth/plugins";
 import { Pool } from "pg";
+import { hasTty, withPrompts } from "./lib/prompt.mjs";
 
 process.loadEnvFile(".env.local");
 
@@ -37,19 +36,6 @@ const seedAuth = betterAuth({
   plugins: [admin({ defaultRole: "user" })],
 });
 
-/** Reads a line without echoing it, so the password stays off the screen. */
-async function promptHidden(rl, question) {
-  const onKeypress = () => rl.output.write("\x1b[2K\x1b[200D" + question);
-  stdout.write(question);
-  rl.input.on("data", onKeypress);
-  try {
-    return await rl.question("");
-  } finally {
-    rl.input.off("data", onKeypress);
-    stdout.write("\n");
-  }
-}
-
 /**
  * Prompts, unless ADMIN_EMAIL and ADMIN_PASSWORD are already in the
  * environment. The env path exists for terminals where the hidden-password
@@ -65,22 +51,19 @@ async function collectCredentials() {
     };
   }
 
-  if (!stdin.isTTY) {
+  if (!hasTty()) {
     throw new Error(
       "No terminal to prompt on. Either run this in a normal terminal, or set\n" +
         "ADMIN_EMAIL and ADMIN_PASSWORD in the environment first."
     );
   }
 
-  const rl = readline.createInterface({ input: stdin, output: stdout });
-  try {
-    const email = (await rl.question("Admin email: ")).trim().toLowerCase();
-    const name = (await rl.question("Display name: ")).trim() || "Admin";
-    const password = await promptHidden(rl, "Password (min 8 chars): ");
+  return withPrompts(async (p) => {
+    const email = (await p.ask("Admin email: ")).trim().toLowerCase();
+    const name = (await p.ask("Display name: ")).trim() || "Admin";
+    const password = await p.askHidden("Password (min 8 chars): ");
     return { email, name, password };
-  } finally {
-    rl.close();
-  }
+  });
 }
 
 async function main() {
