@@ -100,6 +100,26 @@ export function emptyToNull(value: string | undefined | null) {
     : value;
 }
 
+/**
+ * Contact form. Shared by the form and POST /api/messages, so the browser
+ * cannot be the only thing enforcing these limits.
+ */
+export const messageSchema = z.object({
+  name: z.string().trim().min(3, "At least 3 characters").max(50),
+  message: z.string().trim().min(3, "At least 3 characters").max(256),
+  /**
+   * Honeypot. Real people never see this field, so anything in it is a bot.
+   * Named innocuously because scrapers fill in what looks fillable.
+   *
+   * Deliberately permissive: rejecting a filled value here would answer 422
+   * naming this field, which tells the bot exactly what caught it. The route
+   * checks it after validation and answers 200 instead.
+   */
+  website: z.string().optional(),
+});
+
+export type MessageInput = z.infer<typeof messageSchema>;
+
 export const uploadRequestSchema = z.object({
   /** Storage path within the `portfolio` bucket, e.g. "projects/foo-123.png". */
   path: z

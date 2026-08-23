@@ -105,8 +105,10 @@ create policy "published certificates are public"
 -- project that already has one, `if not exists` leaves it untouched - check
 -- the column names match if yours predates this file.
 --
--- The form inserts with the anon key, so that policy stays. Nothing may read
--- it back: the admin inbox uses the service-role client behind an auth check.
+-- RLS on with no policies at all: the contact form posts to /api/messages,
+-- which inserts with the service-role key, and the admin inbox reads the same
+-- way behind an auth check. Neither anon nor authenticated needs any access.
+-- (0004 removed the anon insert policy this file used to create.)
 -- ---------------------------------------------------------------------------
 create table if not exists public.messages (
   id         bigint generated always as identity primary key,
@@ -120,10 +122,4 @@ create index if not exists messages_created_at_idx
 
 alter table public.messages enable row level security;
 
-drop policy if exists "anyone can send a message" on public.messages;
-create policy "anyone can send a message"
-  on public.messages for insert
-  to anon, authenticated
-  with check (true);
-
--- Intentionally absent: any select policy on public.messages.
+-- Intentionally absent: any policy at all on public.messages.

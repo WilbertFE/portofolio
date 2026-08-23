@@ -9,44 +9,51 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import supabase from "@/lib/db";
+import { messageSchema, type MessageInput } from "@/lib/schemas";
 import { useEffect, useState } from "react";
 import { Spinner } from "@/components/ui/spinner";
 import { toast } from "sonner";
-
-const formSchema = z.object({
-  name: z.string().min(3).max(50),
-  message: z.string().min(3).max(256),
-});
 
 export default function Message() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<MessageInput>({
+    resolver: zodResolver(messageSchema),
     defaultValues: {
       name: "",
       message: "",
+      website: "",
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: MessageInput) => {
     setIsSubmitting(true);
-    const { error } = await supabase.from("messages").insert({ ...values });
-    if (error) {
-      console.error(error);
-      toast.error("Something wrong");
-    } else {
-      form.reset({
-        name: "",
-        message: "",
+
+    try {
+      // Goes through the API route rather than straight to Supabase, so the
+      // same schema is enforced on the server and the anon key is not trusted
+      // to write.
+      const response = await fetch("/api/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
       });
+
+      if (!response.ok) {
+        const body = await response.json().catch(() => ({}));
+        toast.error(body.error ?? "Could not send your message");
+        return;
+      }
+
+      form.reset({ name: "", message: "", website: "" });
       toast.success("Message has been sent");
+    } catch {
+      toast.error("Could not reach the server. Check your connection.");
+    } finally {
+      setIsSubmitting(false);
     }
-    setIsSubmitting(false);
   };
 
   useEffect(() => {
@@ -91,6 +98,16 @@ export default function Message() {
                 </FormItem>
               )}
             />
+            {/* Honeypot: hidden from people and from screen readers, but a
+                bot filling every field will trip it. aria-hidden + tabIndex
+                keep it out of keyboard and assistive-tech order. */}
+            <div className="hidden" aria-hidden="true">
+              <Input
+                {...form.register("website")}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <div className="col-span-2">
               <Button
                 disabled={isSubmitting}
