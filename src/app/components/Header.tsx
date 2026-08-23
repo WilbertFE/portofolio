@@ -6,7 +6,7 @@ export function Header() {
       </h1>
       <div className="flex gap-x-4">
         <span className="lg:text-lg text-base text-muted-foreground">
-          &bull; Lives in Medan, Indonesia (ID)
+          &bull; Lives in Surabaya, Indonesia (ID)
         </span>
         <span className="lg:text-lg text-base text-muted-foreground">
           &bull; Remote
