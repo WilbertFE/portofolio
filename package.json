@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "certs:preview": "node scripts/generate-certificate-previews.mjs"
+    "certs:preview": "node scripts/generate-certificate-previews.mjs",
+    "auth:seed-admin": "node scripts/seed-admin.mjs",
+    "seed:content": "node scripts/seed-content.mjs",
+    "auth:generate": "npx auth@latest generate --config src/lib/auth.ts --output supabase/migrations/0001_better_auth.sql --yes"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -39,6 +42,7 @@
     "react-github-calendar": "^4.5.10",
     "react-hook-form": "^7.63.0",
     "react-icons": "^5.5.0",
+    "server-only": "^0.0.1",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "zod": "^4.1.11"

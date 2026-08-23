@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Separator } from "@/components/ui/separator";
 import { CertificateCard, Header } from "./components";
-import { certificates } from "@/lib/certificates";
+import { getCertificates } from "@/lib/content";
+
+// Admin writes call revalidatePath, so edits appear immediately. This is
+// only a safety net: if the build cannot reach Supabase the page would
+// otherwise ship empty and stay that way until the next edit.
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Certificates - Wilbert Bernardi",
@@ -12,7 +17,9 @@ export const metadata: Metadata = {
 // Only the first row is above the fold, so the rest of the previews lazy-load.
 const PRIORITY_PREVIEWS = 2;
 
-export default function CertificatesPage() {
+export default async function CertificatesPage() {
+  const certificates = await getCertificates();
+
   return (
     <div className="p-6 space-y-4 mx-auto h-full container">
       <Header />

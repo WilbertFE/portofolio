@@ -8,7 +8,9 @@ import {
   LayoutDashboard,
   BookUser,
   ArrowRight,
+  ShieldCheck,
 } from "lucide-react";
+import { authClient } from "@/lib/auth-client";
 import {
   Sidebar,
   SidebarContent,
@@ -33,6 +35,15 @@ export function AppSidebar() {
   const pathname = usePathname();
   const { state } = useSidebar();
   const router = useRouter();
+
+  // Client-side so the public pages stay statically prerendered - reading the
+  // session in the layout would make every one of them dynamic for the sake of
+  // a link only one person ever sees.
+  const { data: session } = authClient.useSession();
+  const navItems =
+    session?.user.role === "admin"
+      ? [...items, { title: "Admin", url: "/admin", icon: ShieldCheck }]
+      : items;
 
   return (
     <Sidebar variant="sidebar" collapsible="icon">
@@ -72,8 +83,13 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu className="space-y-2">
-              {items.map((item) => {
-                const isActive = pathname === item.url;
+              {navItems.map((item) => {
+                // startsWith for /admin so its nested pages stay highlighted;
+                // the portfolio routes are all leaves.
+                const isActive =
+                  item.url === "/admin"
+                    ? pathname.startsWith("/admin")
+                    : pathname === item.url;
                 return (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton

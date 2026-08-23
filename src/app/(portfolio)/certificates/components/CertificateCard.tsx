@@ -28,11 +28,9 @@ import {
   CERTIFICATE_ASPECT_RATIO,
   CERTIFICATE_PAGE_HEIGHT,
   CERTIFICATE_PAGE_WIDTH,
-  certificateFile,
-  certificatePage,
   formatCertificateDate,
-  type Certificate,
 } from "@/lib/certificates";
+import type { Certificate } from "@/lib/content";
 
 export default function CertificateCard({
   certificate,
@@ -42,15 +40,18 @@ export default function CertificateCard({
   priority: boolean;
 }) {
   const {
-    slug,
     title,
     issuer,
     issuedAt,
     validUntil,
     credentialId,
     credentialUrl,
-    pageCount,
+    pdfUrl,
+    pageUrls,
   } = certificate;
+
+  // Derived, never stored, so the count can never drift from the images.
+  const pageCount = pageUrls.length;
 
   const [isOpen, setIsOpen] = useState(false);
   const [page, setPage] = useState(1);
@@ -97,7 +98,7 @@ export default function CertificateCard({
               className="overflow-hidden rounded-lg border bg-white"
             >
               <Image
-                src={certificatePage(slug, 1)}
+                src={pageUrls[0]}
                 alt={`${title} certificate issued by ${issuer}`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -179,7 +180,7 @@ export default function CertificateCard({
               width on narrow screens, or the height left over once the
               header, pager and footer have taken their share on short ones. */}
           <Image
-            src={certificatePage(slug, page)}
+            src={pageUrls[page - 1]}
             alt={`${title}, page ${page} of ${pageCount}`}
             width={CERTIFICATE_PAGE_WIDTH}
             height={CERTIFICATE_PAGE_HEIGHT}
@@ -233,16 +234,14 @@ export default function CertificateCard({
                 </Link>
               </Button>
             )}
-            <Button asChild variant="outline">
-              <Link
-                href={certificateFile(slug)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FileText />
-                Open PDF
-              </Link>
-            </Button>
+            {pdfUrl && (
+              <Button asChild variant="outline">
+                <Link href={pdfUrl} target="_blank" rel="noopener noreferrer">
+                  <FileText />
+                  Open PDF
+                </Link>
+              </Button>
+            )}
           </DialogFooter>
         </DialogContent>
       </Dialog>
