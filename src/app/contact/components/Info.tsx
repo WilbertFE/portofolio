@@ -81,7 +81,7 @@ const contacts: Contact[] = [
     title: "Follow My Journey",
     description: "Get regular updates from my Instagram.",
     action: "Instagram",
-    href: "https://www.instagram.com/bernardiwilbertt",
+    href: "https://www.instagram.com/wilbertbernardife/",
     icon: GrInstagram,
     background: "from-[#F58529] via-[#DD2A7B] to-[#8134AF]",
   },
