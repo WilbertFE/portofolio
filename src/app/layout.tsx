@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
 import { Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
@@ -33,6 +31,8 @@ export const metadata: Metadata = {
   },
 };
 
+// The portfolio chrome (sidebar) lives in (portfolio)/layout.tsx so the admin
+// route group can render its own. Everything shared by both groups stays here.
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -47,15 +47,10 @@ export default function RootLayout({
           forcedTheme="dark"
           disableTransitionOnChange
         >
-          <SidebarProvider>
-            <AppSidebar />
-            <main className="min-h-screen w-full overflow-hidden">
-              <SidebarTrigger />
-              {children}
-              <SpeedInsights />
-            </main>
-            <Toaster />
-          </SidebarProvider>
+          {children}
+          {/* Toaster reads useTheme(), so it has to stay under ThemeProvider. */}
+          <Toaster />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
