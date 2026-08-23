@@ -120,6 +120,7 @@ export default function ProjectsManager({ projects }: { projects: Project[] }) {
                         alt=""
                         width={80}
                         height={45}
+                        style={{ objectPosition: project.imagePosition }}
                         className="h-11 w-20 rounded object-cover"
                       />
                     ) : (

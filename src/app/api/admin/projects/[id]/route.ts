@@ -30,6 +30,7 @@ export async function PATCH(request: Request, { params }: Params) {
   if (input.href !== undefined) row.href = input.href;
   if (input.year !== undefined) row.year = input.year;
   if ("imageUrl" in input) row.image_url = emptyToNull(input.imageUrl);
+  if (input.imagePosition !== undefined) row.image_position = input.imagePosition;
   if (input.icons !== undefined) row.icons = input.icons;
   if (input.badges !== undefined) row.badges = input.badges;
   if (input.published !== undefined) row.published = input.published;

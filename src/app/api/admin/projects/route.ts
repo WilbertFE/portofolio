@@ -13,6 +13,7 @@ export function projectToRow(input: ProjectInput) {
     href: input.href,
     year: input.year,
     image_url: emptyToNull(input.imageUrl),
+    image_position: input.imagePosition,
     icons: input.icons,
     badges: input.badges,
     published: input.published,

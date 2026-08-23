@@ -50,6 +50,25 @@ const optionalIsoDate = z
   .regex(/^(\d{4}-\d{2}-\d{2})?$/, "Use YYYY-MM-DD")
   .optional();
 
+/**
+ * CSS object-position keywords. Constrained to a fixed set because the value
+ * ends up in a style attribute - and mirrored by a CHECK constraint in
+ * migration 0005.
+ */
+export const IMAGE_POSITIONS = [
+  "left top",
+  "top",
+  "right top",
+  "left",
+  "center",
+  "right",
+  "left bottom",
+  "bottom",
+  "right bottom",
+] as const;
+
+export type ImagePosition = (typeof IMAGE_POSITIONS)[number];
+
 export const projectIconSchema = z.object({
   key: z.enum(PROJECT_ICON_KEYS as [string, ...string[]]),
   color: z.string().trim().min(1, "Required").max(32),
@@ -66,6 +85,7 @@ export const projectSchema = z.object({
     .min(2000)
     .max(new Date().getFullYear() + 5),
   imageUrl: optionalAssetUrl,
+  imagePosition: z.enum(IMAGE_POSITIONS),
   icons: z.array(projectIconSchema).max(8, "At most 8 icons"),
   badges: z.array(z.string().trim().min(1).max(40)).max(8, "At most 8 badges"),
   published: z.boolean(),

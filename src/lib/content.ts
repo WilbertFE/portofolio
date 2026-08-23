@@ -25,6 +25,8 @@ export type Project = {
   year: number;
   /** null renders the <Skeleton> placeholder. */
   imageUrl: string | null;
+  /** CSS object-position, chosen by the admin. Applied as an inline style. */
+  imagePosition: string;
   icons: ProjectIcon[];
   badges: string[];
   published: boolean;
@@ -38,6 +40,7 @@ export type ProjectRow = {
   href: string;
   year: number;
   image_url: string | null;
+  image_position: string | null;
   icons: unknown;
   badges: string[] | null;
   published: boolean;
@@ -67,6 +70,7 @@ export function mapProject(row: ProjectRow): Project {
     href: row.href,
     year: row.year,
     imageUrl: row.image_url ?? null,
+    imagePosition: row.image_position ?? "center",
     icons: parseIcons(row.icons),
     badges: row.badges ?? [],
     published: row.published,

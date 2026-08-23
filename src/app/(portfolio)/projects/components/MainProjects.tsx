@@ -34,9 +34,12 @@ export default function MainProjects({ projects }: { projects: Project[] }) {
                 className="border bg-transparent p-1 rounded-xl"
               >
                 <Card className="px-4 py-6 h-full relative">
+                  {/* No explicit height here. AspectRatio already reserves the
+                      16:9 box with padding-bottom, so adding one stacked a
+                      second height underneath it and left a dead gap. */}
                   <AspectRatio
                     ratio={16 / 9}
-                    className="relative lg:h-64 overflow-hidden"
+                    className="overflow-hidden rounded-lg"
                   >
                     {project.imageUrl ? (
                       <Image
@@ -44,10 +47,14 @@ export default function MainProjects({ projects }: { projects: Project[] }) {
                         alt={project.title}
                         fill
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="object-center object-cover rounded-lg"
+                        // Inline rather than a Tailwind class: the value comes
+                        // from the database, and the JIT would not emit a class
+                        // it never sees in the source.
+                        style={{ objectPosition: project.imagePosition }}
+                        className="rounded-lg object-cover"
                       />
                     ) : (
-                      <Skeleton className="max-w-full h-64" />
+                      <Skeleton className="h-full w-full rounded-lg" />
                     )}
                   </AspectRatio>
                   <CardHeader className="lg:space-x-4 flex flex-col gap-y-4 px-1">

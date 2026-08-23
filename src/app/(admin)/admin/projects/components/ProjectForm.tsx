@@ -7,7 +7,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { Plus, Upload, X } from "lucide-react";
 import type { Project } from "@/lib/content";
-import { projectSchema, type ProjectInput } from "@/lib/schemas";
+import {
+  projectSchema,
+  type ImagePosition,
+  type ProjectInput,
+} from "@/lib/schemas";
 import {
   PROJECT_ICONS,
   PROJECT_ICON_DEFAULT_COLOR,
@@ -28,6 +32,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import ImagePositionPicker from "./ImagePositionPicker";
 import {
   Form,
   FormControl,
@@ -66,6 +71,7 @@ export default function ProjectForm({
       href: project?.href ?? "",
       year: project?.year ?? new Date().getFullYear(),
       imageUrl: project?.imageUrl ?? undefined,
+      imagePosition: (project?.imagePosition ?? "center") as ImagePosition,
       icons: project?.icons ?? [],
       badges: project?.badges ?? [],
       published: project?.published ?? true,
@@ -233,6 +239,10 @@ export default function ProjectForm({
                 alt=""
                 width={128}
                 height={72}
+                // Always on screen once the dialog opens, so lazy loading
+                // buys nothing and only delays the preview.
+                loading="eager"
+                style={{ objectPosition: form.watch("imagePosition") }}
                 className="h-18 w-32 rounded border object-cover"
               />
             ) : (
@@ -278,6 +288,14 @@ export default function ProjectForm({
             </div>
           </div>
         </div>
+
+        <ImagePositionPicker
+          imageUrl={imageUrl}
+          value={form.watch("imagePosition")}
+          onChange={(position) =>
+            form.setValue("imagePosition", position, { shouldValidate: true })
+          }
+        />
 
         {/* Tech icons */}
         <div className="space-y-2">

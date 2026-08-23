@@ -155,6 +155,8 @@ export default function PdfDropzone({
                 alt={`Page ${index + 1}`}
                 width={112}
                 height={79}
+                // Shown immediately after an upload; lazy only delays them.
+                loading="eager"
                 className="h-20 w-28 rounded border bg-white object-contain"
               />
             ))}
