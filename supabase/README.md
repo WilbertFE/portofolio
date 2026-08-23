@@ -45,15 +45,21 @@ run `npm run auth:generate` and execute the file it writes.
 
 ## 4. Run the migrations
 
-In the SQL editor, in order:
+```bash
+npm run db:migrate
+```
+
+Applies, in filename order:
 
 1. `0002_content.sql` — projects, certificates, messages, RLS policies
 2. `0003_auth_rls_and_storage.sql` — locks down the auth tables, creates the
    `portfolio` storage bucket
 
-Both are safe to re-run.
+Better Auth's own schema is skipped; step 3 owns that. `0003` must come after
+step 3, since it alters tables Better Auth creates.
 
-`0003` must come after step 3, since it alters tables Better Auth creates.
+Both are safe to re-run, and `npm run db:migrate 0003` runs just one of them.
+Pasting the files into the SQL editor by hand works too.
 
 ## 5. Create your admin account
 
