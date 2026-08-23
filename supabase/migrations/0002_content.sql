@@ -99,11 +99,25 @@ create policy "published certificates are public"
   using (published);
 
 -- ---------------------------------------------------------------------------
--- messages (contact form) - lock down reads
+-- messages (contact form)
+--
+-- Created here because a fresh Supabase project has no messages table. On a
+-- project that already has one, `if not exists` leaves it untouched - check
+-- the column names match if yours predates this file.
 --
 -- The form inserts with the anon key, so that policy stays. Nothing may read
 -- it back: the admin inbox uses the service-role client behind an auth check.
 -- ---------------------------------------------------------------------------
+create table if not exists public.messages (
+  id         bigint generated always as identity primary key,
+  name       text not null,
+  message    text not null,
+  created_at timestamptz not null default now()
+);
+
+create index if not exists messages_created_at_idx
+  on public.messages (created_at desc);
+
 alter table public.messages enable row level security;
 
 drop policy if exists "anyone can send a message" on public.messages;

@@ -10,7 +10,8 @@
     "certs:preview": "node scripts/generate-certificate-previews.mjs",
     "auth:seed-admin": "node scripts/seed-admin.mjs",
     "seed:content": "node scripts/seed-content.mjs",
-    "auth:generate": "npx auth@latest generate --config src/lib/auth.ts --output supabase/migrations/0001_better_auth.sql --yes"
+    "auth:generate": "npx auth@latest generate --config src/lib/auth.ts --output supabase/migrations/0001_better_auth.sql --yes",
+    "auth:migrate": "npx auth@latest migrate --config src/lib/auth.ts --yes"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
