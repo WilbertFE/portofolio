@@ -30,7 +30,7 @@ const pool = new Pool({
  * matter which path it arrived through. When the chat room ships and anyone
  * can register, empty this array.
  */
-const SIGNUP_ALLOWLIST = ["wilbertbenardi87@gmail.com"];
+const SIGNUP_ALLOWLIST = ["wilbertbernardife@gmail.com"];
 
 function isSignupAllowed(email: string) {
   if (SIGNUP_ALLOWLIST.length === 0) return true;
