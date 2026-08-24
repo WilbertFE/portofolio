@@ -145,7 +145,7 @@ export default function Youtube() {
           />
         </div>
       </div>
-      <div className="grid lg:grid-cols-2 gap-y-4">
+      <div className="grid lg:grid-cols-2 gap-y-4 justify-items-center place-items-center justify-center">
         {videos.map((video, i) => (
           <VideoCard
             key={video.id}

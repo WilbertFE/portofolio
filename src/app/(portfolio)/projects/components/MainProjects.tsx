@@ -86,7 +86,7 @@ export default function MainProjects({ projects }: { projects: Project[] }) {
                       </CardAction>
                     </CardTitle>
                     <CardDescription className="space-y-4">
-                      <div className="space-x-2">
+                      <div className="space-x-2 space-y-2">
                         {project.badges.map((badge) => (
                           <Badge
                             key={badge}

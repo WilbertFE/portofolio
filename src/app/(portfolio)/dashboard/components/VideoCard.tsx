@@ -3,7 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaEye, FaPlay, FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
-import { Card, CardAction, CardContent, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { embedUrl, watchUrl, type YoutubeVideo } from "@/lib/youtube";
 
@@ -19,8 +24,8 @@ export default function VideoCard({
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <Card className="bg-transparent border-0">
-      <CardContent>
+    <Card className="bg-transparent border-0 md:w-full md:h-full max-w-4/5 self-center mx-auto">
+      <CardContent className="">
         <AspectRatio
           ratio={16 / 9}
           className="overflow-hidden rounded-lg border border-white"
@@ -59,7 +64,7 @@ export default function VideoCard({
         </AspectRatio>
       </CardContent>
       <CardFooter className="flex flex-col items-start gap-y-4">
-        <div className="flex lg:flex-row lg:gap-x-12 gap-y-4 w-full justify-between flex-col">
+        <div className="flex lg:flex-row lg:gap-x-12 gap-y-4 w-full items-center lg:justify-between flex-col">
           <div className="flex gap-x-1 max-w-4/5 lg:max-w-full">
             <FaQuoteLeft size={16} color="yellow" />
             <h1 className="tracking-wider font-bold text-xl line-clamp-1">
@@ -67,7 +72,7 @@ export default function VideoCard({
             </h1>
             <FaQuoteRight size={16} color="yellow" />
           </div>
-          <CardAction className="lg:justify-self-end">
+          <CardAction className="lg:justify-self-end mx-auto md:mx-0">
             <Button
               asChild
               size="sm"
@@ -81,7 +86,7 @@ export default function VideoCard({
             </Button>
           </CardAction>
         </div>
-        <p className="line-clamp-2 text-muted-foreground">
+        <p className="md:line-clamp-2 text-muted-foreground mx-auto md:mx-0 line-clamp-1">
           {video.description || "Video ini tidak memiliki deskripsi."}
         </p>
       </CardFooter>

@@ -4,7 +4,7 @@ export function Header() {
       <h1 className="text-4xl font-bold tracking-wider">
         Hi, I&apos;m Wilbert Bernardi
       </h1>
-      <div className="flex gap-x-4">
+      <div className="flex flex-col gap-x-4 md:flex-row">
         <span className="lg:text-lg text-base text-muted-foreground">
           &bull; Lives in Surabaya, Indonesia (ID)
         </span>
