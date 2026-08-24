@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { IconType } from "react-icons";
 import { BiLogoGmail } from "react-icons/bi";
-import { FaGithub, FaTiktok } from "react-icons/fa6";
+import { FaGithub, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import {
   Card,
@@ -30,7 +30,7 @@ export default function Info() {
         <Card
           key={i}
           className={`${
-            contact.action === "Gmail"
+            contact.action === "Gmail" || contact.action === "Youtube"
               ? "col-span-2"
               : "lg:col-span-1 col-span-2"
           } bg-gradient-to-r ${
@@ -108,5 +108,13 @@ const contacts: Contact[] = [
     href: "https://github.com/WilbertFE",
     icon: FaGithub,
     background: "from-[#2B3137] to-[#0D1117]",
+  },
+  {
+    title: "Youtube",
+    description: "Check out my Youtube channel.",
+    action: "Youtube",
+    href: "https://www.youtube.com/@WilbertBernardis",
+    icon: FaYoutube,
+    background: "from-[#FF0000] via-[#C4111B] to-[#4A0A10]",
   },
 ];
